@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face{
+    src: url('/assets/fonts/MaterialSymbolsOutlined-Regular.ttf');
+    font-family: "MaterialSymbols";
+}
+@font-face{
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+    font-family: "Roboto-Regular";
+}
+
+@font-face{
+    src: url('./assets/fonts/Roboto-Light.ttf');
+    font-family: "Roboto-Light";
+}
+
+@font-face{
+    src: url('./assets/fonts/Roboto-Medium.ttf');
+    font-family: "Roboto-Medium";
+}
+
+@font-face{
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+    font-family: "Roboto-Bold";
+}
+
+@font-face{
+    src: url('./assets/fonts/Roboto-Thin.ttf');
+    font-family: "Roboto-Thin";
+}
+
+:root{
+    --theme: #2563EB;
+    --theme-background: #FFF;
+    --grey-scale: #F8FAFC;
+    --grey-scale-500: #64748B;
+    --grey-scale-900: #0F172A;
+    --border-color: #E0E0E0;
+    --text-color: #64748B;
+    --danger: #FF3B30;
+    --warning: #FF9500;
+    --info: #0055B2;
+    --success: #1B850A;
+    --default: #;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto-Regular";
+    font-weight: 200;
+    font-size: 14px;
+    scrollbar-width: thin;
+    color: var(--text-color);
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+text-group .material-symbols-outlined{
+    width: 10%;
+    padding:  12.5px 0 12.5px 10px;
+    font-size: 22px;
+    color: var(--grey-scale-500);
+    font-family: "MaterialSymbols";
+    vertical-align: middle;
+}
+
+.black{
+    color: var(--grey-scale-900);
+}
+
+a{
+    text-decoration: none;
+    color: var(--theme);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 17px 25px;
+    font-size: 16px;
+    color: #FFF;
+    margin: 10px 0;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.btn.btn-primary{
+    background-color: var(--theme);
+}
+
+.btn.btn-primary:focus{
+    border: 1px dashed var(--border-color);
+}
+
+.btn.btn-outline{
+    color: var(--text-color);
+    background-color: var(--theme-background);
+    border: 1px solid var(--border-color);
+}
+
+.btn:focus, .btn.btn-outline:focus{
+    border: 1px solid var(--theme);
+}
+
+.text-center{
+    text-align: center;
+}

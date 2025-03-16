@@ -1,0 +1,11 @@
+.blank-layout{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.relax{
+    position: relative;
+    height: inherit;
+    width: inherit;
+}

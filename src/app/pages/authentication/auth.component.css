@@ -1,0 +1,64 @@
+.auth-layout{
+    height: 100%;
+    width: inherit;
+}
+
+.auth-layout .get-ads{
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 40px;
+    background-color: var(--theme);
+}
+
+.auth-layout .auth-pages{
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 50%;
+}
+
+.ads-section{
+    padding: 20px;
+}
+
+.ads-section .circular-gradient{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.ads-section .circular-gradient .inner-circular-gradient{
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.display{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.display p{
+    margin: 0;
+}
+
+.display p:first-child{
+    font-size: 22px;
+    font-family: "Roboto-Bold";
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.display p:last-child{
+    font-size: 14px;
+    color: rgba(248, 250, 252, 0.70);
+}

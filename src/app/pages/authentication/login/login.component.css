@@ -1,0 +1,47 @@
+.auth-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+    padding: 0 250px;
+}
+
+.auth-page h1{
+    color: var(--grey-scale-900);
+    font-size: 24px;
+    font-family: "Roboto-Bold";
+}
+
+.login-form p.p-notify{
+    margin: -10px 0 0 0;
+    font-size: 12px;
+}
+
+.notify-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.notify-signup hr{
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    width: 35%;
+    margin: 0;
+    vertical-align: super;
+}
+
+.social-btns{
+    margin-top: 40px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.social-btns button{
+    width: 49%;
+    align-content: center;
+}
+
+.social-btns button svg{
+    vertical-align: sub;
+    margin-right: 10px;
+}

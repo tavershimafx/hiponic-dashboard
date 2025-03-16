@@ -1,0 +1,68 @@
+.text-contain{
+    margin: 10px 0 20px 0;
+}
+
+.text-contain p.text-danger{
+    margin: 0;
+    color: var(--danger);
+    font-size: 12px;
+}
+
+.text-element{
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid var(--border-color);
+    background-color: var(--theme-background);
+}
+
+.text-element input{
+    display: inline-block;
+    width: 100%;
+    padding: 16px 10px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.text-element:has(> input:focus) {
+    border: 1px solid var(--theme);
+}
+
+.text-element.danger input{
+    color: var(--danger);
+}
+
+.text-element.danger{
+    outline: 1px solid var(--danger);
+}
+
+.text-element.info{
+    color: var(--text-color);
+    outline: 1px solid var(--info);
+}
+
+.text-element.success{
+    color: var(--text-color);
+    outline: 1px solid var(--success);
+}
+
+.text-element.warning{
+    outline: 1px solid var(--warning);
+}
+
+.text-element.warning input{
+    color: var(--warning);
+}
+
+span.material-symbols-outlined{
+    display: inline-block;
+    margin-left: -8%;
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    color: var(--grey-scale-500);
+}
