@@ -67,6 +67,16 @@ span.material-symbols-outlined{
     color: var(--grey-scale-500);
 }
 
+@media only screen and (min-width: 1200px) {
+    .text-element input{
+        width: 80%;
+    }
+
+    span.material-symbols-outlined{
+        margin-left: -2%;
+    }
+}
+
 /*********************************************************************/
 /******************************Tablets********************************/
 /*********************************************************************/
