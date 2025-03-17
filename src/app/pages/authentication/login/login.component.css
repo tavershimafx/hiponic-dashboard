@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 90%;
+    height: 100%;
     padding: 0 250px;
 }
 
@@ -115,6 +115,10 @@
 
 @media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
     /* For portrait layouts only */
+    .auth-page{
+        display: block;
+    }
+
     .auth-page{
         padding: 20px;
     }
