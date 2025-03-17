@@ -1,36 +1,37 @@
 <div class="auth-page">
-    <h1>Sign Up for an Account</h1>
+    <img src="../../../../../assets/images/logo-bold.png" alt="logo">
+    <h1>Sign In to your Account</h1>
+    <p class="sub-text">Welcome back! please enter your details</p>
     <div class="login-form">
-        <form action="">
-            <text-group placeholder="Username">
-                <span class="material-symbols-outlined">person</span>
-            </text-group>
-
-            <text-group placeholder="Email">
+        <form [formGroup]="loginForm" (submit)="submitLogin()">
+            <text-group placeholder="Email" 
+            formControlName="email"
+            [showValidation]="isSubmitting"
+            [control]="loginForm.formControl('email')">
                 <span class="material-symbols-outlined">mail</span>
             </text-group>
 
-            <text-group placeholder="Password" type="password">
+            <text-group placeholder="Password" type="password" 
+            formControlName="password"
+            [showValidation]="isSubmitting"
+            [control]="loginForm.formControl('password')">
                 <span class="material-symbols-outlined">lock</span>
             </text-group>
-            <p class="p-notify">Your password must have at least 8 characters</p>
+            
+            <div class="flex-between">
+                <checkbox formControlName="rememberMe">Remember me</checkbox>
+                <a routerLink="/forgot-password">Forgot Password?</a>
+            </div>
 
-            <checkbox>
-                <span>
-                    By creating an account means you agree to the <a routerLink="/" class="black">Terms
-                        & Conditions</a> and our <a routerLink="/" class="black">Privacy Policy</a>
-                </span>
-            </checkbox>
-
-            <button class="btn btn-primary w-100">
-                Sign Up
+            <button type="submit" class="btn btn-primary w-100">
+                Sign In
             </button>
             <div class="notify-signup">
-                <hr>Or sign up with <hr>
+                <hr>Or sign in with <hr>
             </div>
         </form>
         <div class="social-btns">
-            <button class="btn btn-outline">
+            <button type="button" class="btn btn-outline">
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M19.0009 10.1943C19.0009 9.47489 18.9413 8.94989 18.8124 8.40546H10.4294V11.6526H15.35C15.2509 12.4596 14.7152 13.6749 13.5247 14.4915L13.508 14.6002L16.1585 16.6125L16.3421 16.6305C18.0286 15.104 19.0009 12.8582 19.0009 10.1943Z"
@@ -47,7 +48,7 @@
                 </svg>
                 Google
             </button>
-            <button class="btn btn-outline">
+            <button type="button" class="btn btn-outline">
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1318_12982)">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -63,6 +64,6 @@
                 Facebook
             </button>
         </div>
-        <p class="text-center">Already have an account? <a routerLink="">Login</a></p>
+        <p class="text-center">Don't have an account? <a routerLink="/register">Sign Up</a></p>
     </div>
 </div>

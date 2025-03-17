@@ -62,3 +62,94 @@
     font-size: 14px;
     color: rgba(248, 250, 252, 0.70);
 }
+
+/*********************************************************************/
+/***************************Mobile phones*****************************/
+/*********************************************************************/
+@media only screen and (max-width: 575.98px) and (orientation:portrait) {
+/* For portrait layouts only */
+}
+
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+    /* For portrait layouts only */
+    .auth-layout .get-ads{
+        display: none;
+    }
+
+    .auth-layout .auth-pages{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+    }
+
+/*********************************************************************/
+/******************************Tablets********************************/
+/*********************************************************************/
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    /*All tablets */
+
+}
+
+@media only screen and (min-width: 576px) and (orientation:portrait){
+    /*small pablets */
+
+}
+
+@media only screen and (min-width: 768px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 767.98px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 991.98px) {
+    .auth-layout .get-ads{
+        display: none;
+    }
+
+    .auth-layout .auth-pages{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+/*********************************************************************/
+/***************************Small Laptops*****************************/
+/*********************************************************************/
+@media only screen and (min-width: 992px)and (max-width: 1199.98px) {
+    /* All small laptops*/
+    .ads-section .circular-gradient{
+        width: 350px;
+        height: 350px;
+    }
+    
+    .ads-section .circular-gradient .inner-circular-gradient{
+        width: 250px;
+        height: 250px;
+    }
+    
+    .ads-section .circular-gradient .inner-circular-gradient img{
+        width: 100%;
+    }
+}
+
+
+
+/*********************************************************************/
+/**********************Bigger screens/smart TVs***********************/
+/*********************************************************************/
+@media only screen and (min-width: 1200px) {
+
+}

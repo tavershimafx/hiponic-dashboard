@@ -19,7 +19,6 @@ export class CustomFormControl extends FormControl {
    */
   getValidationMessages() {
     let messages: string[] = [];
-    //console.log("Errors ", this.errors)
     if (this.errors) {
       for (let errorName in this.errors) {
         switch (errorName) {
@@ -28,16 +27,16 @@ export class CustomFormControl extends FormControl {
             messages.push(`Please enter ${this.article} ${this.label}`);
             break;
           case "min":
-            messages.push(`${this.article} ${this.label} must be at least ${this.errors['minlength'].requiredLength} characters long`);
+            messages.push(`${this.article.toUpperCase()} ${this.label} must be at least ${this.errors['minlength'].requiredLength} characters long`);
             break;
           case "minlength":
-            messages.push(`${this.article} ${this.label} must be at least ${this.errors['minlength'].requiredLength} characters long`);
+            messages.push(`${this.article.toUpperCase()} ${this.label} must be at least ${this.errors['minlength'].requiredLength} characters long`);
             break;
           case "max":
-            messages.push(`${this.article} ${this.label} must be not more than ${this.errors['maxlength'].requiredLength} characters long`);
+            messages.push(`${this.article.toUpperCase()} ${this.label} must be not more than ${this.errors['maxlength'].requiredLength} characters long`);
             break;
           case "maxlength":
-            messages.push(`${this.article} ${this.label} must be not more than ${this.errors['maxlength'].requiredLength} characters long`);
+            messages.push(`${this.article.toUpperCase()} ${this.label} must be not more than ${this.errors['maxlength'].requiredLength} characters long`);
             break;
           case "pattern":
             messages.push(`The ${this.label} contains unwanted characters`);

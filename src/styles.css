@@ -36,9 +36,9 @@
     --grey-scale-900: #0F172A;
     --border-color: #E0E0E0;
     --text-color: #64748B;
-    --danger: #FF3B30;
+    --danger: #ED4F9D;
     --warning: #FF9500;
-    --info: #0055B2;
+    --info: #2563EB;
     --success: #1B850A;
     --default: #;
 }
@@ -92,6 +92,7 @@ a:hover{
 }
 
 .w-100{
+    display: inline-block;
     width: 100%;
 }
 
@@ -115,4 +116,20 @@ a:hover{
 
 .text-center{
     text-align: center;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*********************************************************************/
+/***************************Mobile phones*****************************/
+/*********************************************************************/
+
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+    /* For portrait layouts only */
+   
 }

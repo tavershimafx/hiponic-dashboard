@@ -66,3 +66,32 @@ span.material-symbols-outlined{
     cursor: pointer;
     color: var(--grey-scale-500);
 }
+
+/*********************************************************************/
+/******************************Tablets********************************/
+/*********************************************************************/
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    /*All tablets */
+    .text-element input{
+        width: 80%;
+    }
+
+    span.material-symbols-outlined{
+        margin-left: -2%;
+    }
+}
+
+/*********************************************************************/
+/***************************Mobile phones*****************************/
+/*********************************************************************/
+
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+    /* For portrait layouts only */
+    .text-element input{
+        width: 80%;
+    }
+
+    span.material-symbols-outlined{
+        margin-left: -2%;
+    }
+}
