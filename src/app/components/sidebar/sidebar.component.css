@@ -1,0 +1,154 @@
+
+aside{
+    padding: 20px 10px;
+    border-right: 1px solid var(--border-color);
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--theme-background);
+}
+
+aside .logo{
+    padding: 10px 20px 30px 20px;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 5;
+    background-color: var(--theme-background);
+}
+
+aside .logo img{
+    width: 60%;;
+}
+
+nav.operator ul{
+    list-style-type: none;
+    padding-left: 0;
+    z-index: 5;
+    background-color: var(--theme-background);
+}
+
+nav.operator ul li{
+    position: relative;
+}
+nav.operator ul li.group-heading{
+    color: var(--text-color);
+    font-family: "Roboto-Medium";
+    border-radius: 14px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+nav.operator ul li a{
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: var(--text-color);
+    font-family: "Roboto-Medium";
+    background-color: var(--theme-background);
+    border-radius: 12px;
+    width: 100%;
+    z-index: 5;
+}
+
+nav.operator ul li > div{
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: var(--text-color);
+    font-family: "Roboto-Medium";
+    border-radius: 12px;
+    width: 100%;
+    cursor: pointer;
+    z-index: 5;
+    background-color: var(--theme-background);
+}
+
+nav.operator ul li span.material-symbols-outlined{
+    font-family: "MaterialSymbols";
+    font-size: 20px;
+    color: var(--grey-scale-500);
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+nav.operator ul li span.sl{
+    position: relative;
+    float: right;
+    text-align: right;
+}
+
+nav.operator ul li a:hover, nav.operator ul li > span:hover{
+    text-decoration: none;
+    background-color: var(--theme-light);
+}
+
+nav.operator ul li.active a, nav.operator ul li.active > span,
+nav.operator ul li.active span.material-symbols-outlined,
+nav.operator ul li.active ul li.active a{
+    color: var(--theme);
+}
+
+nav.operator ul li ul{
+    position: relative;
+    display: block;
+    list-style-type: none;
+    padding-left: 30px;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+nav.operator ul li ul li a{
+    display: inline-block;
+    padding: 15px 20px;
+    color: var(--text-color);
+    font-family: "Roboto-Medium";
+    border-radius: 12px;
+    width: 100%;
+}
+
+aside .aside-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--grey-scale-500);
+}
+
+aside .aside-footer span.material-symbols-outlined{
+    display: inline-block;
+    font-family: "MaterialSymbols";
+    font-size: 20px;
+    color: var(--grey-scale-500);
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+aside .aside-footer .setting{
+    padding: 5px 10px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+aside .aside-footer .setting a{
+    display: inline-block;
+    width: 100%;
+    font-family: "Roboto-Medium";
+    color: var(--text-color);
+    padding: 15px 20px;
+    border-radius: 12px;
+}
+
+aside .aside-footer .setting a:hover{
+    background-color: var(--theme-light);
+    text-decoration: none;
+}
+
+aside .aside-footer .theme-mode{
+    padding: 20px 30px;
+    font-family: "Roboto-Medium";
+}
+
+aside .aside-footer .theme-mode toggle{
+    position: relative;
+    display: inline-block;
+    transform: translateX(100%);
+}

@@ -1,2 +1,30 @@
-<router-outlet></router-outlet>
-<h1>This is dashboard layout</h1>
+<div class="dashboard">
+    <div class="side-bar">
+      <sidebar></sidebar>
+    </div>
+    <div class="main-area">
+        <div class="dashboard-pages">
+            <div class="nav-top">
+                <div class="nav-left">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="nav-right">
+                    <text-group [showValidation]="false">
+                        <span class="material-symbols-outlined">search </span>
+                    </text-group>
+                    <div class="action-group">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <div class="usr-group">
+                            <img src="../../../assets/images/users/user-1.png" alt="user">
+                            <div class="">
+                                <p>Tavershima</p>
+                                <span>Project Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

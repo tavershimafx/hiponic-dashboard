@@ -120,6 +120,7 @@ export class TextGroupComponent {
   }
 
   inputChanged(){
-    this.validationClass = !this.control.valid? "danger" : "success"
+    if(this.showValidation)
+      this.validationClass = !this.control.valid? "danger" : "success"
   }
 }

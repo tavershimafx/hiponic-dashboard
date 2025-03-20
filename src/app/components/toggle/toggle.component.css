@@ -1,0 +1,24 @@
+.toggle{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    padding: 2px 3px;
+    border-radius: 50px;
+    background-color: var(--grey-scale-300)
+}
+
+.toggle .toggle-ball{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: #FFF;
+    vertical-align: sub;
+    transition: transform 0.5s ease;
+}
+
+.toggle .toggle-ball.on{
+    transform: translateX(110%);
+}

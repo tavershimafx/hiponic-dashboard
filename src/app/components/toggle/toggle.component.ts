@@ -1,37 +1,28 @@
 import { Component, Input, forwardRef  } from '@angular/core';
 import { NG_VALUE_ACCESSOR} from '@angular/forms';
-import { CustomFormControl } from '@extensions/control.extensions';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => CheckboxComponent),
+  useExisting: forwardRef(() => ToggleComponent),
   multi: true
 };
 
 @Component({
-  selector: 'checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.css'],
+  selector: 'toggle',
+  templateUrl: './toggle.component.html',
+  styleUrls: ['./toggle.component.css'],
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class CheckboxComponent {
+export class ToggleComponent {
 
   constructor(){
    
   }
 
-  /**
-   * Determines if validation messages and symbols should be displayed
-   */
-  @Input() showValidation?: boolean = false
-
-  /**
-   * The referenced form control
-   */
-  @Input() control!: CustomFormControl
+  @Input() color: string = "var(--success)"
 
   // #region NgModel template definiton
-  private innerValue:any;
+  innerValue: boolean = false;
 
 
   //Placeholders for the callbacks which are later provided
@@ -40,12 +31,12 @@ export class CheckboxComponent {
   private onChangeCallback: (_: any) => void = () => { };
 
   //get accessor
-  get value(): any {
+  get value(): boolean {
       return this.innerValue;
   };
 
   //set accessor including call the onchange callback
-  set value(v: any) {
+  set value(v: boolean) {
       if (v !== this.innerValue) {
           this.innerValue = v;
           this.onChangeCallback(v);
@@ -58,7 +49,7 @@ export class CheckboxComponent {
   }
 
   //From ControlValueAccessor interface
-  writeValue(value: any) {
+  writeValue(value: boolean) {
       if (value !== this.innerValue) {
           this.innerValue = value;
       }
@@ -74,4 +65,8 @@ export class CheckboxComponent {
       this.onTouchedCallback = fn;
   }
   //#endregion
+
+  toggle(){
+    this.innerValue = !this.innerValue
+  }
 }

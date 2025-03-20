@@ -8,7 +8,7 @@
         (ngModelChange)="inputChanged()"
         />
         <span *ngIf="type == 'password'" class="material-symbols-outlined" (click)="showPassword($event)">{{visibility}}</span>
-        <span *ngIf="type != 'password' && value != ''" class="material-symbols-outlined clear-input" (click)="clearInput()">cancel</span>
+        <span *ngIf="type != 'password' && (value != undefined && value.length > 0)" class="material-symbols-outlined clear-input" (click)="clearInput()">cancel</span>
        
     </div>
     <p *ngIf="showValidation && !control.valid" class="text-danger">{{control.getValidationMessages().join(",")}}</p>     

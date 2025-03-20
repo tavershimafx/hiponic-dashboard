@@ -1,17 +1,4 @@
-<!-- <div class="text-contain" #textEl [ngClass]="{'shake': showValidation && !control.valid}">
-    <div class="text-element" class="{{ showValidation && !control.valid? 'danger' : validationClass}}">
-        <input #inputEl
-        [type]="type" 
-        [placeholder]="placeholder"  
-        [(ngModel)]="value"
-        (ngModelChange)="inputChanged()"
-        />
-       
-    </div>
-    <p *ngIf="showValidation && !control.valid" class="text-danger">{{control.getValidationMessages().join(",")}}</p>     
-</div> -->
-
-<label class="check-contain">
+<label class="check-contain" [ngClass]="{'danger': showValidation && !control.valid}">
     <input type="checkbox">
     <ng-content />
 </label>

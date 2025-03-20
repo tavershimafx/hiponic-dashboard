@@ -30,16 +30,18 @@
 
 :root{
     --theme: #2563EB;
+    --theme-light: #F8FAFC;
     --theme-background: #FFF;
     --grey-scale: #F8FAFC;
+    --grey-scale-300: #CBD5E1;
     --grey-scale-500: #64748B;
     --grey-scale-900: #0F172A;
-    --border-color: #E0E0E0;
+    --border-color: #F1F5F9;
     --text-color: #64748B;
     --danger: #ED4F9D;
-    --warning: #FF9500;
-    --info: #2563EB;
-    --success: #1B850A;
+    --warning: #F6A723;
+    --info: #38BDF8;
+    --success: #24D164;
     --default: #;
 }
 
@@ -60,7 +62,6 @@ html, body{
 }
 
 text-group .material-symbols-outlined{
-    width: 10%;
     padding:  12.5px 0 12.5px 10px;
     font-size: 22px;
     color: var(--grey-scale-500);
