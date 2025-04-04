@@ -21,7 +21,7 @@ export class TextGroupComponent {
   }
 
   /**
-   * 
+   * A defined css class to be applied to the checkbox
    */
   @Input("class") cssClass?: string
 

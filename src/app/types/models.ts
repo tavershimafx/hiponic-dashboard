@@ -8,3 +8,10 @@ export interface IMailMessage{
   attachments: number;
   id: number
 }
+
+export interface IQuickMessage{
+  username: string
+  profilePicture: string
+  message: string;
+  time: string
+}

@@ -24,6 +24,7 @@
     ],
     "paths": {
       "@components/*":["./src/app/components/*"],
+      "@directives/*":["./src/app/directives/*"],
       "@extensions/*":["./src/app/extensions/*"],
       "@layouts/*":["./src/app/layouts/*"],
       "@pages/*":["./src/app/pages/*"],

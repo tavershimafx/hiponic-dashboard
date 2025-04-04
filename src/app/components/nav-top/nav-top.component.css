@@ -1,0 +1,75 @@
+
+.nav-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-color);
+    padding: 20px 30px;
+    background-color: var(--theme-background);
+}
+
+.nav-top .nav-left h1{
+    font-family: "Roboto-Bold";
+    font-size: 22px;
+    color: var(--grey-scale-900);
+    margin: 0;
+}
+
+.nav-top .nav-right{
+   display: flex;
+   align-items: center;
+}
+
+.nav-top .nav-right text-group{
+   display: inline-block;
+}
+
+.nav-top .nav-right .action-group{
+   display: inline-block;
+}
+
+.nav-top .nav-right .notification.material-symbols-outlined{
+    font-size: 22px;
+    color: var(--grey-scale-500);
+    font-family: "MaterialSymbols";
+    margin: 0 50px;
+}
+
+.nav-top .nav-right .usr-group{
+    display: flex;
+    align-items: center;
+}
+
+.nav-top .nav-right .usr-group .material-symbols-outlined{
+    font-size: 22px;
+    color: var(--grey-scale-500);
+    font-family: "MaterialSymbols";
+    margin: 0 0 0 20px;
+}
+
+.nav-top .nav-right .usr-group img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
+/* .nav-top .nav-right .usr-group > div{
+    display: inline-block;
+    vertical-align: super;
+} */
+
+.nav-top .nav-right .usr-group p{
+    margin: 0;
+}
+
+.nav-top .nav-right .usr-group p:first-child{
+    color: var(--grey-scale-900);
+    font-family: "Roboto-Bold";
+    margin-bottom: 5px;
+}
+
+.nav-top .nav-right .usr-group p:last-child{
+    font-size: 12px;
+}

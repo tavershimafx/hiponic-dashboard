@@ -1,35 +1,40 @@
-import { Directive, ElementRef, HostListener } from "@angular/core";
+import { Directive, ElementRef, HostListener, OnInit } from "@angular/core";
 
 @Directive({
     selector: "[dropdown]"
 })
-export class DropdownDirective{
+export class DropdownDirective implements OnInit{
+    dropdown: boolean = false
+
     constructor(private el: ElementRef){
-      
+        this.blur = this.blur.bind(this)
+    }
+
+    menu!: any
+
+    ngOnInit(): void {
+        this.el.nativeElement.style.cursor = "pointer"
+        this.el.nativeElement.style.zIndex = "20"
+        this.menu = this.el.nativeElement.children.item(1)
     }
 
     @HostListener("click") onClick(){   
-        let parent = this.el.nativeElement.parentElement.parentElement // ul
-        for(let li of parent.children){
-            if(this.el.nativeElement.parentElement == li){
-                if(li.children.length > 1){
-                    if(li.children.item(1).style.maxHeight == null || li.children.item(1).style.maxHeight == ""){
-                        li.children.item(1).style.maxHeight = li.children.item(1).scrollHeight + "px";
-                    }else{
-                        li.children.item(1).style.maxHeight = null
-                    }
-                }
-            }else{
-                li.classList.remove("active")
-                if(li.children.length > 1){
-                    for(let sli of li.children.item(1).children){
-                        sli.classList.remove("active")
-                    }
-                    li.children.item(1).style.maxHeight = null
-                }
-            }
+        if (!this.dropdown){
+            this.menu.style.visibility = "visible"
+            this.menu.focus()
+            this.menu.addEventListener("blur", this.blur)
+        }else{
+            this.menu.style.visibility = "hidden"
+            this.menu.removeEventListener("click", this.blur)
         }
+        this.dropdown = !this.dropdown
+    }
 
-        this.el.nativeElement.parentElement.classList.add("active")
+    blur(){
+        if (this.dropdown){
+            this.menu.style.visibility = "hidden"
+            this.menu.removeEventListener("click", this.blur)
+            this.dropdown = !this.dropdown
+        }
     }
 }

@@ -1,1 +1,268 @@
-<h1>This is index component</h1>
+<div class="page">
+    <div class="row flex-gap">
+        <div class="col-lg-7 col-md-10 flex col-flex flex-gap">
+            <card>
+                <card-header>
+                    <div class="flex-between item-center pt-10 pb-10">
+                        <p class="bold f-18 m-0">Recent Projects</p>
+                        <div class="relative" dropdown>
+                            <span class="material-symbols-outlined">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </card-header>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="pl-neutral">
+                            <div class="flex-between pl-head">
+                                <p>Hiphonic</p>
+                                <div class="relative" dropdown>
+                                    <span class="material-symbols-outlined">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>Weekly</div>
+                                        <div>Monthly</div>
+                                        <div>Yearly</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-between pl-flask mt-10">
+                                <p>Progress</p>
+                                <span>45%</span>
+                            </div>
+
+                            <progress-bar color="info" width="45%"></progress-bar>
+                            <div class="flex-between pl-flask">
+                                <p>
+                                    <span class="material-symbols-outlined">check_box</span>
+                                    8/15
+                                </p>
+                                <stacked-images [images]="users" size="sm"></stacked-images>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="pl-neutral">
+                            <div class="flex-between pl-head">
+                                <p>SEO Analytics</p>
+                                <div class="relative" dropdown>
+                                    <span class="material-symbols-outlined">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>Weekly</div>
+                                        <div>Monthly</div>
+                                        <div>Yearly</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-between pl-flask mt-10">
+                                <p>Progress</p>
+                                <span>65%</span>
+                            </div>
+
+                            <progress-bar color="danger" width="65%"></progress-bar>
+                            <div class="flex-between pl-flask">
+                                <p>
+                                    <span class="material-symbols-outlined">check_box</span>
+                                    8/40
+                                </p>
+                                <stacked-images [images]="users" size="sm"></stacked-images>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="pl-neutral">
+                            <div class="flex-between pl-head">
+                                <p>Dibhub App</p>
+                                <div class="relative" dropdown>
+                                    <span class="material-symbols-outlined">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>Weekly</div>
+                                        <div>Monthly</div>
+                                        <div>Yearly</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-between pl-flask mt-10">
+                                <p>Progress</p>
+                                <span>85%</span>
+                            </div>
+
+                            <progress-bar color="warning" width="85%"></progress-bar>
+                            <div class="flex-between pl-flask">
+                                <p>
+                                    <span class="material-symbols-outlined">check_box</span>
+                                    8/15
+                                </p>
+                                <stacked-images [images]="users" size="sm"></stacked-images>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </card>
+
+            <!--Second chart row-->
+            <div class="row">
+                <div class="col-lg-7 col-md-10 col-sm-10">
+                    <card>
+                        <div class="flex-between pb-10 relative">
+                            <p class="bold f-18 m-0">Activity</p>
+                            <div class="relative">
+                                <span class="mr-10 inline-block">Weekly</span>
+                                <div class="inline-block" dropdown>
+                                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>Weekly</div>
+                                        <div>Monthly</div>
+                                        <div>Yearly</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chart">
+                            <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                                [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!"
+                                [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+                        </div>
+                    </card>
+                </div>
+                <div class="col-lg-3 col-md-0 col-sm-0">
+                    <card>
+                        <div class="flex-between mb-10">
+                            <span class="bold">Tasks Summary</span>
+                            <span class="material-symbols-outlined">more_horiz</span>
+                        </div>
+                        <div class="summaries">
+                            <div class="item-summary theme-bg">
+                                <div class="circle">
+                                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.1747 8.1852C11.9747 8.57126 13.7468 7.42502 14.1329 5.625C14.5189 3.82499 13.3727 2.05283 11.5727 1.66677C9.77268 1.28071 8.00051 2.42695 7.61446 4.22696C7.2284 6.02698 8.37464 7.79914 10.1747 8.1852Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M3.94565 15.3721C5.74566 15.7581 7.51782 14.6119 7.90388 12.8119C8.28994 11.0119 7.1437 9.23971 5.34369 8.85365C3.54367 8.46759 1.77151 9.61383 1.38545 11.4138C0.999394 13.2139 2.14563 14.986 3.94565 15.3721Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.9085 17.2944C14.7086 17.6804 16.4807 16.5342 16.8668 14.7342C17.2528 12.9342 16.1066 11.162 14.3066 10.776C12.5066 10.3899 10.7344 11.5361 10.3483 13.3362C9.96228 15.1362 11.1085 16.9083 12.9085 17.2944Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span>Projects</span>
+                                <p>40</p>
+                            </div>
+                            <div class="item-summary info-bg">
+                                <div class="circle">
+                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.50008 8.16667C8.34103 8.16667 9.83342 6.67428 9.83342 4.83333C9.83342 2.99238 8.34103 1.5 6.50008 1.5C4.65913 1.5 3.16675 2.99238 3.16675 4.83333C3.16675 6.67428 4.65913 8.16667 6.50008 8.16667Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M1.5 16.5V14.8333C1.5 13.9493 1.85119 13.1014 2.47631 12.4763C3.10143 11.8512 3.94928 11.5 4.83333 11.5H8.16667C9.05072 11.5 9.89857 11.8512 10.5237 12.4763C11.1488 13.1014 11.5 13.9493 11.5 14.8333V16.5"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M12.3333 8.16667L13.9999 9.83333L17.3333 6.5" stroke="white"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span>Projects</span>
+                                <p>40</p>
+                            </div>
+                            <div class="item-summary theme-light-bg">
+                                <div class="circle">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.8895 1.83347H5.11016C3.09616 1.83347 1.8335 3.25947 1.8335 5.27747V10.7228C1.8335 12.7408 3.09016 14.1668 5.11016 14.1668H10.8888C12.9095 14.1668 14.1668 12.7408 14.1668 10.7228V5.27747C14.1668 3.25947 12.9095 1.83347 10.8895 1.83347Z"
+                                            stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M5.62646 8.00013L7.20913 9.58213L10.3731 6.41813" stroke="#0F172A"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span class="black">Projects</span>
+                                <p class="black">40</p>
+                            </div>
+                        </div>
+                        <p>On-time Completion Rate</p>
+                        <div class="flex-between">
+                            <div class="completion-rate">
+                                <p class="bold">95%</p> <span class="success">+2.5%</span>
+                            </div>
+                            <div>
+                                <apx-chart
+                                  [series]="fluentOptions.series!"
+                                  [chart]="fluentOptions.chart!"
+                                  [yaxis]="fluentOptions.yaxis!"
+                                  [xaxis]="fluentOptions.xaxis!"
+                                  [labels]="fluentOptions.labels!"
+                                  [stroke]="fluentOptions.stroke!"
+                                  [plotOptions]="fluentOptions.plotOptions!"
+                                  [markers]="fluentOptions.markers!"
+                                  [fill]="fluentOptions.fill!"
+                                  [tooltip]="fluentOptions.tooltip!"
+                                ></apx-chart>
+                              </div>
+                        </div>
+                    </card>
+
+                </div>
+            </div>
+
+            <!--Tasks row-->
+            <div>
+                <div class="flex-between mb-10">
+                    <p class="bold">Tasks Today <span>(10)</span></p>
+                    <p>
+                        See all
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </p>
+                </div>
+                <div class="task-item">
+                    <checkbox class="m-0"><span class="bold">Create userflow for Hisphonic Application Design</span>
+                    </checkbox>
+                    <div class="flex item-center">
+                        <span badge="warning">In Review</span>
+                        <stacked-images [images]="users"></stacked-images>
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <checkbox class="m-0"><span class="bold">Homepage Design for Diphub application</span></checkbox>
+                    <div class="flex item-center">
+                        <span badge="success">In Progress</span>
+                        <stacked-images [images]="users"></stacked-images>
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-0 col-sm-0">
+            <card>
+                <div>
+                    <p class="bold">Messages</p>
+                </div>
+                <div class="quick-message" *ngFor="let msg of quickMessages">
+                    <div class="">
+                        <img [src]="msg.profilePicture" alt="user">
+                        <div class="ml-10">
+                            <p class="bold m-0">{{msg.username}}</p>
+                            <span>{{msg.message}}</span>
+                        </div>
+                    </div>
+                    <p>{{msg.time}}</p>
+                </div>
+                <div class="text-center mt-20">
+                    <a routerLink="" class="bold">See All</a>
+                </div>
+            </card>
+        </div>
+    </div>
+</div>

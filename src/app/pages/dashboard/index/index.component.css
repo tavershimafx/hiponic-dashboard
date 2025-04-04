@@ -1,0 +1,121 @@
+.pl-neutral{
+    border-radius: 12px;
+    background-color: var(--theme-light);
+    padding: 10px;
+}
+
+.pl-head p{
+    font-family: "Roboto-Bold";
+    color: var(--grey-scale-900);
+}
+
+.pl-head span{
+    font-size: 22px;
+    color: var(--grey-scale-500);
+    font-family: "MaterialSymbols";
+}
+
+.pl-flask p{
+    margin: 0;
+    font-size: 12px;
+    color: var(--grey-scale-500);
+}
+
+.pl-flask span{
+    font-size: 12px;
+    font-family: "Roboto-Bold";
+    color: var(--grey-scale-900);
+}
+
+.pl-flask span.material-symbols-outlined{
+    font-size: 18px;
+    color: var(--grey-scale-500);
+    font-family: "MaterialSymbols";
+    vertical-align: middle;
+}
+
+.task-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-background);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.task-item span[badge]{
+    position: relative;
+    top: 0;
+}
+
+.summaries{
+    display: flex;
+    column-gap: 10px;
+}
+
+.summaries .item-summary{
+    width: 32%;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+.summaries .item-summary .circle{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    align-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.summaries span{
+    color: #FFFFFF;
+}
+
+.summaries p{
+    color: #FFFFFF;
+    margin-top: 10px;
+    font-family: 'Roboto-Bold';
+}
+
+.completion-rate{
+    width: 100px;
+}
+
+.completion-rate p{
+    font-size: 28px;
+    display: inline-block;
+}
+
+.completion-rate span{
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.quick-message{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    border-top: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.quick-message:hover{
+   background-color: var(--theme-light);
+}
+
+.quick-message > div{
+    display: flex;
+    align-items: center;
+}
+
+.quick-message img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}

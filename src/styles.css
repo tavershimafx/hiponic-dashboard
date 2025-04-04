@@ -33,20 +33,73 @@
     --theme-light: #F8FAFC;
     --theme-background: #FFF;
     --grey-scale: #F8FAFC;
+    --grey-scale-200: #E2E8F0;
     --grey-scale-300: #CBD5E1;
     --grey-scale-500: #64748B;
     --grey-scale-900: #0F172A;
     --border-color: #F1F5F9;
     --text-color: #64748B;
     --danger: #ED4F9D;
+    --danger-light: #FDF2F8;
     --warning: #F6A723;
+    --warning-light: #FFFBEB;
     --info: #38BDF8;
+    --info-light: #EFF6FF;
     --success: #24D164;
+    --success-light: #F0FDF4;
     --default: #;
 }
 
+.theme{
+    color: var(--theme);
+}
+
+.theme-bg{
+    background-color: var(--theme);
+}
+
+.theme-light{
+    color: var(--theme-light);
+}
+
+.theme-light-bg{
+    background-color: var(--theme-light);
+}
+
+.danger{
+    color: var(--danger);
+}
+
+.danger-bg{
+    background-color: var(--danger);
+}
+
+.warning{
+    color: var(--warning);
+}
+
+.warning-bg{
+    background-color: var(--warning);
+}
+
+.info{
+    color: var(--info);
+}
+
+.info-bg{
+    background-color: var(--info);
+}
+
+.success{
+    color: var(--success);
+}
+
+.success-bg{
+    background-color: var(--success);
+}
+
 *{
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     font-family: "Roboto-Regular";
     font-weight: 200;
     font-size: 14px;
@@ -69,10 +122,6 @@ text-group .material-symbols-outlined{
     vertical-align: middle;
 }
 
-.black{
-    color: var(--grey-scale-900);
-}
-
 a{
     text-decoration: none;
     color: var(--theme);
@@ -90,11 +139,6 @@ a:hover{
     font-size: 16px;
     color: #FFF;
     margin: 10px 0;
-}
-
-.w-100{
-    display: inline-block;
-    width: 100%;
 }
 
 .btn.btn-primary{
@@ -115,8 +159,87 @@ a:hover{
     border: 1px solid var(--theme);
 }
 
+.dropdown-menu{
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    right: 100%;
+    outline: none;
+    background-color: var(--theme-background);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    z-index: 10;
+    width: max-content;
+}
+
+.dropdown-menu > div{
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.dropdown-menu > div:hover{
+    background-color: var(--theme-light);
+    cursor: pointer;
+}
+
+/*********************************************************************/
+/*****************************Utilities*******************************/
+/*********************************************************************/
+
+.material-symbols-outlined{
+    font-family: "MaterialSymbols";
+}
+
+.black{
+    color: var(--grey-scale-900) !important;
+}
+
+.bold{
+    font-family: "Roboto-Bold";
+    color: var(--grey-scale-900) !important;
+}
+
 .text-center{
-    text-align: center;
+    text-align: center !important;
+}
+
+.circle{
+    border-radius: 100%;
+}
+
+.middle{
+    vertical-align: middle;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.relative{
+    position: relative;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-gap{
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.col-flex{
+    flex-direction: column;
+}
+
+.row-flex{
+    flex-direction: row;
 }
 
 .flex-between{
@@ -125,12 +248,322 @@ a:hover{
     align-items: center;
 }
 
+.item-center{
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.w-100{
+    display: inline-block;
+    width: 100%;
+}
+
+.f-18{
+    font-size: 18px;
+}
+
+.f-16{
+    font-size: 16px;
+}
+
+.m-0{
+    margin: 0 !important;
+}
+
+.ml-0{
+    margin-left: 0 !important;
+}
+
+.ml-10{
+    margin-left: 10px !important;
+}
+
+.mr-0{
+    margin-right: 0 !important;
+}
+
+.mr-10{
+    margin-right: 10px !important;
+}
+
+.mt-0{
+    margin-top: 0 !important;
+}
+
+.mt-10{
+    margin-top: 10px !important;
+}
+
+.mt-20{
+    margin-top: 20px !important;
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
+
+.mb-10{
+    margin-bottom: 10px !important;
+}
+
+.mb-20{
+    margin-bottom: 20px !important;
+}
+
+.p-10{
+    padding: 10px !important;
+}
+
+.pt-10{
+    padding-top: 10px !important;
+}
+
+.pb-10{
+    padding-bottom: 10px !important;
+}
+
+.pl-5{
+    padding-left: 5px !important;
+}
+
+.pl-10{
+    padding-left: 10px !important;
+}
+
+.pr-5{
+    padding-right: 5px !important;
+}
+
+.pr-10{
+    padding-right: 10px !important;
+}
+
+.page{
+    padding: 30px;
+}
+
+.row{
+    display: flex;
+    column-gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.r-gap10{
+    row-gap: 10px;
+}
+
+.r-gap20{
+    row-gap: 20px;
+}
+
+.c-gap10{
+    column-gap: 10px;
+}
+
+.c-gap20{
+    column-gap: 20px;
+}
+
+
+/*********************************************************************/
+/**********************Bigger screens/smart TVs***********************/
+/*********************************************************************/
+
+@media only screen and (min-width: 1200px) and (max-width: 1680px){
+   
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .col-lg-0{
+        display: none;
+    }
+
+    .col-lg-1{
+        width: 9.5%;
+    }
+
+    .col-lg-2{
+        width: 19.5%;
+    }
+
+    .col-lg-3{
+        width: 29.5%;
+    }
+
+    .col-lg-4{
+        width: 39.5%;
+    }
+
+    .col-lg-5{
+        width: 49.5%;
+    }
+
+    .col-lg-6{
+        width: 58.5%;
+    }
+
+    .col-lg-7{
+        width: 68.5%;
+    }
+
+    .col-lg-8{
+        width: 78.5%;
+    }
+
+    .col-lg-9{
+        width: 88.5%;
+    }
+
+    .col-lg-10{
+        width: 100%;
+    }
+}
+
+
+/*********************************************************************/
+/***************************Small Laptops*****************************/
+/*********************************************************************/
+@media only screen and (min-width: 992px)and (max-width: 1199.98px) {
+    /* All small laptops*/
+
+}
+
+
+/*********************************************************************/
+/******************************Tablets********************************/
+/*********************************************************************/
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    /*All tablets */
+
+}
+
+@media only screen and (min-width: 576px) and (orientation:portrait){
+    /*small pablets */
+
+}
+
+@media only screen and (min-width: 768px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 767.98px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 991.98px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 1080px) {
+    .col-md-0{
+        display: none;
+    }
+
+    .col-md-1{
+        width: 9.5%;
+    }
+
+    .col-md-2{
+        width: 19.5%;
+    }
+
+    .col-md-3{
+        width: 29.5%;
+    }
+
+    .col-md-4{
+        width: 39.5%;
+    }
+
+    .col-md-5{
+        width: 49.5%;
+    }
+
+    .col-md-6{
+        width: 58.5%;
+    }
+
+    .col-md-7{
+        width: 68.5%;
+    }
+
+    .col-md-8{
+        width: 78.5%;
+    }
+
+    .col-md-9{
+        width: 88.5%;
+    }
+
+    .col-md-10{
+        width: 100%;
+    }
+}
 
 /*********************************************************************/
 /***************************Mobile phones*****************************/
 /*********************************************************************/
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+}
+
+@media only screen and (max-width: 575.98px) and (orientation:portrait) {
+/* For portrait layouts only */
+    .col-sm-0{
+        display: none;
+    }
+
+    .col-sm-1{
+        width: 9.5%;
+    }
+
+    .col-sm-2{
+        width: 19.5%;
+    }
+
+    .col-sm-3{
+        width: 29.5%;
+    }
+
+    .col-sm-4{
+        width: 39.5%;
+    }
+
+    .col-sm-5{
+        width: 49.5%;
+    }
+
+    .col-sm-6{
+        width: 59%;
+    }
+
+    .col-sm-7{
+        width: 69%;
+    }
+
+    .col-sm-8{
+        width: 79%;
+    }
+
+    .col-sm-9{
+        width: 89%;
+    }
+
+    .col-sm-10{
+        width: 100%;
+    }
+}
+
+
 @media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
     /* For portrait layouts only */
-   
+    
 }
+    	

@@ -10,6 +10,12 @@ import { CardFooterComponent } from "./cards/card-footer/card-footer.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import DirectivesModule from "../directives/directives.module";
+import { NavTopComponent } from "./nav-top/nav-top.component";
+import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
+import { NgApexchartsModule } from "ng-apexcharts";
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { StackedImagesComponent } from "./stacked-images/stacked-images.component";
 
 const components = [
     TextInputComponent,
@@ -19,7 +25,10 @@ const components = [
     CardHeaderComponent,
     CardFooterComponent,
     ToggleComponent,
-    SidebarComponent
+    SidebarComponent,
+    NavTopComponent,
+    ProgressBarComponent,
+    StackedImagesComponent
 ]
 
 @NgModule({
@@ -28,9 +37,14 @@ const components = [
     ],
     imports: [CommonModule, ReactiveFormsModule, 
         FormsModule, 
-        DirectivesModule],
+        DirectivesModule,
+        NgApexchartsModule,
+        MatButtonModule, MatMenuModule
+    ],
     exports: [
-        ...components
+        ...components,
+        NgApexchartsModule,
+        MatButtonModule, MatMenuModule
     ]
 })
 export default class ComponentsModule{}

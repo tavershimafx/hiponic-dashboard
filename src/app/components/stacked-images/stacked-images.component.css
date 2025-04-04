@@ -1,0 +1,25 @@
+.stacked-images{
+    position: relative;
+    display: inline-block;
+}
+
+.stacked-images img{
+    position: absolute;
+    display: inline-block;
+    border-radius: 100%;
+    top: 0;
+    vertical-align: middle;
+    z-index: 4;
+}
+
+.stacked-images .new{
+    position: absolute;
+    display: inline-block;
+    border-radius: 100%;
+    top: 0;
+    border: 1px solid #FFF;
+    text-align: center;
+    align-content: center;
+    background-color: var(--grey-scale-200);
+    z-index: 10;
+}

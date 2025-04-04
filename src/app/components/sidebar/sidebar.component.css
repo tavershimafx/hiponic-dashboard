@@ -28,6 +28,7 @@ nav.operator ul{
 nav.operator ul li{
     position: relative;
 }
+
 nav.operator ul li.group-heading{
     color: var(--text-color);
     font-family: "Roboto-Medium";
@@ -51,7 +52,7 @@ nav.operator ul li a{
 nav.operator ul li > div{
     position: relative;
     display: inline-block;
-    padding: 15px 20px;
+    padding: 15px 0 15px 20px;
     color: var(--text-color);
     font-family: "Roboto-Medium";
     border-radius: 12px;
@@ -59,6 +60,11 @@ nav.operator ul li > div{
     cursor: pointer;
     z-index: 5;
     background-color: var(--theme-background);
+}
+
+nav.operator ul li > div span.txt, nav.operator ul li a span.txt{
+    color: var(--text-color);
+    font-family: "Roboto-Medium";
 }
 
 nav.operator ul li span.material-symbols-outlined{
@@ -75,12 +81,12 @@ nav.operator ul li span.sl{
     text-align: right;
 }
 
-nav.operator ul li a:hover, nav.operator ul li > span:hover{
+nav.operator ul li a:hover, nav.operator ul li > div:hover{
     text-decoration: none;
     background-color: var(--theme-light);
 }
 
-nav.operator ul li.active a, nav.operator ul li.active > span,
+nav.operator ul li.active a, nav.operator ul li.active > div,
 nav.operator ul li.active span.material-symbols-outlined,
 nav.operator ul li.active ul li.active a{
     color: var(--theme);
@@ -151,4 +157,75 @@ aside .aside-footer .theme-mode toggle{
     position: relative;
     display: inline-block;
     transform: translateX(100%);
+}
+
+
+/*********************************************************************/
+/******************************Tablets********************************/
+/*********************************************************************/
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    /*All tablets */
+
+    aside .logo{
+        padding: 10px 0 30px 0;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 5;
+        background-color: var(--theme-background);
+    }
+    
+    aside .logo img{
+        width: 100%;;
+    }
+
+    nav.operator ul li > div span.txt, nav.operator ul li a span.txt,
+    aside .aside-footer .setting a span.txt, aside .aside-footer .theme-mode span.txt{
+        display: none;
+    }
+
+    aside .aside-footer span.material-symbols-outlined{
+        margin-right: 5px;
+    }
+
+    aside .aside-footer .theme-mode toggle{
+        transform: translateX(0);
+    }
+
+    nav.operator ul li span.material-symbols-outlined{
+        margin-right: 10px;
+    }
+    nav.operator ul li span.sl{
+        position: relative;
+        float: none;
+        text-align: right;
+    }
+    
+}
+
+@media only screen and (min-width: 576px) and (orientation:portrait){
+    /*small pablets */
+
+}
+
+@media only screen and (min-width: 768px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 767.98px) {
+    /*specific pablets */
+}
+
+@media only screen and (max-width: 991.98px) {
+    /*specific pablets */
+}
+
+
+/*********************************************************************/
+/***************************Small Laptops*****************************/
+/*********************************************************************/
+@media only screen and (min-width: 992px)and (max-width: 1280.98px) {
+    /* All small laptops*/
+
+    nav.operator ul li span.material-symbols-outlined:last-of-type{
+        margin: 0;
+    }
 }

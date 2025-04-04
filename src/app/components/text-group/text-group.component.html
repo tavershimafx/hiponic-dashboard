@@ -1,4 +1,4 @@
-<div class="text-contain" #textEl [ngClass]="{'shake': showValidation && !control.valid}">
+<div class="text-contain {{cssClass}}" #textEl [ngClass]="{'shake': showValidation && !control.valid}">
     <div class="text-element" class="{{ showValidation && !control.valid? 'danger' : validationClass}}">
         <ng-content></ng-content>
         <input #inputEl

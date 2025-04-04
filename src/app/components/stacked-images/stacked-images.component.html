@@ -1,0 +1,7 @@
+<div class="stacked-images" [ngStyle]="{'width': ((images.length == max? max : max + 1) * (size == 'sm' ? 20 : 30)) + 'px', height: size == 'sm' ? '25px' : '40px'}">
+    <img *ngFor="let user of images.slice(0, max);let i = index" [src]="user"
+        [ngStyle]="{ 'left': (i * (size == 'sm' ? 15 : 20)) + 'px', 'z-index': i + 1, height: size == 'sm' ? '25px' : '40px', width: size == 'sm' ? '25px' : '40px'}" alt="user" />
+    <div *ngIf="images.length > max" class="new" [ngStyle]="{ 'left': (max * (size == 'sm' ? 15 : 20)) + 'px', height: size == 'sm' ? '25px' : '40px', width: size == 'sm' ? '25px' : '40px'}">
+        +{{images.length - max}}
+    </div>
+</div>

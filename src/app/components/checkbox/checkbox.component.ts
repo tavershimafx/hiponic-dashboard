@@ -21,6 +21,11 @@ export class CheckboxComponent {
   }
 
   /**
+   * A defined css class to be applied to the checkbox
+   */
+  @Input("class") cssClass?: string
+  
+  /**
    * Determines if validation messages and symbols should be displayed
    */
   @Input() showValidation?: boolean = false
