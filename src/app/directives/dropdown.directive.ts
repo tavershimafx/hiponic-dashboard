@@ -15,10 +15,15 @@ export class DropdownDirective implements OnInit{
     ngOnInit(): void {
         this.el.nativeElement.style.cursor = "pointer"
         this.el.nativeElement.style.zIndex = "20"
-        this.menu = this.el.nativeElement.children.item(1)
+        for(let eel in this.el.nativeElement.children){
+            if (this.el.nativeElement.children[eel].classList.contains("dropdown-menu")){
+                this.menu =  this.el.nativeElement.children[eel]
+                return;
+            }
+        }
     }
 
-    @HostListener("click") onClick(){   
+    @HostListener("click") onClick(){
         if (!this.dropdown){
             this.menu.style.visibility = "visible"
             this.menu.focus()

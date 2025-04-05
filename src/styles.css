@@ -163,7 +163,8 @@ a:hover{
     position: absolute;
     visibility: hidden;
     overflow: hidden;
-    right: 100%;
+    top: 100%;
+    right: 0;
     outline: none;
     background-color: var(--theme-background);
     border-radius: 12px;
@@ -373,13 +374,7 @@ a:hover{
 /**********************Bigger screens/smart TVs***********************/
 /*********************************************************************/
 
-@media only screen and (min-width: 1200px) and (max-width: 1680px){
-   
-    
-}
-
 @media only screen and (min-width: 1200px) {
-    
     .col-lg-0{
         display: none;
     }
@@ -393,7 +388,7 @@ a:hover{
     }
 
     .col-lg-3{
-        width: 29.5%;
+        width: 29%;
     }
 
     .col-lg-4{
@@ -409,7 +404,7 @@ a:hover{
     }
 
     .col-lg-7{
-        width: 68.5%;
+        width: 68%;
     }
 
     .col-lg-8{
@@ -426,14 +421,105 @@ a:hover{
 }
 
 
+@media only screen and (min-width: 1200px) and (max-width: 1680px){
+    .col-lg-0{
+        display: none;
+    }
+
+    .col-lg-1{
+        width: 9.5%;
+    }
+
+    .col-lg-2{
+        width: 19.5%;
+    }
+
+    .col-lg-3{
+        width: 29%;
+    }
+
+    .col-lg-4{
+        width: 39.5%;
+    }
+
+    .col-lg-5{
+        width: 49.5%;
+    }
+
+    .col-lg-6{
+        width: 58.5%;
+    }
+
+    .col-lg-7{
+        width: 68%;
+    }
+
+    .col-lg-8{
+        width: 78.5%;
+    }
+
+    .col-lg-9{
+        width: 88.5%;
+    }
+
+    .col-lg-10{
+        width: 100%;
+    }
+}
+
 /*********************************************************************/
 /***************************Small Laptops*****************************/
 /*********************************************************************/
 @media only screen and (min-width: 992px)and (max-width: 1199.98px) {
     /* All small laptops*/
-
+    
 }
 
+@media only screen and (max-width: 1440px) {
+    .col-md-0{
+        display: none;
+    }
+
+    .col-md-1{
+        width: 9.5%;
+    }
+
+    .col-md-2{
+        width: 19.5%;
+    }
+
+    .col-md-3{
+        width: 29.5%;
+    }
+
+    .col-md-4{
+        width: 39.5%;
+    }
+
+    .col-md-5{
+        width: 49.5%;
+    }
+
+    .col-md-6{
+        width: 58.5%;
+    }
+
+    .col-md-7{
+        width: 68.5%;
+    }
+
+    .col-md-8{
+        width: 78.5%;
+    }
+
+    .col-md-9{
+        width: 88.5%;
+    }
+
+    .col-md-10{
+        width: 100%;
+    }
+}
 
 /*********************************************************************/
 /******************************Tablets********************************/
@@ -446,10 +532,6 @@ a:hover{
 @media only screen and (min-width: 576px) and (orientation:portrait){
     /*small pablets */
 
-}
-
-@media only screen and (min-width: 768px) {
-    /*specific pablets */
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -514,8 +596,8 @@ a:hover{
 
 }
 
-@media only screen and (max-width: 575.98px) and (orientation:portrait) {
-/* For portrait layouts only */
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+    /* For portrait layouts only */
     .col-sm-0{
         display: none;
     }
@@ -559,11 +641,13 @@ a:hover{
     .col-sm-10{
         width: 100%;
     }
-}
 
-
-@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
-    /* For portrait layouts only */
+    .hide-md{
+        display: none;
+    }
     
+    .page{
+        padding: 20px;
+    }
 }
     	

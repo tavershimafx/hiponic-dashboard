@@ -5,6 +5,7 @@ aside{
     height: 100%;
     overflow-y: auto;
     background-color: var(--theme-background);
+    transition: all 0.5s ease-in-out;
 }
 
 aside .logo{
@@ -174,11 +175,18 @@ aside .aside-footer .theme-mode toggle{
     }
     
     aside .logo img{
-        width: 100%;;
+        width: 100%;
     }
 
-    nav.operator ul li > div span.txt, nav.operator ul li a span.txt,
-    aside .aside-footer .setting a span.txt, aside .aside-footer .theme-mode span.txt{
+    nav.operator ul li.group-heading{
+        padding: 10px 10px;
+    }
+
+    aside.collapsed-nav nav.operator ul li > div span.txt, 
+    aside.collapsed-nav nav.operator ul li > div span.sl, 
+    aside.collapsed-nav nav.operator ul li a span.txt,
+    aside.collapsed-nav .aside-footer .setting a span.txt, 
+    aside.collapsed-nav .aside-footer .theme-mode span.txt{
         display: none;
     }
 
@@ -200,24 +208,6 @@ aside .aside-footer .theme-mode toggle{
     }
     
 }
-
-@media only screen and (min-width: 576px) and (orientation:portrait){
-    /*small pablets */
-
-}
-
-@media only screen and (min-width: 768px) {
-    /*specific pablets */
-}
-
-@media only screen and (max-width: 767.98px) {
-    /*specific pablets */
-}
-
-@media only screen and (max-width: 991.98px) {
-    /*specific pablets */
-}
-
 
 /*********************************************************************/
 /***************************Small Laptops*****************************/

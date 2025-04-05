@@ -16,6 +16,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { StackedImagesComponent } from "./stacked-images/stacked-images.component";
+import { ProfileDropdownComponent } from "./profile-dropdown/profile-dropdown.component";
 
 const components = [
     TextInputComponent,
@@ -28,7 +29,8 @@ const components = [
     SidebarComponent,
     NavTopComponent,
     ProgressBarComponent,
-    StackedImagesComponent
+    StackedImagesComponent,
+    ProfileDropdownComponent
 ]
 
 @NgModule({

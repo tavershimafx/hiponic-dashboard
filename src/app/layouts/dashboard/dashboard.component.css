@@ -9,6 +9,7 @@
     height: 100%;
     top: 0;
     background-color: var(--theme-background);
+    transition: all 0.5s ease-in-out;
 }
 
 .dashboard .main-area{
@@ -25,4 +26,55 @@
     height: 100%;
     overflow-y: auto;
     padding-bottom: 100px;
+}
+
+/*********************************************************************/
+/***************************Small Laptops*****************************/
+/*********************************************************************/
+@media only screen and (min-width: 992px)and (max-width: 1199.98px) {
+    /* All small laptops*/
+    
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    .dashboard .side-bar{
+       width: 10%;
+       z-index: 10;
+    }
+
+    .dashboard .main-area{
+        width: 90%;
+        left: 10%;
+    }
+
+    .dashboard .side-bar.out{
+        width: 10%;
+    }
+
+    .dashboard .side-bar.in{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) and (orientation:portrait) {
+    .dashboard .side-bar{
+        position: absolute;
+        top: 0;
+        width: 220px;
+        z-index: 10;
+        transform: translateY(-100%);
+    }
+
+    .dashboard .main-area{
+        width: 100%;
+        left: 0;
+    }
+
+    .dashboard .side-bar.out{
+        transform: translateY(-100%);
+    }
+
+    .dashboard .side-bar.in{
+        transform: translateY(0);
+    }
 }

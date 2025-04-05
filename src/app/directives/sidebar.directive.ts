@@ -1,11 +1,18 @@
 import { Directive, ElementRef, HostListener } from "@angular/core";
+import { SidebarService } from "@services/sidebar";
 
 @Directive({
     selector: "[sidebar]"
 })
 export class SidebarDirective{
-    constructor(private el: ElementRef){
-      
+    constructor(private el: ElementRef, sidebar: SidebarService){
+        sidebar.sidebar.subscribe({
+            next: (x) =>{
+                if (!x && sidebar.sidebarOpen){
+                    this.collapseAll()
+                }
+            }
+        })
     }
 
     @HostListener("click") onClick(){   
@@ -29,7 +36,21 @@ export class SidebarDirective{
                 }
             }
         }
-
         this.el.nativeElement.parentElement.classList.add("active")
+    }
+
+    collapseAll(){
+        let parent = this.el.nativeElement.parentElement.parentElement // ul
+        for(let li of parent.children){
+            if(li.classList.contains("active")){
+                li.classList.remove("active")
+                if(li.children.length > 1){
+                    for(let sli of li.children.item(1).children){
+                        sli.classList.remove("active")
+                    }
+                    li.children.item(1).style.maxHeight = null
+                }
+            }
+        }
     }
 }
