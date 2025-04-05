@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy, ElementRef, AfterViewInit } from '@angular/core';
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -15,16 +15,6 @@ import {
   ApexLegend
 } from "ng-apexcharts";
 import { IQuickMessage } from '../../../types/models';
-
-
-// export type ChartOptions = {
-//   series: ApexAxisChartSeries;
-//   chart: ApexChart;
-//   xaxis: ApexXAxis;
-//   stroke: ApexStroke;
-//   tooltip: ApexTooltip;
-//   dataLabels: ApexDataLabels;
-// };
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -48,8 +38,9 @@ export type ChartOptions = {
   styleUrl: './index.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IndexComponent {
-  @ViewChild("chart", {static: true }) chart!: ChartComponent;
+export class IndexComponent{
+  // @ViewChild("chart1", {static: true }) chart1!: ElementRef;
+  // @ViewChild("chart2", {static: true }) chart2!: ElementRef;
   
   chartOptions: Partial<ChartOptions>;
   fluentOptions: Partial<ChartOptions>;
@@ -68,6 +59,7 @@ export class IndexComponent {
   ]
 
   constructor(){
+   
     this.chartOptions = {
       series: [
         {
@@ -158,9 +150,6 @@ export class IndexComponent {
       },
     };
   
-    
-    // var chart = new ApexCharts(element, this.chartOptions); 
-    // chart.render()
   }
 
   public generateData(baseval: number, count: number, yrange: any) {
