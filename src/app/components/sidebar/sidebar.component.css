@@ -48,6 +48,7 @@ nav.operator ul li a{
     border-radius: 12px;
     width: 100%;
     z-index: 5;
+    cursor: pointer;
 }
 
 nav.operator ul li > div{
@@ -110,6 +111,7 @@ nav.operator ul li ul li a{
     font-family: "Roboto-Medium";
     border-radius: 12px;
     width: 100%;
+    cursor: pointer;
 }
 
 aside .aside-footer{
@@ -206,7 +208,51 @@ aside .aside-footer .theme-mode toggle{
         float: none;
         text-align: right;
     }
+}
+
+/**************************************************************************/
+/*****************************iPad Pro 12"*********************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+    aside .logo{
+        padding: 10px 0 30px 0;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 5;
+        background-color: var(--theme-background);
+    }
     
+    aside .logo img{
+        width: 100%;
+    }
+
+    nav.operator ul li.group-heading{
+        padding: 10px 10px;
+    }
+
+    aside.collapsed-nav nav.operator ul li > div span.txt, 
+    aside.collapsed-nav nav.operator ul li > div span.sl, 
+    aside.collapsed-nav nav.operator ul li a span.txt,
+    aside.collapsed-nav .aside-footer .setting a span.txt, 
+    aside.collapsed-nav .aside-footer .theme-mode span.txt{
+        display: none;
+    }
+
+    aside .aside-footer span.material-symbols-outlined{
+        margin-right: 5px;
+    }
+
+    aside .aside-footer .theme-mode toggle{
+        transform: translateX(0);
+    }
+
+    nav.operator ul li span.material-symbols-outlined{
+        margin-right: 10px;
+    }
+    nav.operator ul li span.sl{
+        position: relative;
+        float: none;
+        text-align: right;
+    }
 }
 
 /*********************************************************************/

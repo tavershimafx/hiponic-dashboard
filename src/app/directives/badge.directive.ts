@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input, OnInit } from "@angular/core";
     selector: "[badge]"
 })
 export class BadgeDirective implements OnInit{
-    @Input() badge:  "info" | "success" | "danger" | "warning" = "info"
+    @Input() badge:  "info" | "success" | "danger" | "warning" | "text-color"= "info"
 
     constructor(private el: ElementRef){
         
@@ -28,6 +28,8 @@ export class BadgeDirective implements OnInit{
                 return "danger-light"
             case "warning":
                 return "warning-light"
+            case "text-color":
+                return "grey-scale"
             default:
                 return "info-light";
         }

@@ -14,7 +14,6 @@ export class DashboardLayoutComponent implements OnDestroy {
     this.mouseEvent = this.mouseEvent.bind(this)
     sidebarService.sidebar.subscribe({
       next: x =>{
-        console.log("state of sidebar", x)
         if (x){
           this.sidebar.nativeElement.classList.remove("out")
           this.sidebar.nativeElement.classList.add("in")

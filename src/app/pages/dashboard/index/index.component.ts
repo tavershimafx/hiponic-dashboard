@@ -1,18 +1,15 @@
-import { Component, ViewChild, ChangeDetectionStrategy, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
-  ChartComponent,
   ApexAxisChartSeries,
   ApexChart,
   ApexXAxis,
   ApexDataLabels,
   ApexTooltip,
-  ApexStroke,
   ApexYAxis,
   ApexMarkers,
   ApexPlotOptions,
   ApexFill,
   ApexGrid,
-  ApexLegend
 } from "ng-apexcharts";
 import { IQuickMessage } from '../../../types/models';
 
@@ -39,9 +36,6 @@ export type ChartOptions = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IndexComponent{
-  // @ViewChild("chart1", {static: true }) chart1!: ElementRef;
-  // @ViewChild("chart2", {static: true }) chart2!: ElementRef;
-  
   chartOptions: Partial<ChartOptions>;
   fluentOptions: Partial<ChartOptions>;
   
@@ -53,7 +47,7 @@ export class IndexComponent{
   ]
   quickMessages: Array<IQuickMessage> = [
     { username: "Tavershima Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-4.png", message: "Hi, how are you today?"},
-    { username: "ImotoroAbasi", time: "08:24", profilePicture: "../../../../assets/images/users/user-3.png", message: "Hi, how are you today?"},
+    { username: "ImitoroAbasi", time: "08:24", profilePicture: "../../../../assets/images/users/user-3.png", message: "Hi, how are you today?"},
     { username: "Queen Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-2.png", message: "Hi, how are you today?"},
     { username: "Sussan Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-1.png", message: "Hi, how are you today?"}
   ]

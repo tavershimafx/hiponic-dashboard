@@ -29,7 +29,7 @@
       "@layouts/*":["./src/app/layouts/*"],
       "@pages/*":["./src/app/pages/*"],
       "@services/*":["./src/app/services/*"],
-      "@models/*":["./src/app/models/*"]
+      "@models/*":["./src/app/types/*"]
     }
   },
   "angularCompilerOptions": {

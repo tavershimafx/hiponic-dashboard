@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class StackedImagesComponent {
 
-  @Input() images: Array<any> = []
+  @Input() images: Array<string> = []
   @Input() max: number = 2
   @Input() size: "md" | "sm" = "md"
 

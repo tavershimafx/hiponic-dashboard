@@ -36,6 +36,29 @@
     
 }
 
+/**************************************************************************/
+/*****************************iPad Pro 12"*********************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+    .dashboard .side-bar{
+        width: 8%;
+        z-index: 10;
+     }
+ 
+     .dashboard .main-area{
+         width: 92%;
+         left: 8%;
+     }
+ 
+     .dashboard .side-bar.out{
+         width: 8%;
+     }
+ 
+     .dashboard .side-bar.in{
+         width: 250px;
+     }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 991.98px){
     .dashboard .side-bar{
        width: 10%;

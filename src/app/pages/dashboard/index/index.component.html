@@ -1,6 +1,6 @@
 <div class="page">
-    <div class="row flex-gap">
-        <div class="col-lg-7 col-md-10 flex col-flex flex-gap">
+    <div class="row">
+        <div class="col-lg-9 col-md-8 col-tb-12 flex flex-col r-gap20 pr-10">
             <card>
                 <card-header>
                     <div class="flex-between item-center pt-10 pb-10">
@@ -15,8 +15,8 @@
                         </div>
                     </div>
                 </card-header>
-                <div class="row r-gap10 dip-tasks">
-                    <div class="dip-3">
+                <div class="row flex-row r-gap10 dip-tasks">
+                    <div class="col-lg-4 col-md-4 col-tb-4 col-sm-12 prt-10 prm-10 prl-10 prx-10">
                         <div class="pl-neutral">
                             <div class="flex-between pl-head">
                                 <p>Hiphonic</p>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dip-3">
+                    <div class="col-lg-4 col-md-4 col-tb-4 col-sm-12 prt-10 plt-10 prm-10 plm-10 prl-10 pll-10 prx-10 plx-10">
                         <div class="pl-neutral">
                             <div class="flex-between pl-head">
                                 <p>SEO Analytics</p>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dip-3">
+                    <div class="col-lg-4 col-md-4 col-tb-4 col-sm-12 plt-10 plm-10 pll-10 plx-10">
                         <div class="pl-neutral">
                             <div class="flex-between pl-head">
                                 <p>Dibhub App</p>
@@ -105,7 +105,7 @@
 
             <!--Second chart row-->
             <div class="row">
-                <div class="col-lg-7 col-md-10 col-sm-10">
+                <div class="col-lg-8 col-md-8 col-tb-12 col-sm-12 prt-10 prm-10 prl-10 prx-10">
                     <card>
                         <div class="flex-between pb-10 relative">
                             <p class="bold f-18 m-0">Activity</p>
@@ -121,14 +121,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="chart">
+                        <div>
                             <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
                                 [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!"
                                 [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
                         </div>
                     </card>
                 </div>
-                <div class="col-lg-3 col-md-0 col-sm-0">
+                <div class="col-lg-4 col-md-4 col-tb-0 col-sm-0 plt-10 plm-10 pll-10 plx-10">
                     <card>
                         <div class="flex-between mb-10">
                             <span class="bold">Tasks Summary</span>
@@ -244,7 +244,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-0 col-sm-0">
+        <div class="col-lg-3 col-md-4 col-tb-0 col-sm-0 pl-10">
             <card>
                 <div>
                     <p class="bold">Messages</p>

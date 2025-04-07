@@ -1,11 +1,13 @@
-import { Directive, ElementRef, HostListener } from "@angular/core";
+import { Directive, ElementRef, HostListener,} from "@angular/core";
 
 @Directive({
     selector: "[sidebarItem]"
 })
 export class SideBarItemDirective{
 
-    constructor(private el: ElementRef){  }
+    constructor(private el: ElementRef){ 
+       
+     }
 
     @HostListener("click") onClick(){
         let parent = this.el.nativeElement.parentElement // ul

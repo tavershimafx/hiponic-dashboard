@@ -1,0 +1,20 @@
+.bdg{
+    align-content: center;
+    padding: 10px 15px;
+}
+
+.bdg .material-symbols-outlined{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.task-img{
+    background-color: var(--theme-light);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.task-img img{
+    width: 100%;
+}
