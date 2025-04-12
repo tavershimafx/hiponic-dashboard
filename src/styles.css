@@ -51,51 +51,51 @@
 }
 
 .theme{
-    color: var(--theme);
+    color: var(--theme) !important;
 }
 
 .theme-bg{
-    background-color: var(--theme);
+    background-color: var(--theme) !important;
 }
 
 .theme-light{
-    color: var(--theme-light);
+    color: var(--theme-light) !important;
 }
 
 .theme-light-bg{
-    background-color: var(--theme-light);
+    background-color: var(--theme-light) !important;
 }
 
 .danger{
-    color: var(--danger);
+    color: var(--danger) !important;
 }
 
 .danger-bg{
-    background-color: var(--danger);
+    background-color: var(--danger) !important;
 }
 
 .warning{
-    color: var(--warning);
+    color: var(--warning) !important;
 }
 
 .warning-bg{
-    background-color: var(--warning);
+    background-color: var(--warning) !important;
 }
 
 .info{
-    color: var(--info);
+    color: var(--info) !important;
 }
 
 .info-bg{
-    background-color: var(--info);
+    background-color: var(--info) !important;
 }
 
 .success{
-    color: var(--success);
+    color: var(--success) !important;
 }
 
 .success-bg{
-    background-color: var(--success);
+    background-color: var(--success) !important;
 }
 
 *{

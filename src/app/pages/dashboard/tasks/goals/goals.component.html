@@ -1,0 +1,199 @@
+<div class="task-page">
+    <div class="page-actions">
+        <div class="tab-menu">
+            <div class="active">Active </div>
+            <div> Completed </div>
+            <div>Archived</div>
+        </div>
+        <div class="filters">
+            <span>
+                <span class="material-symbols-outlined"> filter_alt </span>
+                Sort by: Updated
+            </span>
+            <div class="" dropdown>
+                <span class="material-symbols-outlined"> folder</span>&nbsp;
+                Folders: Show
+                <div class="dropdown-menu" tabindex="-1">
+                    <div>Latest</div>
+                    <div>Alphabetical A-Z</div>
+                    <div>Alphabetical Z-A</div>
+                    <div>Completed</div>
+                    <div>Pending</div>
+                    <div>Date Created</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-tb-6 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 theme">Sales</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Grow Revenue in America</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="theme" width="75%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 info">Engineering</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Increase eficiency of QA process</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="info" width="45%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+            </div>
+            <div class="col-lg-4 col-md-4 col-tb-6 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prm-10 plx-10 pll-10 plt-10 plm-10">
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 danger">SEO</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Increase Website Traffic</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="danger" width="25%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 warning">Marketing</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Enhance Digital Marketing</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="warning" width="60%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+            </div>
+            <div class="col-lg-4 col-md-4 col-tb-6 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10 plt-10">
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 warning">Sales</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Establish a Solid Lead Gen Engine</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="warning" width="50%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+                <card>
+                    <div class="flex-between">
+                        <p class="b m-0 f16 theme">Sales</p>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bold f18">Increase User Base</p>
+                    <p class="mt-20">
+                        Quis augue enim a magna feugiat massa, ligula. Proin libero vel in at hac. In ipsum, tempor velit, metus. Nibh dolor tortor quam volutpat sit.
+                    </p>
+                    <progress-bar color="theme" width="60%"></progress-bar>
+                    <div class="flex-between item-center mt-20 hr-top pt-10">
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18">calendar_month</span>
+                            <span>Oct - Dec 2021</span>
+                        </div>
+                        <div>
+                            <stacked-images [images]="users" size="sm"></stacked-images>
+                        </div>
+                    </div>
+                </card>
+            </div>
+        </div>
+    </div>
+</div>
