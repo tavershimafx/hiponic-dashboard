@@ -15,16 +15,22 @@ export class IndexComponent{
     "../../../../assets/images/users/user-3.png",
     "../../../../assets/images/users/user-4.png",
   ]
-  showNewTask = true
+  
+  tab = 0
   constructor(private dialogService: DialogService){
    
   }
 
   newTask(n: number){
-    this.dialogService.showDialog(NewTaskModal)
+    this.dialogService.showDialog(NewTaskModal)?.subscribe({
+      next: x =>{
+        console.log("The dialog has closed")
+        // reload the data if necessary
+      }
+    })
   }
 
-  closeTaskDialog(n: number){
-    this.showNewTask = false
+  switchTab(index: number){
+    this.tab = index
   }
 }

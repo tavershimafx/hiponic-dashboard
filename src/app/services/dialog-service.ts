@@ -8,6 +8,8 @@ export class DialogService{
 
     dialog: Observable<any>
     private subscriber?: Subscriber<any>
+    private onClose?: Observable<any>
+    private onCloseSubscriber?: Subscriber<any>
 
     constructor(){
         this.dialog = new Observable(sub =>{
@@ -15,7 +17,18 @@ export class DialogService{
         })
     }
 
-    showDialog(element: any){
+    showDialog(element: any): Observable<boolean> | undefined{
+        if (element != null){
+            this.onClose = new Observable(sub =>{
+                this.onCloseSubscriber = sub
+            })
+        }else{
+            if (this.onCloseSubscriber != undefined){
+                this.onCloseSubscriber?.next(true)
+            }
+        }
+
         this.subscriber?.next(element)
+        return this.onClose;
     }
 }

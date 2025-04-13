@@ -1,13 +1,13 @@
 <div class="task-page">
     <div class="page-actions">
         <div class="tab-menu">
-            <div>
+            <div [ngClass]="{'active': tab == 0}" (click)="switchTab(0)">
                 <span class="material-symbols-outlined">view_agenda</span> List
             </div>
-            <div class="active">
+            <div [ngClass]="{'active': tab == 1}" (click)="switchTab(1)">
                 <span class="material-symbols-outlined">view_column_2</span> Board
             </div>
-            <div>
+            <div [ngClass]="{'active': tab == 2}" (click)="switchTab(2)">
                 <span class="material-symbols-outlined">view_object_track</span>Gant
             </div>
         </div>
@@ -30,7 +30,260 @@
             </div>
         </div>
     </div>
-    <div class="page">
+    <div class="page" *ngIf="tab == 0">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-tb-12 col-sm-12">
+                <div class="flex-between">
+                    <div>
+                        <p class="bold b f18">Todo<span class="f18"> (03)</span></p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined mr-10 f22 pointer" (click)="newTask(1)">add</span>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Implement Login</p>
+                        <span class="info"><span class="f22 info middle">&#x2022; </span>Development</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">Add Forgot password option when login & send email to reset password</p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Design Review</p>
+                        <span class="theme"><span class="f22 theme middle">&#x2022; </span>Design</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0"></p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Release 1 MVP</p>
+                        <span class="success"><span class="f22 success middle">&#x2022; </span>Planning</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">The app should be working and could receive first users</p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-tb-12 col-sm-12">
+                <div class="flex-between">
+                    <div>
+                        <p class="b theme f18">In Progress<span class="f18"> (02)</span></p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined mr-10 f22 pointer" (click)="newTask(1)">add</span>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">UI Adjustments</p>
+                        <span class="theme"><span class="f22 theme middle">&#x2022; </span>Design</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">Add Forgot password option when login & send email to reset password</p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Dashboard Improvements</p>
+                        <span class="theme"><span class="f22 theme middle">&#x2022; </span>Design</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">
+                            <span class="material-symbols-outlined f18 middle"> imagesmode </span>
+                            <span class="bold">IMG00122.JPG</span>
+                        </p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-tb-12 col-sm-12">
+                <div class="flex-between">
+                    <div>
+                        <p class="b warning f18">Todo<span class="f18"> (03)</span></p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined mr-10 f22 pointer" (click)="newTask(1)">add</span>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Authentication</p>
+                        <span class="info"><span class="f22 info middle">&#x2022; </span>Development</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">Add Forgot password option when login & send email to reset password</p>
+                    </div>
+                    <div badge="danger" class="bdg">
+                        <span class="material-symbols-outlined f18 danger">schedule</span>
+                        <span class="danger">3 Days left</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Automated Goals</p>
+                        <span class="info"><span class="f22 info middle">&#x2022; </span>Design</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0"></p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">
+                        <p class="m-0 bold f16">Release 1 MVP</p>
+                        <span class="success"><span class="f22 success middle">&#x2022; </span>Planning</span>
+                    </div>
+                    <div class="task-description">
+                        <p class="m-0">The app should be working and could receive first users</p>
+                    </div>
+                    <div badge="text-color" class="bdg">
+                        <span class="material-symbols-outlined f18">calendar_month</span>
+                        <span>Nov 30</span>
+                    </div>
+                    <div class="task-actions">
+                        <stacked-images [images]="users" size="sm"></stacked-images>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" *ngIf="tab == 1">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-tb-6 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
                 <div class="flex-between">

@@ -11,6 +11,7 @@
     display: inline-block;
     padding: 12px;
     font-family: 'Roboto-Medium';
+    cursor: pointer;
 }
 
 .page-actions .tab-menu span.material-symbols-outlined{
@@ -78,8 +79,64 @@
 }
 
 
+/**************************************************************/
+/**********************List layout*****************************/
+/**************************************************************/
+.task-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--theme-background);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.task-card .task-title{
+    text-align: left;
+    width: 20%;
+}
+
+.task-card .task-description{
+    width: 40%;
+    text-align: left;
+}
+
+.task-card .task-actions{
+    width: 20%;
+    text-align: right;
+}
+
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+
 @media (max-width: 575.98px) and (orientation:portrait) {
     .page-actions{
         display: block;
+    }
+
+    .task-card{
+        display: block;
+    }
+
+    .task-card .task-title, .task-card .task-description{
+        width: 100%;
+    }
+    
+    .task-card .task-description{
+        margin-top: 20px;
+    }
+    
+    .task-card .bdg{
+        display: inline-block;
+        margin-top: 20px;
+        width: 50%;
+    }
+
+    .task-card .task-actions{
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
     }
 }
