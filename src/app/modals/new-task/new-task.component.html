@@ -1,0 +1,153 @@
+<modal-dialog size="md">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>Space</span> > <span>Hiphonic App</span>
+            </div>
+            <div class="actions">
+                <span class="material-symbols-outlined"> visibility</span>
+                <span class="material-symbols-outlined">link</span>
+                <span class="material-symbols-outlined"> more_horiz</span>
+                <span class="material-symbols-outlined" (click)="closeDialog()"> close </span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3>Automated Goals</h3>
+                <div class="review-drop">
+                    In Review
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <div class="task-details">
+                <div class="detail-head">
+                    <p class="m-0 bold">Details</p>
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </div>
+                <div class="detail-body">
+                    <div class="assignment">
+                        <p>Assigned To</p>
+                        <stacked-images [images]="users" [max]="3"></stacked-images>
+                    </div>
+                    <div class="assignment">
+                        <p>Created</p>
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18 black">calendar_month</span>
+                            <span class="black">Apr 10, 2025</span>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <p>Labels</p>
+                        <div class="info mt-10 mb-10"><span class="f22 info middle">&#x2022; </span>Development</div>
+                    </div>
+                    <div class="assignment">
+                        <p>Due Date</p>
+                        <div badge="text-color" class="bdg">
+                            <span class="material-symbols-outlined f18 black">calendar_month</span>
+                            <span class="black">Apr 10, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="task-description">
+                <p class="bold">Description</p>
+                <textarea rows="7" placeholder="Describe your task here"></textarea>
+                <div class="subtask">
+                    <div class="mr-20 bold">Subtask</div>
+                    <div class="theme b pointer">
+                        <span class="material-symbols-outlined f18  theme mr-5">add</span>Add
+                    </div>
+                </div>
+            </div>
+            <div class="activity">
+                <div class="activity-head">
+                    <p class="bold">Activity</p>
+                    <p class="b theme"><span class="material-symbols-outlined">sort</span>Newest First</p>
+                </div>
+                <div class="activity-body">
+                    <div class="add-comment">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                                <text-input class="mt-0 mb-0" placeholder="Add a comment"></text-input>
+                                <p class="black mt-0">Pro tip: <span>press</span> M <span>to comment</span> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment mt-20">
+                        <div class="">
+                            <img src="../../../../../assets/images/users/user-3.png" alt="">
+                            <div class="w-100">
+                               <p class="bold mt-0 mb-0">Tavershima Ako 
+                                    <span class="material-symbols-outlined f18 middle ml-10 mr-5 inline-block">schedule </span>
+                                    <span>10 hours ago</span>
+                                </p>
+                               <p class="mt-0">Almost there <span class="theme">Jennifer</span> can you see the comments in Figma now?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</modal-dialog>

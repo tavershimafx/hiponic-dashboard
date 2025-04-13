@@ -21,6 +21,12 @@ export class TextGroupComponent {
   }
 
   /**
+   * A flag to determine if the clear input icon should be visible when the control
+   * is dirty
+   */
+  @Input() showClear = false
+  
+  /**
    * A defined css class to be applied to the checkbox
    */
   @Input("class") cssClass?: string

@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ComponentRef, ElementRef, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
+import { DialogService } from '@services/dialog-service';
 import { SidebarService } from '@services/sidebar';
 import { isInbound } from '@services/utilities';
 
@@ -10,7 +11,11 @@ import { isInbound } from '@services/utilities';
 })
 export class DashboardLayoutComponent implements OnDestroy {
   @ViewChild("sidebar", { static: true }) sidebar!: ElementRef
-  constructor(private sidebarService: SidebarService){
+
+  activeDialog?: ComponentRef<any>
+  constructor(private sidebarService: SidebarService, dialogService: DialogService,
+    container: ViewContainerRef
+  ){
     this.mouseEvent = this.mouseEvent.bind(this)
     sidebarService.sidebar.subscribe({
       next: x =>{
@@ -27,6 +32,17 @@ export class DashboardLayoutComponent implements OnDestroy {
           window.removeEventListener("click", this.mouseEvent)
           this.sidebar.nativeElement.classList.remove("in")
           this.sidebar.nativeElement.classList.add("out")
+        }
+      }
+    })
+
+    dialogService.dialog.subscribe({
+      next: n =>{
+        if(n == null && this.activeDialog != undefined){
+          this.activeDialog?.destroy()
+          this.activeDialog = undefined
+        }else{
+          this.activeDialog = container.createComponent<any>(n)
         }
       }
     })

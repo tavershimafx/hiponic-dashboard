@@ -10,6 +10,7 @@ import ComponentsModule from '@components/components.module';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
+import { ModalsModule } from '@modals/modals.module';
 
 const components = [
   DashboardLayoutComponent,
@@ -23,6 +24,7 @@ const components = [
     DirectivesModule, 
     CommonModule,
     ComponentsModule,
+    ModalsModule,
     MatDatepickerModule, MatCardModule],
   exports: [],
   providers: [provideNativeDateAdapter()],

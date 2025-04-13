@@ -21,6 +21,12 @@ export class TextInputComponent {
   }
 
   /**
+   * A flag to determine if the clear input icon should be visible when the control
+   * is dirty
+   */
+  @Input() showClear = false
+
+  /**
    * 
    */
   @Input("class") cssClass?: string
@@ -43,7 +49,7 @@ export class TextInputComponent {
   /**
    * Determines if validation messages and symbols should be displayed
    */
-  @Input() showValidation?: boolean = false
+  @Input() showValidation: boolean = false
 
   /**
    * The referenced form control
@@ -121,6 +127,8 @@ export class TextInputComponent {
   }
 
   inputChanged(){
-    this.validationClass = !this.control.valid? "danger" : "success"
+    if (this.showValidation){
+      this.validationClass = !this.control?.valid? "danger" : "success"
+    }
   }
 }

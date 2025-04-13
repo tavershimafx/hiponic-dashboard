@@ -23,3 +23,13 @@
     background-color: var(--grey-scale-200);
     z-index: 10;
 }
+
+
+/*********************************************************************/
+/***************************Mobile phones*****************************/
+/*********************************************************************/
+
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+    /* For portrait layouts only */
+   
+}

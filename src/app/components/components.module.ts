@@ -18,6 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { StackedImagesComponent } from "./stacked-images/stacked-images.component";
 import { ProfileDropdownComponent } from "./profile-dropdown/profile-dropdown.component";
 import { RouterModule } from "@angular/router";
+import { DialogComponent } from "./dialog/dialog.component";
+import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
 
 const components = [
     TextInputComponent,
@@ -31,7 +33,9 @@ const components = [
     NavTopComponent,
     ProgressBarComponent,
     StackedImagesComponent,
-    ProfileDropdownComponent
+    ProfileDropdownComponent,
+    DialogComponent,
+    ModalDialogComponent
 ]
 
 @NgModule({
