@@ -9,10 +9,12 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { GoalsComponent } from './goals/goals.component';
+import { MessageComponent } from './message/message.component';
 
 const components = [
   IndexComponent,
-  GoalsComponent
+  GoalsComponent,
+  MessageComponent
 ]
 
 @NgModule({

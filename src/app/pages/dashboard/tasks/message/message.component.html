@@ -1,0 +1,45 @@
+<div class="page">
+    <div class="row r-gap20 h-100">
+        <div class="col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
+            <div class="chat-card">
+                <div class="card-head">
+                    <h2>Chat</h2>
+                    <span class="material-symbols-outlined">add</span>
+                </div>
+                <div class="card-tab">
+                    <div class="tab-head">
+                        <div class="items">
+                            <span class="active">Open</span>
+                            <span>Archived</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tabs">
+                        <div class="tab">
+                            <div class="chat-head" *ngFor="let message of quickMessages">
+                                <img [src]="message.profilePicture" alt="user">
+                                <div class="highlight">
+                                    <p class="bold m-0">{{message.username}}</p>
+                                    <p class="mt-5 mb-0 black">{{message.message}}</p>
+                                </div>
+                                <div class="gnt">
+                                    <p class="m-0 black">1m ago</p>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="tab">
+
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prm-10 plx-10 pll-10 plt-10 plm-10">
+         
+        </div>
+        <div class="col-lg-3 col-md-0 col-tb-0 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10">
+          
+        </div>
+    </div>
+</div>

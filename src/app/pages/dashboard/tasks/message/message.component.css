@@ -1,0 +1,112 @@
+.page{
+    overflow-y: hidden !important;
+}
+
+.chat-card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theme-background);
+    border-radius: 12px;
+    /* height: 100%; 
+    overflow-y: hidden;*/
+}
+
+.chat-card .card-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.chat-card .card-head h2{
+    color: var(--grey-scale-900);
+    font-size: 24px;
+    font-family: 'Roboto-Bold';
+    margin: 0;
+}
+
+.chat-card .card-head span{
+    color: #FFF;
+    font-size: 22px;
+    background-color: var(--theme);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.chat-card .card-tab{
+    overflow-y: auto;
+    max-height: 60%;
+}
+
+.chat-card .card-tab .tabs{
+    overflow-y: auto;
+    max-height: 60%;
+}
+
+.chat-card .card-tab .tab-head{
+    padding: 20px;
+}
+
+.chat-card .card-tab .tab-head .items{
+    background-color: var(--theme-light);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.chat-card .card-tab .tab-head span{
+    display: inline-block;
+    padding: 10px;
+    width: 50%;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.chat-card .card-tab .tab-head span.active{
+    background-color: var(--theme-background);
+    color: var(--grey-scale-900);
+    font-family: 'Roboto-Bold';
+}
+
+.chat-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.chat-head:hover{
+    background-color: var(--theme-light);
+}
+
+.chat-head.active{
+    background-color: var(--theme-light);
+}
+
+.chat-head img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.chat-head .highlight{
+    flex-grow: 100;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.chat-head .gnt {
+    text-align: right;
+}
+
+.chat-head .gnt p:last-of-type{
+    display: inline-block;
+    background-color: var(--danger);
+    padding: 5px 9px;
+    color: #FFF;
+    border-radius: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
