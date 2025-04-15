@@ -99,7 +99,7 @@
 }
 
 *{
-    box-sizing: border-box !important;
+    box-sizing: border-box;
     font-family: "Roboto-Regular";
     font-weight: 200;
     font-size: 14px;
