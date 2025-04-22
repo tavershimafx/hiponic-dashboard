@@ -1,6 +1,6 @@
 <div class="page">
     <div class="row r-gap20 h-100">
-        <div class="col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
+        <div class="relative col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
             <div class="chat-card">
                 <div class="card-head">
                     <h2>Chat</h2>
@@ -39,9 +39,9 @@
             <div class="current-chart-card">
                 <div class="current-user">
                     <div class="user-initials">
-                        <img src="../../../../../assets/images/users/user-4.png" alt="user" class="">
+                        <img [src]="currentChat?.profilePicture" alt="user" class="">
                         <div>
-                            <p class="m-0 bold">Tavershima Ako</p>
+                            <p class="m-0 bold">{{currentChat?.username}}</p>
                             <span>Online</span>
                         </div>
                     </div>
@@ -53,22 +53,108 @@
                 </div>
                 <div class="chat-messages">
 
-                    <div class="chat-message">
-
+                    <div class="chat-message" *ngFor="let message of currentChat?.messages" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                        <img *ngIf="message.messageType != messageTypes.DayBreaker" [src]="message.senderId == 'aaa'? '' :currentChat?.profilePicture" alt="user" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                        <div *ngIf="message.messageType === messageTypes.Text" class="message" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                            {{message.content}}
+                        </div>
+                        <div *ngIf="message.messageType === messageTypes.Image" class="image-message" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                            <div *ngIf="message.content.length > 3" class="many-images">
+                                <div *ngFor="let img of message.content.slice(0, 2)">
+                                    <img [src]="img" alt="user">
+                                </div>
+                                <div *ngIf="message.content.length > 3" class="more-images">
+                                    <img [src]="message.content[2]" alt="user">
+                                    <div class="more-overlay"><p>+{{message.content.length - 3}}</p></div>
+                                </div>
+                            </div>
+                            <div *ngIf="message.content.length < 4" class="single-images">
+                                <div *ngFor="let img of message.content">
+                                    <img [src]="img" alt="user">
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="message.messageType != messageTypes.DayBreaker" class="message-date" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                            {{message.dateSent| date: 'HH:mm'}}
+                        </div>
+                        <div class="day-breaker" *ngIf="message.messageType === messageTypes.DayBreaker">
+                            <span class="hr"></span>
+                            <p>{{message.dateSent | date: 'dd/MM/YYYY'}}</p>
+                            <span class="hr"></span>
+                        </div>
                     </div>
-
-                    <!-- <div class="new-message">
-                        <text-input placeholder="Write your message"></text-input>
+                    <div class="new-message">
+                        <text-input class="m-0" placeholder="Write your message"></text-input>
                         <div>
                             <span class="material-symbols-outlined">sentiment_satisfied</span>
                             <span class="material-symbols-outlined">link</span>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-0 col-tb-0 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10">
-          
+            <div class="user-info-card">
+                <div class="flex-between">
+                    <h3 class="m-0 bold f18">User Info</h3>
+                    <span class="material-symbols-outlined f18"> close</span>
+                </div>
+                <div class="info-overview">
+                    <div class="img-crc">
+                        <img src="../../../../../assets/images/users/user-2.png" alt="user">
+                    </div>
+                    <p>Jennifer Kato</p>
+                    <p>UX Researcher</p>
+                </div>
+                <team-select placeholder="Hiphonic Team" [options]="teamOptions"></team-select>
+                <hr>
+                <div class="shared-files">
+                    <h3>Shared Files</h3>
+                    <div class="file">
+                        <span class="material-symbols-outlined theme">docs</span>
+                        <div>
+                            Reference.zip <br>
+                            <span>2 MB</span>
+                        </div>
+                        <span class="material-symbols-outlined">delete </span>
+                    </div>
+                    <div class="file">
+                        <span class="material-symbols-outlined info">docs</span>
+                        <div>
+                            Doc001.docx<br>
+                            <span>1005 KB</span>
+                        </div>
+                        <span class="material-symbols-outlined">delete </span>
+                    </div>
+                    <div class="file">
+                        <span class="material-symbols-outlined danger">docs</span>
+                        <div>
+                            Filex.pdf <br>
+                            <span>208 KB</span>
+                        </div>
+                        <span class="material-symbols-outlined">delete </span>
+                    </div>
+                </div>
+                <div class="shared-files">
+                    <h3>Shared Links</h3>
+                    <div class="file">
+                        <span class="material-symbols-outlined black">link</span>
+                        <div>
+                            mux.li<br>
+                            <span>https://muz.li</span>
+                        </div>
+                        <span class="material-symbols-outlined">delete </span>
+                    </div>
+                    <div class="file">
+                        <span class="material-symbols-outlined black">link</span>
+                        <div>
+                            dribble<br>
+                            <span>https://dribble.com/dribbles/user-001199033-9940488433994949488488</span>
+                        </div>
+                        <span class="material-symbols-outlined">delete </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

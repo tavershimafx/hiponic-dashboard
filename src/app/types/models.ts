@@ -15,3 +15,31 @@ export interface IQuickMessage{
   message: string;
   time: string
 }
+
+export enum MessageType{
+  Text,
+  Audio,
+  Image,
+  Document,
+  DocumentPlusText,
+  DayBreaker
+}
+
+export interface ChatMessage{
+  messageType: MessageType
+  content: any
+  senderId: string
+  dateSent: Date
+  isRead: boolean
+}
+
+export interface LoadedChat{
+  username: string
+  profilePicture: string
+  messages: Array<ChatMessage>;
+}
+
+export interface UserProfile{
+  username: string
+  profilePicture: string
+}

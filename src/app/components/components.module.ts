@@ -20,10 +20,12 @@ import { ProfileDropdownComponent } from "./profile-dropdown/profile-dropdown.co
 import { RouterModule } from "@angular/router";
 import { DialogComponent } from "./dialog/dialog.component";
 import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
+import { TeamSelectComponent } from "./team-select/team-select.component";
 
 const components = [
     TextInputComponent,
     TextGroupComponent,
+    TeamSelectComponent,
     CheckboxComponent,
     CardComponent,
     CardHeaderComponent,

@@ -98,6 +98,14 @@
     background-color: var(--success) !important;
 }
 
+.default{
+    color: var(--default) !important;
+}
+
+.default-bg{
+    background-color: var(--default) !important;
+}
+
 *{
     box-sizing: border-box;
     font-family: "Roboto-Regular";
@@ -369,6 +377,10 @@ a:hover{
     padding: 10px !important;
 }
 
+.p-20{
+    padding: 20px !important;
+}
+
 .pt-10{
     padding-top: 10px !important;
 }
@@ -396,6 +408,7 @@ a:hover{
 .page{
     padding: 30px;
     height: 100%;
+    overflow-y: auto;
 }
 
 /**************************************************************************/

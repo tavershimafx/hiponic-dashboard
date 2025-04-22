@@ -1,0 +1,9 @@
+<div class="team-dropdown">
+    <div class="current-item" (click)="drop()">
+        <p><span>&#x2022; </span>{{(value == null || value == undefined) ? placeholder : getDisplay()}}</p>
+        <span class="material-symbols-outlined">keyboard_arrow_down</span>
+    </div>
+    <div class="dropdown-items" #dropItems tabindex="-1">
+        <div *ngFor="let option of options" (click)="selectOption(option.value)">{{option.name}}</div>
+    </div>
+</div>

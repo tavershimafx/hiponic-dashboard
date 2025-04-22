@@ -1,0 +1,59 @@
+.team-dropdown{
+    position: relative;
+    outline: none;
+}
+
+.team-dropdown .current-item{
+    background-color: var(--theme-light);
+    padding: 20px;
+    font-family: "Roboto-Medium";
+    color: var(--grey-scale-900);
+}
+
+.team-dropdown .current-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-light);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.team-dropdown .current-item p{
+    margin: 0;
+    font-family: "Roboto-Medium";
+    color: var(--grey-scale-900);
+}
+
+.team-dropdown .current-item span.material-symbols-outlined{
+    font-size: 22px;
+}
+
+.team-dropdown .current-item p span{
+    font-size: 28px;
+    vertical-align: middle;
+    color: var(--success);
+}
+
+.team-dropdown .dropdown-items{
+    position: absolute;
+    width: 100%;
+    outline: none;
+    transition: max-height 0.2s ease-out;
+    height: 0;
+    max-height: 300px;
+    visibility: hidden;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid var(--theme-light);
+    z-index: 10;
+    background-color: var(--theme-background);
+}
+
+.team-dropdown .dropdown-items div{
+    padding: 15px;
+}
+
+.team-dropdown .dropdown-items div:hover{
+    background-color: var(--theme-light);
+}
