@@ -254,10 +254,16 @@
                         <img [src]="msg.profilePicture" alt="user">
                         <div class="ml-10">
                             <p class="bold m-0">{{msg.username}}</p>
-                            <span>{{msg.message}}</span>
+                            <span *ngIf="msg.messages[0].messageType == messageType.Text">{{msg.messages[0].content}}</span>
+                            <span *ngIf="msg.messages[0].messageType == messageType.Document">
+                                <span class="material-symbols-outlined">draft</span>
+                            </span>
+                            <span *ngIf="msg.messages[0].messageType == messageType.Image">
+                                <span class="material-symbols-outlined">photo_camera</span> Photo
+                            </span>
                         </div>
                     </div>
-                    <p>{{msg.time}}</p>
+                    <p>{{msg.messages[0].dateSent | date: 'HH:mm'}}</p>
                 </div>
                 <div class="text-center mt-20">
                     <a routerLink="" class="bold">See All</a>

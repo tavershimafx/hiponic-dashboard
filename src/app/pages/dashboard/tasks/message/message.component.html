@@ -16,15 +16,21 @@
                     
                     <div class="tabs">
                         <div class="tab">
-                            <div class="chat-head" *ngFor="let message of quickMessages">
-                                <img [src]="message.profilePicture" alt="user">
+                            <div class="chat-head" *ngFor="let chat of messageContext.chats">
+                                <img [src]="chat.profilePicture" alt="user">
                                 <div class="highlight">
-                                    <p class="bold m-0">{{message.username}}</p>
-                                    <p class="mt-5 mb-0 black">{{message.message}}</p>
+                                    <p class="bold m-0">{{chat.username}}</p>
+                                    <p class="mt-5 mb-0 black" *ngIf="chat.messages[0].messageType == messageType.Text">{{chat.messages[0].content}}</p>
+                                    <p class="mt-5 mb-0 black" *ngIf="chat.messages[0].messageType == messageType.Document">
+                                        <span class="material-symbols-outlined">draft</span>
+                                    </p>
+                                    <p class="mt-5 mb-0 black" *ngIf="chat.messages[0].messageType == messageType.Image">
+                                        <span class="material-symbols-outlined">photo_camera</span> Photo
+                                    </p>
                                 </div>
                                 <div class="gnt">
-                                    <p class="m-0 black">1m ago</p>
-                                    <p>2</p>
+                                    <p class="m-0 black">{{chat.messages[0].dateSent| timespan}}</p>
+                                    <p>{{getReadCount(chat.userId)}}</p>
                                 </div>
                             </div>
                         </div>
@@ -39,26 +45,32 @@
             <div class="current-chart-card">
                 <div class="current-user">
                     <div class="user-initials">
-                        <img [src]="currentChat?.profilePicture" alt="user" class="">
+                        <img [src]="messageContext.getChatContext(chatUserId).profilePicture" alt="user">
                         <div>
-                            <p class="m-0 bold">{{currentChat?.username}}</p>
+                            <p class="m-0 bold">{{messageContext.getChatContext(chatUserId).username}}</p>
                             <span>Online</span>
                         </div>
                     </div>
                     <div class="chat-actions">
                         <span class="material-symbols-outlined">call </span>
                         <span class="material-symbols-outlined">dock_to_left</span>
-                        <span class="material-symbols-outlined">more_vert</span>
+                        <div class="relative inline-block" dropdown>
+                            <span class="material-symbols-outlined">more_vert</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Search</div>
+                                <div>Contact Info</div>
+                                <div>Clear Chat</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="chat-messages">
-
-                    <div class="chat-message" *ngFor="let message of currentChat?.messages" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
-                        <img *ngIf="message.messageType != messageTypes.DayBreaker" [src]="message.senderId == 'aaa'? '' :currentChat?.profilePicture" alt="user" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
-                        <div *ngIf="message.messageType === messageTypes.Text" class="message" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                    <div class="chat-message" *ngFor="let message of messageContext.getChatContext(chatUserId).messages" [ngClass]="{'from-me': message.senderId == currentUser.id,'from-others': message.senderId != currentUser.id}">
+                        <img *ngIf="message.messageType != messageType.DayBreaker" [src]="message.senderId == currentUser.id? '' :messageContext.getChatContext(chatUserId).profilePicture" alt="user" [ngClass]="{'from-me': message.senderId == currentUser.id,'from-others': message.senderId != currentUser.id}">
+                        <div *ngIf="message.messageType === messageType.Text" class="message" [ngClass]="{'from-me': message.senderId == currentUser.id,'from-others': message.senderId != currentUser.id}">
                             {{message.content}}
                         </div>
-                        <div *ngIf="message.messageType === messageTypes.Image" class="image-message" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                        <div *ngIf="message.messageType === messageType.Image" class="image-message" [ngClass]="{'from-me': message.senderId == currentUser.id,'from-others': message.senderId != currentUser.id}">
                             <div *ngIf="message.content.length > 3" class="many-images">
                                 <div *ngFor="let img of message.content.slice(0, 2)">
                                     <img [src]="img" alt="user">
@@ -74,10 +86,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="message.messageType != messageTypes.DayBreaker" class="message-date" [ngClass]="{'from-me': message.senderId == 'aaa','from-others': message.senderId != 'aaa'}">
+                        <div *ngIf="message.messageType != messageType.DayBreaker" class="message-date" [ngClass]="{'from-me': message.senderId == currentUser.id,'from-others': message.senderId != currentUser.id}">
                             {{message.dateSent| date: 'HH:mm'}}
                         </div>
-                        <div class="day-breaker" *ngIf="message.messageType === messageTypes.DayBreaker">
+                        <div class="day-breaker" *ngIf="message.messageType === messageType.DayBreaker">
                             <span class="hr"></span>
                             <p>{{message.dateSent | date: 'dd/MM/YYYY'}}</p>
                             <span class="hr"></span>

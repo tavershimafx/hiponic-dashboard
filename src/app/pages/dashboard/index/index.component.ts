@@ -1,4 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChatHead, MessageType } from '@models/models';
+import { MessagingContext } from '@services/messaging-context';
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -11,7 +13,6 @@ import {
   ApexFill,
   ApexGrid,
 } from "ng-apexcharts";
-import { IQuickMessage } from '../../../types/models';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -38,22 +39,18 @@ export type ChartOptions = {
 export class IndexComponent{
   chartOptions: Partial<ChartOptions>;
   fluentOptions: Partial<ChartOptions>;
-  
+  readonly messageType: typeof MessageType = MessageType
   users = [
     "../../../../assets/images/users/user-1.png",
     "../../../../assets/images/users/user-2.png",
     "../../../../assets/images/users/user-3.png",
     "../../../../assets/images/users/user-4.png"
   ]
-  quickMessages: Array<IQuickMessage> = [
-    { username: "Tavershima Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-4.png", message: "Hi, how are you today?"},
-    { username: "Jennifer Kato", time: "08:24", profilePicture: "../../../../assets/images/users/user-3.png", message: "Hi, how are you today?"},
-    { username: "Queen Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-2.png", message: "Hi, how are you today?"},
-    { username: "Sussan Ako", time: "08:24", profilePicture: "../../../../assets/images/users/user-1.png", message: "Hi, how are you today?"}
-  ]
+  quickMessages?: Array<ChatHead>
 
-  constructor(){
-   
+  constructor(messageContext: MessagingContext){
+   this.quickMessages = messageContext.chats?.slice(0, 4)
+
     this.chartOptions = {
       series: [
         {

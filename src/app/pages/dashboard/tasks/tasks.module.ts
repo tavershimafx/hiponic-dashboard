@@ -10,6 +10,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { GoalsComponent } from './goals/goals.component';
 import { MessageComponent } from './message/message.component';
+import PipesModule from '../../../pipes/pipes.module';
 
 const components = [
   IndexComponent,
@@ -21,7 +22,8 @@ const components = [
   declarations: [ ...components],
   imports: [RouterModule,
     TasksRoutingModule, 
-    DirectivesModule, 
+    DirectivesModule,
+    PipesModule,
     CommonModule,
     ComponentsModule,
     MatDatepickerModule, MatCardModule],
