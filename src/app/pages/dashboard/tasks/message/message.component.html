@@ -1,6 +1,6 @@
 <div class="page">
     <div class="row r-gap20 h-100">
-        <div class="relative col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10">
+        <div class="relative col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10 hide-mb">
             <div class="chat-card">
                 <div class="card-head">
                     <h2>Chat</h2>
@@ -52,11 +52,12 @@
                         </div>
                     </div>
                     <div class="chat-actions">
-                        <span class="material-symbols-outlined">call </span>
-                        <span class="material-symbols-outlined">dock_to_left</span>
+                        <span class="material-symbols-outlined hide-mb">call </span>
+                        <span class="material-symbols-outlined hide-mb">dock_to_left</span>
                         <div class="relative inline-block" dropdown>
                             <span class="material-symbols-outlined">more_vert</span>
                             <div class="dropdown-menu" tabindex="-1">
+                                <div class="hide show-mb">Call</div>
                                 <div>Search</div>
                                 <div>Contact Info</div>
                                 <div>Clear Chat</div>
@@ -91,7 +92,7 @@
                         </div>
                         <div class="day-breaker" *ngIf="message.messageType === messageType.DayBreaker">
                             <span class="hr"></span>
-                            <p>{{message.dateSent | date: 'dd/MM/YYYY'}}</p>
+                            <p>{{message.dateSent | timespan}}</p>
                             <span class="hr"></span>
                         </div>
                     </div>
@@ -105,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-0 col-tb-0 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10">
+        <div class="col-lg-3 col-md-0 col-tb-0 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10 hide-mb">
             <div class="user-info-card">
                 <div class="flex-between">
                     <h3 class="m-0 bold f18">User Info</h3>

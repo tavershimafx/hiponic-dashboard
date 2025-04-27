@@ -136,6 +136,15 @@
     display: inline-block;
     margin-left: 10px;
     vertical-align: middle;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.current-chart-card .current-user .user-initials div p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .current-chart-card .current-user .chat-actions{
@@ -459,4 +468,48 @@
 hr{
     margin: 40px 0;
     color: var(--border-color);
+}
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+@media (max-width: 575.98px) and (orientation:portrait) {
+    .page{
+        padding: 0 0 400px 0 !important;
+    }
+
+    .current-chart-card .current-user .user-initials{
+        width: 85%;
+    }
+
+    .current-chart-card .current-user .user-initials div{
+        width: 70%;
+    }
+
+    .current-chart-card .chat-messages .chat-message {
+        max-width: 90%;
+    }
+
+    .current-chart-card .chat-messages .chat-message:has(.message.from-me),
+    .current-chart-card .chat-messages .chat-message:has(.image-message.from-me) {
+        right: -10%;
+    }
+
+    .current-chart-card .chat-messages .chat-message > img {
+        display: none;
+    }
+
+    .current-chart-card .chat-messages .chat-message .image-message .many-images div {
+        width: 46%;
+    }
+
+    .current-chart-card .chat-messages .chat-message .day-breaker span.hr{
+        width: 30%;
+    }
+
+    .current-chart-card .chat-messages .new-message{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
