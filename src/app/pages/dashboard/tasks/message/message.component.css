@@ -1,5 +1,6 @@
 .page{
     overflow-y: auto !important;
+    overflow-x: hidden;
     padding-bottom: 400px;
 }
 
@@ -103,12 +104,14 @@
 .chat-head .gnt p:last-of-type{
     display: inline-block;
     background-color: var(--danger);
-    padding: 5px 9px;
+    min-width: 25.8px;
     color: #FFF;
     border-radius: 100%;
     text-align: center;
+    align-content: center;
     margin-top: 5px;
     margin-bottom: 0;
+    aspect-ratio: 1/1;
 }
 
 .current-chart-card{
@@ -477,6 +480,16 @@ hr{
         padding: 0 0 400px 0 !important;
     }
 
+    .page > .row{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .current-chart-card {
+        /* overflow-y: auto; */
+        height: calc(100vh - 160px);
+    }
+
     .current-chart-card .current-user .user-initials{
         width: 85%;
     }
@@ -511,5 +524,36 @@ hr{
         bottom: 0;
         left: 0;
         right: 0;
+    }
+
+    .chat-card, .user-info-card{
+        height: 100%; 
+    }
+
+    .page{
+        padding: 0 !important;
+    }
+
+    .user-chat-col{
+        top: 0;
+        left: 0;
+        position: absolute;
+        /* position: absolute;
+        display: block; */
+        transform: translateX(100%);
+        transition: all 1s ease-in-out;
+    }
+
+    .user-profile-col{
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: none; */
+        transform: translateX(100%);
+        transition: all 1s ease-in-out;
+    }
+
+    .overview-col{
+        transition: transform 1s ease-in-out;
     }
 }

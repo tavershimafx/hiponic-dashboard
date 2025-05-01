@@ -1,6 +1,6 @@
 <div class="page">
     <div class="row r-gap20 h-100">
-        <div class="relative col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10 hide-mb">
+        <div #overview class="col-lg-3 col-md-4 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prt-10 prm-10 overview-col">
             <div class="chat-card">
                 <div class="card-head">
                     <h2>Chat</h2>
@@ -16,7 +16,7 @@
                     
                     <div class="tabs">
                         <div class="tab">
-                            <div class="chat-head" *ngFor="let chat of messageContext.chats">
+                            <div class="chat-head" *ngFor="let chat of messageContext.chats" (click)="openMesage(chat.userId)">
                                 <img [src]="chat.profilePicture" alt="user">
                                 <div class="highlight">
                                     <p class="bold m-0">{{chat.username}}</p>
@@ -41,10 +41,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-8 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prm-10 plx-10 pll-10 plt-10 plm-10">
+        <div #chat class="col-lg-6 col-md-8 col-tb-12 col-sm-12 flex flex-col r-gap20 prx-10 prl-10 prm-10 plx-10 pll-10 plt-10 plm-10 user-chat-col">
             <div class="current-chart-card">
                 <div class="current-user">
-                    <div class="user-initials">
+                    <div class="user-initials" (click)="showProfile(chatUserId)">
                         <img [src]="messageContext.getChatContext(chatUserId).profilePicture" alt="user">
                         <div>
                             <p class="m-0 bold">{{messageContext.getChatContext(chatUserId).username}}</p>
@@ -106,11 +106,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-0 col-tb-0 col-sm-0 flex flex-col r-gap20 plx-10 pll-10 plm-10 hide-mb">
+        <div #profile class="col-lg-3 col-md-0 col-tb-0 col-sm-12 flex flex-col r-gap20 plx-10 pll-10 plm-10 user-profile-col">
             <div class="user-info-card">
+
+            <div>
                 <div class="flex-between">
                     <h3 class="m-0 bold f18">User Info</h3>
-                    <span class="material-symbols-outlined f18"> close</span>
+                    <span class="material-symbols-outlined f18" (click)="closeProfile()"> close</span>
                 </div>
                 <div class="info-overview">
                     <div class="img-crc">
@@ -167,6 +169,7 @@
                         <span class="material-symbols-outlined">delete </span>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
