@@ -13,14 +13,13 @@ import DirectivesModule from "../directives/directives.module";
 import { NavTopComponent } from "./nav-top/nav-top.component";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { NgApexchartsModule } from "ng-apexcharts";
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
 import { StackedImagesComponent } from "./stacked-images/stacked-images.component";
 import { ProfileDropdownComponent } from "./profile-dropdown/profile-dropdown.component";
 import { RouterModule } from "@angular/router";
 import { DialogComponent } from "./dialog/dialog.component";
 import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
 import { TeamSelectComponent } from "./team-select/team-select.component";
+import { SelectInputComponent } from "./select-input/select-input.component";
 
 const components = [
     TextInputComponent,
@@ -37,7 +36,8 @@ const components = [
     StackedImagesComponent,
     ProfileDropdownComponent,
     DialogComponent,
-    ModalDialogComponent
+    ModalDialogComponent,
+    SelectInputComponent
 ]
 
 @NgModule({
@@ -49,12 +49,10 @@ const components = [
         FormsModule, 
         DirectivesModule,
         NgApexchartsModule,
-        MatButtonModule, MatMenuModule
     ],
     exports: [
         ...components,
         NgApexchartsModule,
-        MatButtonModule, MatMenuModule
     ]
 })
 export default class ComponentsModule{}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { NewTaskModal } from '@modals/new-task/new-task.component';
+import { PageTitleService } from '@services/page-title.service';
 
 @Component({
   selector: 'index',
@@ -17,14 +18,13 @@ export class IndexComponent{
   ]
   
   tab = 0
-  constructor(private dialogService: DialogService){
-   
+  constructor(private dialogService: DialogService, pageTitle: PageTitleService){
+   pageTitle.setTitle({ title: "Tasks", description: "Manage project tasks" })
   }
 
   newTask(n: number){
     this.dialogService.showDialog(NewTaskModal)?.subscribe({
       next: x =>{
-        console.log("The dialog has closed")
         // reload the data if necessary
       }
     })

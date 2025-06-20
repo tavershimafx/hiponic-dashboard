@@ -30,7 +30,9 @@
       "@pages/*":["./src/app/pages/*"],
       "@services/*":["./src/app/services/*"],
       "@modals/*":["./src/app/modals/*"],
-      "@models/*":["./src/app/types/*"]
+      "@models/*":["./src/app/types/*"],
+      "@store/*":["./src/app/store/*"],
+      "@pipes/*":["./src/app/pipes/*"]
     }
   },
   "angularCompilerOptions": {

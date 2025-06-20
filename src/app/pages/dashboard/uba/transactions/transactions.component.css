@@ -1,0 +1,76 @@
+.transaction-page{
+    height: 100%;
+    overflow-y: auto;
+}
+
+.page-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--theme-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.page-actions .tab-menu > div{
+    display: inline-block;
+    padding: 12px;
+    font-family: 'Roboto-Medium';
+    cursor: pointer;
+}
+
+.page-actions .tab-menu span.material-symbols-outlined{
+    font-size: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.page-actions .tab-menu > div.active{
+    background-color: var(--info-light);
+    color: var(--theme);
+    border-radius: 12px;
+}
+
+.page-actions .tab-menu > div.active span{
+    color: var(--theme);
+}
+
+.page-actions .filters > span{
+    margin-right: 20px;
+    font-family: 'Roboto-Medium';
+}
+
+.page-actions .filters span.material-symbols-outlined{
+    font-size: 18px;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+
+.page-actions .filters > div{
+    position: relative;
+    display: inline-block;
+    background-color: var(--info-light);
+    color: var(--theme);
+    border-radius: 12px;
+    padding: 12px;
+    font-family: 'Roboto-Medium';
+    z-index: 25 !important;
+}
+
+.page-actions .filters > div span{
+    color: var(--theme);
+}
+
+/* Above style is duplicated from ./tasks/index.css*/
+
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+
+@media (max-width: 575.98px) and (orientation:portrait) {
+    .page-actions{
+        display: block;
+    }
+
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PageTitleService } from '@services/page-title.service';
 
 @Component({
   selector: 'goals',
@@ -12,8 +13,8 @@ export class GoalsComponent{
     "../../../../assets/images/users/user-2.png",
   ]
 
-  constructor(){
-   
+  constructor(pageTitle: PageTitleService){
+   pageTitle.setTitle({ title: "Project Goals" })
   }
 
 }

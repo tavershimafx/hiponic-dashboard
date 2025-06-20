@@ -1,0 +1,129 @@
+<div class="page">
+    <div class="flex-between mb-20">
+        <div class="analyse-date">
+            <span class="material-symbols-outlined">calendar_month</span>
+            Dec 24 - Dec 31
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+        </div>
+        <button class="btn btn-md btn-primary">Export</button>
+    </div>
+
+    <div class="class-impressions">
+        <div class="item">
+            <div>
+                <p>Impressions</p>
+                <span class="material-symbols-outlined">pan_zoom</span>
+            </div>
+            <h3>40,55k</h3> 
+            <span class="danger danger-light-bg">
+                <span class="material-symbols-outlined danger">arrow_downward</span>59%
+            </span>
+            <p>Last week 84,70K</p>
+        </div>
+        <div class="item">
+            <div>
+                <p>Involvements</p>
+                <span class="material-symbols-outlined">pan_zoom</span>
+            </div>
+            <h3>40,55k</h3> 
+            <span class="success success-light-bg">
+                <span class="material-symbols-outlined success">arrow_downward</span>59%
+            </span>
+            <p>Last week 84,70K</p>
+        </div>
+        <div class="item">
+            <div>
+                <p>Total Audience</p>
+                <span class="material-symbols-outlined">pan_zoom</span>
+            </div>
+            <h3>40,55k</h3> 
+            <span class="danger danger-light-bg">
+                <span class="material-symbols-outlined danger">arrow_downward</span>59%
+            </span>
+            <p>Last week 84,70K</p>
+        </div>
+        <div class="item">
+            <div>
+                <p>Audience Interactions</p>
+                <span class="material-symbols-outlined">pan_zoom</span>
+            </div>
+            <h3>40,55k</h3> 
+            <span class="danger danger-light-bg">
+                <span class="material-symbols-outlined danger">arrow_downward</span>59%
+            </span>
+            <p>Last week 84,70K</p>
+        </div>
+    </div>
+
+    <div class="row mt-20">
+        <div class="col-xl-8 col-lg-8 col-md-6 col-tb-12 col-sm-12 prl-10">
+            <card>
+                <div class="flex-between pb-10 relative">
+                    <p class="bold f-18 m-0">Activity</p>
+                    <div class="relative">
+                        <span class="mr-10 inline-block">Impression</span>
+                        <div class="inline-block" dropdown>
+                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!"
+                        [xaxis]="chartOptions.xaxis!" [stroke]="chartOptions.stroke!"
+                        [tooltip]="chartOptions.tooltip!" [dataLabels]="chartOptions.dataLabels!"></apx-chart>
+                </div>
+            </card>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-tb-0 col-sm-0 pll-10">
+            <card>
+                <div class="flex-between pb-10 relative mb-100">
+                    <p class="bold f-18 m-0">Email Activity</p>
+                    <div class="relative">
+                        <span class="mr-10 inline-block">This week</span>
+                        <div class="inline-block" dropdown>
+                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            <div class="dropdown-menu" tabindex="-1">
+                                <div>Weekly</div>
+                                <div>Monthly</div>
+                                <div>Yearly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <apx-chart
+                    [series]="pieOptions.series!"
+                    [chart]="pieOptions.chart!"
+                    [labels]="pieOptions.labels!"
+                    [responsive]="pieOptions.responsive!"
+                ></apx-chart>
+            </card>
+        </div>
+    </div>
+
+    <div class="row mt-20">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-tb-12 col-sm-12 prl-10">
+            <card>
+                <apx-chart
+                    [series]="barOptions.series!"
+                    [chart]="barOptions.chart!"
+                    [dataLabels]="barOptions.dataLabels!"
+                    [plotOptions]="barOptions.plotOptions!"
+                    [yaxis]="barOptions.yaxis!"
+                    [legend]="barOptions.legend!"
+                    [fill]="barOptions.fill!"
+                    [stroke]="barOptions.stroke!"
+                    [tooltip]="barOptions.tooltip!"
+                    [xaxis]="barOptions.xaxis!"
+                ></apx-chart>
+            </card>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-tb-12 col-sm-12 pll-10">
+
+        </div>
+    </div>
+</div>

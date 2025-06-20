@@ -3,10 +3,12 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
 import { NewTaskModal } from './new-task/new-task.component';
+import { NewUserModal } from './new-user/new-user.component';
 
 
 const components = [
-  NewTaskModal
+  NewTaskModal,
+  NewUserModal
 ]
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MessageType, UserProfile } from '@models/models';
 import { MessagingContext } from '@services/messaging-context';
+import { PageTitleService } from '@services/page-title.service';
 
 @Component({
   selector: 'message',
@@ -23,8 +24,8 @@ export class MessageComponent{
   @ViewChild("profile", { static: true }) profile! : ElementRef
   @ViewChild("overview", { static: true }) overview! : ElementRef
 
-  constructor(public messageContext: MessagingContext){
-   
+  constructor(public messageContext: MessagingContext, pageTitle: PageTitleService){
+   pageTitle.setTitle({ title: "Chat" })
   }
 
   getReadCount(userId: string){

@@ -1,7 +1,8 @@
 <div class="nav-top">
     <div class="nav-left">
         <span class="material-symbols-outlined more-menu" (click)="toggleSidebar()"> menu</span>
-        <h1>Dashboard</h1>
+        <h1>{{pageTitle.title}}</h1>
+        <p class="m-0">{{pageTitle.description}}</p>
     </div>
     <div class="nav-right">
         <text-group [showValidation]="false" class="mt-0 mb-0">

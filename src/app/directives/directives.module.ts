@@ -4,12 +4,13 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SideBarItemDirective } from "./sidebar-item.directive";
 import { SidebarDirective } from "./sidebar.directive";
 import { DropdownDirective } from "./dropdown.directive";
-import { BadgeDirective } from "./badge.directive";
+import { BadgeDirective, SquareBadgeDirective } from "./badge.directive";
 
 const components = [
    SideBarItemDirective,
    SidebarDirective,
    BadgeDirective,
+   SquareBadgeDirective,
    DropdownDirective
 ]
 

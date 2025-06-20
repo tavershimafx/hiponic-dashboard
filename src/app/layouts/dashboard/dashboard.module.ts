@@ -7,9 +7,6 @@ import DirectivesModule from '@directives/directives.module';
 import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
 
-import {provideNativeDateAdapter} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatCardModule} from '@angular/material/card';
 import { ModalsModule } from '@modals/modals.module';
 
 const components = [
@@ -25,9 +22,9 @@ const components = [
     CommonModule,
     ComponentsModule,
     ModalsModule,
-    MatDatepickerModule, MatCardModule],
+    ],
   exports: [],
-  providers: [provideNativeDateAdapter()],
+  providers: [],
 })
 export class DashboardLayoutModule {
   

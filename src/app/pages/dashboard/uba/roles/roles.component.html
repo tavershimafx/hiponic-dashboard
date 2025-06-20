@@ -1,0 +1,85 @@
+<div class="transaction-page">
+    <div class="page-actions">
+        <div>
+            <text-input placeholder="search" class="w-10x"></text-input>
+        </div>
+        <div class="filters">
+            <span>
+                <span class="material-symbols-outlined"> filter_alt </span>
+                Filter
+            </span>
+            <div class="" dropdown>
+                <span class="material-symbols-outlined">sort</span>&nbsp;
+                Sort: Date Created
+                <div class="dropdown-menu" tabindex="-1">
+                    <div>Latest</div>
+                    <div>Alphabetical A-Z</div>
+                    <div>Alphabetical Z-A</div>
+                    <div>Completed</div>
+                    <div>Active</div>
+                    <div>Date Created</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" >
+        <div class="row">
+            <card class="w-100 h-100">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
+                            <th>Name</th>
+                            <th>Is System</th>
+                            <th>Created By</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th><span class="material-symbols-outlined"> more_horiz</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let role of roles">
+                            <td><checkbox class="mt-0 mb-0" [(ngModel)]="role.selected"></checkbox></td>
+                            <td>{{role.name}}</td>
+                            <td><span [squareBadge]="role.isSystem? 'success': 'info'">{{role.isSystem ? "System" : "User"}}</span></td>
+                            <td>{{role.createdBy}}</td>
+                            <td><span [squareBadge]="getStatusClass(role.status)">{{getStatusString(role.status)}}</span></td>
+                            <td>{{role.date | date: 'dd MMM yyyy'}}</td>
+                            <td>
+                                <div class="relative inline-block" dropdown>
+                                    <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>View</div>
+                                        <div>Report</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr colspan="">
+                            <th colspan="3">
+                                <div>
+                                    Show rows:
+                                </div>
+                            </th>
+                            <th colspan="5">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_backward</span></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_right</span></a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </card>
+       </div>
+    </div>
+   
+</div>

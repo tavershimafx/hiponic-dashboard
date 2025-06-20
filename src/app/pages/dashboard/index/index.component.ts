@@ -1,33 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ChatHead, MessageType } from '@models/models';
+import { ChartOptions, ChatHead, MessageType } from '@models/models';
 import { MessagingContext } from '@services/messaging-context';
-import {
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexDataLabels,
-  ApexTooltip,
-  ApexYAxis,
-  ApexMarkers,
-  ApexPlotOptions,
-  ApexFill,
-  ApexGrid,
-} from "ng-apexcharts";
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  xaxis: ApexXAxis;
-  yaxis: ApexYAxis | ApexYAxis[];
-  labels: string[];
-  stroke: any; // ApexStroke;
-  markers: ApexMarkers;
-  plotOptions: ApexPlotOptions;
-  fill: ApexFill;
-  tooltip: ApexTooltip;
-  dataLabels: ApexDataLabels;
-  grid: ApexGrid;
-};
+import { PageTitleService } from '@services/page-title.service';
 
 @Component({
   selector: 'index',
@@ -48,7 +22,7 @@ export class IndexComponent{
   ]
   quickMessages?: Array<ChatHead>
 
-  constructor(messageContext: MessagingContext){
+  constructor(messageContext: MessagingContext, pageTitle: PageTitleService){
    this.quickMessages = messageContext.chats?.slice(0, 4)
 
     this.chartOptions = {
@@ -141,6 +115,7 @@ export class IndexComponent{
       },
     };
   
+    pageTitle.setTitle({ title: "Dashboard" })
   }
 
   public generateData(baseval: number, count: number, yrange: any) {

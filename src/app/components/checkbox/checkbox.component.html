@@ -1,4 +1,4 @@
-<label class="check-contain {{cssClass}}" [ngClass]="{'danger': showValidation && !control.valid}">
-    <input type="checkbox">
+<label (click)="writeValue(!value)" class="check-contain {{cssClass}}" [ngClass]="{'danger': showValidation && !control.valid}">
+    <input type="checkbox" [(ngModel)]="value">
     <ng-content />
 </label>

@@ -66,6 +66,7 @@ export class CheckboxComponent {
   writeValue(value: any) {
       if (value !== this.innerValue) {
           this.innerValue = value;
+          this.onChangeCallback(value);
       }
   }
 

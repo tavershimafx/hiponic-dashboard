@@ -1,4 +1,5 @@
 import { Component  } from '@angular/core';
+import { PageTitleService } from '@services/page-title.service';
 import { SidebarService } from '@services/sidebar';
 
 @Component({
@@ -8,7 +9,7 @@ import { SidebarService } from '@services/sidebar';
 })
 export class NavTopComponent {
 
-  constructor(private sidebarService: SidebarService){
+  constructor(private sidebarService: SidebarService, public pageTitle: PageTitleService){
    
   }
 

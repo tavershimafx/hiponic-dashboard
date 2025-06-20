@@ -1,0 +1,219 @@
+<div class="transaction-page">
+    <div class="page-actions">
+        <div class="tab-menu">
+            <div [ngClass]="{'active': tab == 0}" (click)="switchTab(0)">
+                All Transactions
+            </div>
+            <div [ngClass]="{'active': tab == 1}" (click)="switchTab(1)">
+                Verified Transactions
+            </div>
+            <div [ngClass]="{'active': tab == 2}" (click)="switchTab(2)">
+                Flagged Transactions
+            </div>
+        </div>
+        <div class="filters">
+            <span>
+                <span class="material-symbols-outlined"> filter_alt </span>
+                Filter
+            </span>
+            <div class="" dropdown>
+                <span class="material-symbols-outlined">sort</span>&nbsp;
+                Sort: Date Created
+                <div class="dropdown-menu" tabindex="-1">
+                    <div>Latest</div>
+                    <div>Alphabetical A-Z</div>
+                    <div>Alphabetical Z-A</div>
+                    <div>Completed</div>
+                    <div>Pending</div>
+                    <div>Date Created</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" *ngIf="tab == 0">
+        <div class="row">
+            <card class="w-100 h-100">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
+                            <th>Sol ID</th>
+                            <th>Account Name</th>
+                            <th>Account Number</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th><span class="material-symbols-outlined"> more_horiz</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of transactions">
+                            <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
+                            <td>{{transaction.solId}}</td>
+                            <td>{{transaction.accountName}}</td>
+                            <td>{{transaction.accountNumber}}</td>
+                            <td>{{transaction.amount}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.status)">{{getStatusString(transaction.status)}}</span></td>
+                            <td>{{transaction.date | date: 'dd MMM yyyy'}}</td>
+                            <td>
+                                <div class="relative inline-block" dropdown>
+                                    <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                       <div>View</div>
+                                        <div>Report</div>
+                                        <div>Send for Approval</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr colspan="">
+                            <th colspan="3">
+                                <div>
+                                    Show rows:
+                                </div>
+                            </th>
+                            <th colspan="5">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_backward</span></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_right</span></a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </card>
+       </div>
+    </div>
+    <div class="page" *ngIf="tab == 1">
+       <div class="row">
+             <card class="w-100 h-100">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
+                            <th>Sol ID</th>
+                            <th>Account Name</th>
+                            <th>Account Number</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th><span class="material-symbols-outlined"> more_horiz</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of getVerified()">
+                            <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
+                            <td>{{transaction.solId}}</td>
+                            <td>{{transaction.accountName}}</td>
+                            <td>{{transaction.accountNumber}}</td>
+                            <td>{{transaction.amount}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.status)">{{getStatusString(transaction.status)}}</span></td>
+                            <td>{{transaction.date | date: 'dd MMM yyyy'}}</td>
+                            <td>
+                                 <div class="relative inline-block" dropdown>
+                                    <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                       <div>View</div>
+                                        <div>Report</div>
+                                        <div>Send for Approval</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr colspan="">
+                            <th colspan="3">
+                                <div>
+                                    Show rows:
+                                </div>
+                            </th>
+                            <th colspan="5">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_backward</span></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_right</span></a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </card>
+       </div>
+    </div>
+    <div class="page" *ngIf="tab == 2">
+       <div class="row">
+             <card class="w-100 h-100">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
+                            <th>Sol ID</th>
+                            <th>Account Name</th>
+                            <th>Account Number</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th><span class="material-symbols-outlined"> more_horiz</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of getFlagged()">
+                            <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
+                            <td>{{transaction.solId}}</td>
+                            <td>{{transaction.accountName}}</td>
+                            <td>{{transaction.accountNumber}}</td>
+                            <td>{{transaction.amount}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.status)">{{getStatusString(transaction.status)}}</span></td>
+                            <td>{{transaction.date | date: 'dd MMM yyyy'}}</td>
+                            <td>
+                                 <div class="relative inline-block" dropdown>
+                                    <span class="material-symbols-outlined f22 ml-10">more_horiz</span>
+                                    <div class="dropdown-menu" tabindex="-1">
+                                        <div>View</div>
+                                        <div>Report</div>
+                                        <div>Send for Approval</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr colspan="">
+                            <th colspan="3">
+                                <div>
+                                    Show rows:
+                                </div>
+                            </th>
+                            <th colspan="5">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_backward</span></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href=""><span class="material-symbols-outlined">chevron_right</span></a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </card>
+       </div>
+    </div>
+</div>

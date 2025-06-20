@@ -1,0 +1,79 @@
+.analyse-date{
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--theme-background);
+    color: var(--grey-scale-900);
+    font-family: 'Roboto-Medium';
+}
+
+.analyse-date span{
+    color: var(--grey-scale-900);
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.analyse-date span:first-of-type{
+    margin-right: 10px;
+}
+
+.analyse-date span:last-of-type{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.class-impressions{
+    display: flex;
+    background-color: var(--theme-background);
+    padding: 20px;
+}
+
+.class-impressions .item{
+    width: 25%;
+}
+
+.class-impressions .item:not(:last-of-type){
+    width: 25%;
+    border-right: 1px solid var(--border-color);
+}
+
+
+.class-impressions .item:not(:first-of-type),
+.class-impressions .item:not(:last-of-type){
+    padding: 0 50px;
+}
+
+.class-impressions .item:first-of-type{
+    padding-right: 50px;
+}
+
+.class-impressions .item:last-of-type{
+    padding-left: 50px;
+}
+
+.class-impressions .item div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-impressions .item div p{
+    margin: 0;
+}
+
+.class-impressions .item h3{
+    color: var(--grey-scale-900);
+    font-family: 'Roboto-Bold';
+    font-size: 32px;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+}
+
+.class-impressions .item > span{
+    padding: 3px 5px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.class-impressions .item > span span{
+    vertical-align: sub;
+}

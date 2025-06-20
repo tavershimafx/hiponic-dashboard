@@ -17,6 +17,12 @@ export class DialogService{
         })
     }
 
+    /**
+     * Opens a component as a modal dialog.
+     * Calling the method with null closes the opened dialog
+     * @param element The component to lauch
+     * @returns 
+     */
     showDialog(element: any): Observable<boolean> | undefined{
         if (element != null){
             this.onClose = new Observable(sub =>{

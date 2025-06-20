@@ -1,0 +1,63 @@
+<modal-dialog size="md">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>User Management</span> > <span>Create User</span>
+            </div>
+            <div class="actions">
+                <span class="material-symbols-outlined">link</span>
+                <span class="material-symbols-outlined"> more_horiz</span>
+                <span class="material-symbols-outlined" (click)="closeDialog()"> close </span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3>Create User</h3>
+                <div class="review-drop">
+                    In Review
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <form action="">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Username</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Email</label>
+                        <text-input type="email"></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Department</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Branch</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Phone Number</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Role</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <button type="submit" class="btn btn-primary w-100">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</modal-dialog>

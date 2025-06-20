@@ -5,9 +5,6 @@ import { IndexComponent } from './index/index.component';
 import DirectivesModule from '@directives/directives.module';
 import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
-import {provideNativeDateAdapter} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatCardModule} from '@angular/material/card';
 import { GoalsComponent } from './goals/goals.component';
 import { MessageComponent } from './message/message.component';
 import PipesModule from '../../../pipes/pipes.module';
@@ -26,9 +23,9 @@ const components = [
     PipesModule,
     CommonModule,
     ComponentsModule,
-    MatDatepickerModule, MatCardModule],
+    ],
   exports: [],
-  providers: [provideNativeDateAdapter()],
+  providers: [],
 })
 export class TasksModule {
   
