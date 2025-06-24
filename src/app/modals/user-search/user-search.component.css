@@ -1,0 +1,137 @@
+
+.task-dialog{
+    background-color: var(--theme-background);
+    border-radius: 12px;
+}
+
+.task-dialog .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-dialog .header .crumb{
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--default);
+}
+
+.task-dialog .header .actions span{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.task-dialog .header .actions span:nth-child(1){
+    padding: 10px;
+}
+
+.task-dialog .header .actions span:nth-child(2){
+    padding: 10px 0 10px 10px;
+}
+
+.task-dialog .dialog-body{
+    padding: 20px;
+}
+
+.task-dialog .dialog-body .automated{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-dialog .dialog-body .automated h3{
+    font-size: 20px;
+    font-family: "Roboto-Bold";
+    color: #000;
+}
+
+.task-dialog .dialog-body .automated .review-drop{
+    background-color: var(--warning);
+    border-radius: 12px;
+    padding: 10px;
+    color: #FFF;
+}
+
+.task-dialog .dialog-body .automated .review-drop span{
+   color: #FFF;
+   vertical-align: middle;
+   font-size: 18px;
+}
+
+.task-dialog .dialog-body .task-details{
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.task-dialog .dialog-body .task-details .detail-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-dialog .dialog-body .task-details .detail-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.task-dialog .dialog-body .task-details .detail-body .assignment p{
+    text-transform: uppercase;
+}
+
+.task-description textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.task-description .subtask{
+    margin-top: 10px;
+}
+
+.task-description .subtask > div{
+    display: inline-block;
+}
+
+.task-description .subtask > div span{
+    vertical-align: sub;
+}
+
+.dialog-body .activity{
+    margin-top: 20px;
+}
+
+.dialog-body .activity .activity-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-body .activity .activity-head span{
+    font-size: 18px;
+    color: var(--theme);
+    margin-right: 10px;
+    vertical-align: sub;
+}
+
+.dialog-body .activity .activity-body .add-comment > div{
+    display: flex;
+}
+
+.dialog-body .activity .activity-body .add-comment > div img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    vertical-align: sub;
+}
+
+.dialog-body .activity .activity-body .add-comment > div text-input{
+    flex-grow: 100;
+}

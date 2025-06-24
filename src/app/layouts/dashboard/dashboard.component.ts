@@ -38,7 +38,7 @@ export class DashboardLayoutComponent implements OnDestroy {
 
     dialogService.dialog.subscribe({
       next: n =>{
-        if(n == null && this.activeDialog != undefined){
+        if(n == null || typeof(n) != typeof(Component) && this.activeDialog != undefined){
           this.activeDialog?.destroy()
           this.activeDialog = undefined
         }else{

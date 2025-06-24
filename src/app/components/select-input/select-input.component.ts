@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, ViewChild, forwardRef  } from '@angular/core';
 import { NG_VALUE_ACCESSOR} from '@angular/forms';
+import { IKeyValue } from '@models/models';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -27,7 +28,7 @@ export class SelectInputComponent {
   /**
    * The options for the control
    */
-  @Input() options?: { name: string, value: string }[]
+  @Input() options?: IKeyValue[]
 
   /**
    * The items container
@@ -106,6 +107,6 @@ export class SelectInputComponent {
   }
 
   getDisplay(): string{
-    return this.options!.find(k => k.value == this.value)!.name
+    return this.options!.find(k => k.value == this.value)!.value
   }
 }

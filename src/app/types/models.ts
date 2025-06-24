@@ -13,6 +13,18 @@ import {
   ApexStroke
 } from "ng-apexcharts";
 
+export interface IKeyValue{
+  /**
+   * The value or key which will be used or sent to the form control or initiator
+   */
+  key: any
+
+  /**
+   * The text to be displayed to the user
+   */
+  value: string
+}
+
 export interface IMailMessage{
   profilePicture: string
   sender: string

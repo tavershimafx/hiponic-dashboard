@@ -4,6 +4,6 @@
         <span class="material-symbols-outlined">keyboard_arrow_down</span>
     </div>
     <div class="dropdown-items" #dropItems tabindex="-1">
-        <div *ngFor="let option of options" (click)="selectOption(option.value)">{{option.name}}</div>
+        <div *ngFor="let option of options" (click)="selectOption(option.key)">{{option.value}}</div>
     </div>
 </div>

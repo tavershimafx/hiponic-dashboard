@@ -20,6 +20,8 @@ import { DialogComponent } from "./dialog/dialog.component";
 import { ModalDialogComponent } from "./modal-dialog/modal-dialog.component";
 import { TeamSelectComponent } from "./team-select/team-select.component";
 import { SelectInputComponent } from "./select-input/select-input.component";
+import { SearchUtilityComponent } from "./search-utility/search-utility.component";
+import { UserSearchModal } from "@modals/user-search/user-search.component";
 
 const components = [
     TextInputComponent,
@@ -37,7 +39,9 @@ const components = [
     ProfileDropdownComponent,
     DialogComponent,
     ModalDialogComponent,
-    SelectInputComponent
+    SelectInputComponent,
+    SearchUtilityComponent,
+    UserSearchModal
 ]
 
 @NgModule({

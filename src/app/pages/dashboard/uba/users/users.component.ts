@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { NewUserModal } from '@modals/new-user/new-user.component';
 import { PageTitleService } from '@services/page-title.service';
-import { IUser } from '@models/models';
+import { IKeyValue, IUser } from '@models/models';
 import { users } from '@store/faker';
 import { classes } from '@directives/badge.directive';
+import { UserSearchModal } from '@modals/user-search/user-search.component';
 
 @Component({
   selector: 'users',
@@ -14,12 +15,24 @@ import { classes } from '@directives/badge.directive';
 })
 export class UsersComponent{
  
-  //BTN/90/DE189044
+  filterValues: IKeyValue[] = [
+      { key: "ddd", value: "Alphabetical A-Z" },
+      { key: "ddd", value: "Alphabetical Z-A" },
+      { key: "ddd", value: "Completed" },
+      { key: "ddd", value: "Active" },
+      { key: "ddd", value: "Date Created" },
+    ]
+
   users: IUser[] = users
+  ress: IUser[] = users
 
   tab = 0
+  evaluate: Function = ()=> {}
+
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
+  this.evaluate = this.evaluate.bind(this)
    pageTitle.setTitle({ title: "Users", description: "Manage users and privileges" })
+   this.newUser()
   }
 
   newUser(){
@@ -30,12 +43,56 @@ export class UsersComponent{
     })
   }
 
+  advancedSearch(){
+    this.dialogService.showDialog(UserSearchModal)?.subscribe({
+      next: x =>{
+        if(x != true){
+          console.log("user component got", x)
+          // send to backend
+        }
+      }
+    })
+  }
+
   switchTab(index: number){
     this.tab = index
   }
 
-  checkAll(event:any){
+  checkAll(event: any){
     this.users.forEach((m) => m.selected = event.target.checked)
+  }
+
+  search(q: any){
+    if(q){
+      let filter = `this.users = this.ress.filter(k => `
+        if (q.query && q.query.trim() != ""){
+          q.query = q.query.toLowerCase()
+          filter += `(k.accountName.toLowerCase().includes('${q.query.toLowerCase()}') || 
+          k.email.toLowerCase().includes('${q.query.toLowerCase()}') || k.username.toLowerCase().includes('${q.query.toLowerCase()}'))`
+        }
+        
+        if (q.startDate && q.startDate.trim() != ""){
+          let d = new Date(q.startDate)
+          filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.registeredAt.getTime() >= ${d.getTime()}`
+        }
+
+        if (q.endDate && q.endDate.trim() != ""){
+          let d = new Date(q.endDate)
+          filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.registeredAt.getTime() <= ${d.getTime()}`
+        }
+
+        filter += filter.trim().endsWith(">") ? "k)" : ")"
+        this.evaluate = new Function(filter);
+        this.evaluate()
+      return
+    }
+
+    this.users = users
+  }
+
+  searchAll(q: any){
+
+    this.users = users
   }
 
   getStatusString(status: number){
