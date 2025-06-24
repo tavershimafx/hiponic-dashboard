@@ -6,6 +6,7 @@ import { IKeyValue, ITransaction } from '@models/models';
 import { transactions } from '@store/faker';
 import { classes } from '@directives/badge.directive';
 import { TransactionSearchModal } from '@modals/transaction-search/transaction-search.component';
+import { LoadingDialogComponent } from '@components/loading-dialog/loading.component';
 
 @Component({
   selector: 'transactions',
@@ -30,9 +31,8 @@ export class TransactionsComponent{
       ]
   
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
-  this.evaluate = this.evaluate.bind(this)
+    this.evaluate = this.evaluate.bind(this)
    pageTitle.setTitle({ title: "Transactions", description: "Recent transactions" })
-   this.advancedSearch()
   }
 
   advancedSearch(){
@@ -41,6 +41,7 @@ export class TransactionsComponent{
           if(x != true){
             console.log("transaction component got", x)
             // send to backend
+            this.showLoading()
           }
         }
       })
@@ -75,10 +76,20 @@ export class TransactionsComponent{
     }
   
     searchAll(q: any){
-  
+      this.showLoading()
       this.transactions = transactions
     }
-
+    
+  showLoading(){
+      this.dialogService.showDialog(LoadingDialogComponent)?.subscribe({
+        next: x =>{
+          if(x != true){
+            console.log("loading ended", x)
+            // send to backend
+          }
+        }
+      })
+  }
   switchTab(index: number){
     this.tab = index
   }

@@ -1,0 +1,61 @@
+<dialog-box size="md">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>Role Management</span> > <span>Advanced Role setup</span>
+            </div>
+            <div class="actions">
+                <span class="material-symbols-outlined">link</span>
+                <span class="material-symbols-outlined"> more_horiz</span>
+                <span class="material-symbols-outlined" (click)="closeDialog()"> close </span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3>Privileges for {{privileges.roleName}}</h3>
+                <div class="review-drop">
+                    In Review
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <form action="">
+                <div class="row">
+                    <div>
+                        <table>
+                        <thead>
+                            <tr>
+                                <th>Resource</th>
+                                <th>Read</th>
+                                <th>Create</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                                <th>Import</th>
+                                <th>Export</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let resource of privileges.resources">
+                                <td class="b black">{{resource.name}}</td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.read" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.create" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.update" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.delete" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.import" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                                <td><checkbox [outline]="true" [(ngModel)]="resource.permissions.export" [ngModelOptions]="{standalone: true}"></checkbox></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <button type="submit" class="btn btn-primary w-100" (click)="next()">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</dialog-box>

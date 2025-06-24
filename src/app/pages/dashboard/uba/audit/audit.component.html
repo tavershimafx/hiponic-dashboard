@@ -1,26 +1,10 @@
 <div class="transaction-page">
     <div class="page-actions">
-        <div>
-            <text-input placeholder="search" class="w-10x"></text-input>
-        </div>
-        <div class="filters">
-            <span>
-                <span class="material-symbols-outlined"> filter_alt </span>
-                Filter
-            </span>
-            <div class="" dropdown>
-                <span class="material-symbols-outlined">sort</span>&nbsp;
-                Sort: Date Created
-                <div class="dropdown-menu" tabindex="-1">
-                    <div>Latest</div>
-                    <div>Alphabetical A-Z</div>
-                    <div>Alphabetical Z-A</div>
-                    <div>Completed</div>
-                    <div>Active</div>
-                    <div>Date Created</div>
-                </div>
+        <search-utility placeholder="Search Approval requests" [filterValues]="filterValues" (searchChange)="search($event)" (searchAll)="searchAll($event)">
+            <div class="inline-block float-right">
+                <button class="btn btn-md btn-info mr-10" (click)="advancedSearch()"><span class="material-symbols-outlined middle mr-10">search</span>Advanced Search</button>
             </div>
-        </div>
+        </search-utility>
     </div>
     <div class="page" >
         <div class="row">

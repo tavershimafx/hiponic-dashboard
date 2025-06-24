@@ -154,6 +154,27 @@ export interface IRole extends IModelBase{
   status: RoleStatus
 }
 
+export interface IRolePrivilege extends IModelBase{
+  roleId: string
+  roleName: string
+  resources: IResource[]
+}
+
+export interface IResource extends IModelBase{
+  id: string
+  name: string
+  permissions: IPermission
+}
+
+export interface IPermission extends IModelBase{
+  read: boolean
+  create: boolean
+  update: boolean
+  delete: boolean
+  export: boolean
+  import: boolean
+}
+
 export interface ITransaction extends IModelBase{
   id: string
   transactionType: TransactionType

@@ -1,0 +1,116 @@
+.modal-dialog{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+  }
+  
+  .dialog-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .dialog-body{
+    display: block;
+    max-height: 90%;
+    align-self: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1);
+    animation-name: scale-out;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .dialog-body.sm{
+    width: 30%;
+  }
+
+  .dialog-body.md{
+    width: 40%;
+  }
+  
+  .dialog-body.lg{
+    width: 75%;
+  }
+  
+  .dialog-body.xl{
+    width: 100%;
+  }
+  
+  @keyframes scale-out {
+    from{
+      transform: scale(0.3, 0.3);
+    }
+  
+    to{
+      transform: scale(1, 1);
+    }
+  }
+  .ctent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+.emb{
+  /* position: relative; */
+  background: none;
+}
+
+.ctent img{
+  background: none;
+  width: 100px;
+}
+
+.arc {
+  top: 35%;
+  left: 43.5%;
+  z-index: 100;
+  --b: 3px; /* the boder thickness */
+  --a: 240deg; /* control the progression */
+  position: absolute;
+  width: 250px;
+  aspect-ratio: 1;
+  padding: var(--b);
+  border-radius: 50%;
+  background: var(--theme);
+  --_g:/var(--b) var(--b) no-repeat  radial-gradient(50% 50%,#000 97%,#0000);
+    mask: top var(--_g), calc(50% + 50%*sin(var(--a))) calc(50% - 50%*cos(var(--a))) var(--_g),
+    linear-gradient(#0000 0 0) content-box intersect,conic-gradient(#000 var(--a),#0000 0);
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(540deg);
+  }
+  to {
+    transform: rotateZ(1080deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(540deg) ;
+  }
+  to {
+    transform: rotateZ(1080deg);
+  }
+}

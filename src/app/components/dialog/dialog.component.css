@@ -21,8 +21,8 @@
     display: block;
     max-height: 90%;
     align-self: center;
+    overflow-y: auto;
     border-radius: 12px;
-    overflow: hidden;
     background-color: #fff;
     box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1);
     animation-name: scale-out;

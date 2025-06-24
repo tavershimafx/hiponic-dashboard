@@ -3,12 +3,12 @@ import { DialogService } from '@services/dialog-service';
 import { roles } from '@store/faker';
 
 @Component({
-  selector: 'user-search',
+  selector: 'audit-details',
   standalone: false,
-  templateUrl: './user-search.component.html',
-  styleUrl: './user-search.component.css'
+  templateUrl: './audit-details.component.html',
+  styleUrl: './audit-details.component.css'
 })
-export class UserSearchModal{
+export class AuditDetailsModal{
   /**
    *
    */
@@ -20,7 +20,7 @@ export class UserSearchModal{
   matchType = [ { key: "exact", value: "Exact"}, { key: "contains", value: "Contains"}]
   predicates = [ { key: "or", value: "OR"}, { key: "and", value: "AND"}]
   userStatus = [ { key: "active", value: "Active"}, { key: "Inactive", value: "InActive"}, 
-    { key: "deleted", value: "Deleted"}, { key: "suspeded", value: "Suspended"},
+    { key: "deleted", value: "Deleted"}, { key: "suspeded", value: "Suspeded"},
     { key: "flagged", value: "Flagged"}
   ]
 

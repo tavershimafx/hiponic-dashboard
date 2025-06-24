@@ -8,13 +8,23 @@ import { UserSearchModal } from './user-search/user-search.component';
 import { TransactionSearchModal } from './transaction-search/transaction-search.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FormsModule } from '@angular/forms';
+import { ApprovalSearchModal } from './approval-search/approval-search.component';
+import { AuditDetailsModal } from './audit-details/audit-details.component';
+import { RoleDetailsModal } from './role-details/role-details.component';
+import { NewRoleModal } from './new-role/new-role.component';
+import { AuditSearchModal } from './audit-search/audit-search.component';
 
 
 const components = [
   NewTaskModal,
   NewUserModal,
   UserSearchModal,
-  TransactionSearchModal
+  TransactionSearchModal,
+  ApprovalSearchModal,
+  AuditDetailsModal,
+  AuditSearchModal,
+  RoleDetailsModal,
+  NewRoleModal
 ]
 
 @NgModule({

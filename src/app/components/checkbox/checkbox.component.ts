@@ -29,6 +29,7 @@ export class CheckboxComponent {
    * Determines if validation messages and symbols should be displayed
    */
   @Input() showValidation?: boolean = false
+  @Input() outline?: boolean = false
 
   /**
    * The referenced form control

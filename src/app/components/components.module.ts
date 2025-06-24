@@ -22,6 +22,7 @@ import { TeamSelectComponent } from "./team-select/team-select.component";
 import { SelectInputComponent } from "./select-input/select-input.component";
 import { SearchUtilityComponent } from "./search-utility/search-utility.component";
 import { UserSearchModal } from "@modals/user-search/user-search.component";
+import { LoadingDialogComponent } from "./loading-dialog/loading.component";
 
 const components = [
     TextInputComponent,
@@ -40,7 +41,8 @@ const components = [
     DialogComponent,
     ModalDialogComponent,
     SelectInputComponent,
-    SearchUtilityComponent
+    SearchUtilityComponent,
+    LoadingDialogComponent
 ]
 
 @NgModule({

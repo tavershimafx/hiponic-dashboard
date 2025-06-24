@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { NewTaskModal } from '@modals/new-task/new-task.component';
 import { PageTitleService } from '@services/page-title.service';
-import { IApproval } from '@models/models';
+import { IApproval, IKeyValue } from '@models/models';
 import { approvals } from '@store/faker';
 import { classes } from '@directives/badge.directive';
+import { ApprovalSearchModal } from '@modals/approval-search/approval-search.component';
+import { LoadingDialogComponent } from '@components/loading-dialog/loading.component';
 
 @Component({
   selector: 'approvals',
@@ -15,20 +17,80 @@ import { classes } from '@directives/badge.directive';
 export class ApprovalsComponent{
  
   approvals: IApproval[] = approvals
+  apsss: IApproval[] = approvals
 
   tab = 0
+  evaluate: Function = ()=> {}
+      filterValues: IKeyValue[] = [
+          { key: "ddd", value: "Alphabetical A-Z" },
+          { key: "ddd", value: "Alphabetical Z-A" },
+          { key: "ddd", value: "Completed" },
+          { key: "ddd", value: "Active" },
+          { key: "ddd", value: "Date Created" },
+        ]
+
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
+    this.evaluate = this.evaluate.bind(this)
    pageTitle.setTitle({ title: "Approval Requests", description: "Manage Approval workflow" })
   }
-
-  newTask(n: number){
-    this.dialogService.showDialog(NewTaskModal)?.subscribe({
-      next: x =>{
-        // reload the data if necessary
+  
+    search(q: any){
+      if(q){
+        let filter = `this.approvals = this.apsss.filter(k => `
+          if (q.query && q.query.trim() != ""){
+            q.query = q.query.toLowerCase()
+            filter += `(k.initiator.toLowerCase().includes('${q.query.toLowerCase()}') || 
+            k.currentUser.toLowerCase().includes('${q.query.toLowerCase()}') || k.approvalType.toLowerCase().includes('${q.query.toLowerCase()}'))`
+          }
+          
+          if (q.startDate && q.startDate.trim() != ""){
+            let d = new Date(q.startDate)
+            filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.date.getTime() >= ${d.getTime()}`
+          }
+  
+          if (q.endDate && q.endDate.trim() != ""){
+            let d = new Date(q.endDate)
+            filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.date.getTime() <= ${d.getTime()}`
+          }
+  
+          filter += filter.trim().endsWith(">") ? "k)" : ")"
+          this.evaluate = new Function(filter);
+          this.evaluate()
+        return
       }
-    })
+  
+      this.approvals = approvals
+    }
+    
+      searchAll(q: any){
+        this.showLoading()
+        this.approvals = approvals
+      }
+  
+  advancedSearch(){
+      this.dialogService.showDialog(ApprovalSearchModal)?.subscribe({
+        next: x =>{
+          if(x != true){
+            console.log("approval component got", x)
+            // send to backend
+            this.showLoading()
+            
+          }
+        }
+      })
   }
-
+  
+  showLoading(){
+      this.dialogService.showDialog(LoadingDialogComponent)?.subscribe({
+        next: x =>{
+          if(x != true){
+            console.log("loading ended", x)
+            // send to backend
+          }
+        }
+      })
+  }
+  
   switchTab(index: number){
     this.tab = index
   }

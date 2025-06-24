@@ -1,0 +1,65 @@
+<dialog-box size="sm">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>Approvals</span> > <span>Search Approvals</span>
+            </div>
+            <div class="actions">
+                <span class="material-symbols-outlined">link</span>
+                <span class="material-symbols-outlined"> more_horiz</span>
+                <span class="material-symbols-outlined" (click)="closeDialog()"> close </span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3>Advanced Approval Search</h3>
+                <select-input [options]="exportTypes" placeholder="Export" class="mt-0 mb-0 border-success"></select-input>
+            </div>
+            <form action="">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Search Keyword</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="match">Match type</label>
+                        <select-input [options]="matchType"></select-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="match">Approval Status</label>
+                        <select-input [options]="userStatus" class="mt-0"></select-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="match">Predicate</label>
+                        <select-input [options]="predicates" class="mt-0"></select-input>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 pr-10">
+                        <label for="username">Start Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 pr-10">
+                        <label for="username">EndDate</label>
+                        <input type="date">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <label for="match">Predicate</label>
+                        <select-input [options]="predicates.slice(1)" class="mt-0"></select-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <button type="submit" class="btn btn-primary w-100" (click)="next()">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</dialog-box>

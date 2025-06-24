@@ -32,7 +32,10 @@ export class DialogService{
             })
         }
         else{
-            this.onCloseSubscriber?.next(valueOrElement)
+            this.closeDialog()
+            setTimeout(() => {
+                this.onCloseSubscriber?.next(valueOrElement)
+            }, 50);
         }
 
         this.subscriber?.next(valueOrElement)

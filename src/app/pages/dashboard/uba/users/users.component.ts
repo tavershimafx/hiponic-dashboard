@@ -6,6 +6,7 @@ import { IKeyValue, IUser } from '@models/models';
 import { users } from '@store/faker';
 import { classes } from '@directives/badge.directive';
 import { UserSearchModal } from '@modals/user-search/user-search.component';
+import { LoadingDialogComponent } from '@components/loading-dialog/loading.component';
 
 @Component({
   selector: 'users',
@@ -48,10 +49,22 @@ export class UsersComponent{
         if(x != true){
           console.log("user component got", x)
           // send to backend
+          this.showLoading()
         }
       }
     })
   }
+  
+  showLoading(){
+        this.dialogService.showDialog(LoadingDialogComponent)?.subscribe({
+          next: x =>{
+            if(x != true){
+              console.log("loading ended", x)
+              // send to backend
+            }
+          }
+        })
+    }
 
   switchTab(index: number){
     this.tab = index
@@ -90,7 +103,7 @@ export class UsersComponent{
   }
 
   searchAll(q: any){
-
+    this.showLoading()
     this.users = users
   }
 
