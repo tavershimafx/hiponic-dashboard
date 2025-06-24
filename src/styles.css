@@ -124,6 +124,29 @@
     background-color: var(--default) !important;
 }
 
+/*********************************************************************/
+/******************************Borders********************************/
+/*********************************************************************/
+.border-success{
+    border: 1px solid var(--success) !important;
+}
+
+.border-theme{
+    border: 1px solid var(--theme) !important;
+}
+
+.border-danger{
+    border: 1px solid var(--danger) !important;
+}
+
+.border-warning{
+    border: 1px solid var(--warning) !important;
+}
+
+.border-info{
+    border: 1px solid var(--info) !important;
+}
+
 *{
     box-sizing: border-box;
     font-family: "Roboto-Regular";
@@ -133,6 +156,10 @@
     color: var(--text-color);
 }
 
+
+/*********************************************************************/
+/******************************Tag stles******************************/
+/*********************************************************************/
 html, body{
     margin: 0;
     padding: 0;
@@ -146,6 +173,10 @@ text-group .material-symbols-outlined{
     color: var(--grey-scale-500);
     font-family: "MaterialSymbols";
     vertical-align: middle;
+}
+
+select-input{
+    border-radius: 12px;
 }
 
 a{

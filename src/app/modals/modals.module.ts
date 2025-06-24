@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
 import { NewTaskModal } from './new-task/new-task.component';
 import { NewUserModal } from './new-user/new-user.component';
+import { UserSearchModal } from './user-search/user-search.component';
+import { TransactionSearchModal } from './transaction-search/transaction-search.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { FormsModule } from '@angular/forms';
 
 
 const components = [
   NewTaskModal,
-  NewUserModal
+  NewUserModal,
+  UserSearchModal,
+  TransactionSearchModal
 ]
 
 @NgModule({
@@ -16,7 +22,9 @@ const components = [
   imports: [
     RouterModule,
     CommonModule,
-    ComponentsModule],
+    ComponentsModule,
+    FormsModule,
+  NgxSliderModule],
   exports: [...components],
   providers: [],
 })

@@ -40,8 +40,7 @@ const components = [
     DialogComponent,
     ModalDialogComponent,
     SelectInputComponent,
-    SearchUtilityComponent,
-    UserSearchModal
+    SearchUtilityComponent
 ]
 
 @NgModule({

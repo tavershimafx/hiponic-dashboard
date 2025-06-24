@@ -32,7 +32,6 @@ export class UsersComponent{
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
   this.evaluate = this.evaluate.bind(this)
    pageTitle.setTitle({ title: "Users", description: "Manage users and privileges" })
-   this.newUser()
   }
 
   newUser(){

@@ -17,6 +17,12 @@ export class UserSearchModal{
   }
 
   roles = roles.map((r) => { return { key: r.id, value: r.name}})
+  matchType = [ { key: "exact", value: "Exact"}, { key: "contains", value: "Contains"}]
+  predicates = [ { key: "or", value: "OR"}, { key: "and", value: "AND"}]
+  userStatus = [ { key: "active", value: "Active"}, { key: "Inactive", value: "InActive"}, 
+    { key: "deleted", value: "Deleted"}, { key: "suspeded", value: "Suspeded"},
+    { key: "flagged", value: "Flagged"}
+  ]
 
   closeDialog(){
     this.dialogService.closeDialog()

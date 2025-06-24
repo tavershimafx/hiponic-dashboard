@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { NewTaskModal } from '@modals/new-task/new-task.component';
 import { PageTitleService } from '@services/page-title.service';
-import { ITransaction, TransactionStatus, TransactionType } from '@models/models';
+import { IKeyValue, ITransaction } from '@models/models';
 import { transactions } from '@store/faker';
 import { classes } from '@directives/badge.directive';
+import { TransactionSearchModal } from '@modals/transaction-search/transaction-search.component';
 
 @Component({
   selector: 'transactions',
@@ -16,19 +17,67 @@ export class TransactionsComponent{
  
   //BTN/90/DE189044
   transactions: ITransaction[] = transactions
+  tsss: ITransaction[] = transactions
 
   tab = 0
+  evaluate: Function = ()=> {}
+    filterValues: IKeyValue[] = [
+        { key: "ddd", value: "Alphabetical A-Z" },
+        { key: "ddd", value: "Alphabetical Z-A" },
+        { key: "ddd", value: "Completed" },
+        { key: "ddd", value: "Active" },
+        { key: "ddd", value: "Date Created" },
+      ]
+  
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
+  this.evaluate = this.evaluate.bind(this)
    pageTitle.setTitle({ title: "Transactions", description: "Recent transactions" })
+   this.advancedSearch()
   }
 
-  newTask(n: number){
-    this.dialogService.showDialog(NewTaskModal)?.subscribe({
-      next: x =>{
-        // reload the data if necessary
-      }
-    })
+  advancedSearch(){
+      this.dialogService.showDialog(TransactionSearchModal)?.subscribe({
+        next: x =>{
+          if(x != true){
+            console.log("transaction component got", x)
+            // send to backend
+          }
+        }
+      })
   }
+  
+    search(q: any){
+      if(q){
+        let filter = `this.transactions = this.tsss.filter(k => `
+          if (q.query && q.query.trim() != ""){
+            q.query = q.query.toLowerCase()
+            filter += `(k.accountName.toLowerCase().includes('${q.query.toLowerCase()}') || 
+            k.accountNumber.toLowerCase().includes('${q.query.toLowerCase()}') || k.description.toLowerCase().includes('${q.query.toLowerCase()}'))`
+          }
+          
+          if (q.startDate && q.startDate.trim() != ""){
+            let d = new Date(q.startDate)
+            filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.date.getTime() >= ${d.getTime()}`
+          }
+  
+          if (q.endDate && q.endDate.trim() != ""){
+            let d = new Date(q.endDate)
+            filter += `${filter.trim().endsWith(">") ? "" : "&&"} k.date.getTime() <= ${d.getTime()}`
+          }
+  
+          filter += filter.trim().endsWith(">") ? "k)" : ")"
+          this.evaluate = new Function(filter);
+          this.evaluate()
+        return
+      }
+  
+      this.transactions = transactions
+    }
+  
+    searchAll(q: any){
+  
+      this.transactions = transactions
+    }
 
   switchTab(index: number){
     this.tab = index
@@ -71,6 +120,29 @@ export class TransactionsComponent{
         return "Declined"
       case 3:
         return "Flagged"
+      default:
+        return "";
+    }
+  }
+
+  getTypeString(status: number){
+    switch (status) {
+      case 0:
+        return "Finacle"
+      case 1:
+        return "Tellworld"
+      case 2:
+        return "NEFT_NIP"
+      case 3:
+        return "RTGS"
+      case 4:
+        return "CRP"
+      case 5:
+        return "Pensions"
+      case 6:
+        return "GTP"
+      case 7:
+        return "NAPs"
       default:
         return "";
     }

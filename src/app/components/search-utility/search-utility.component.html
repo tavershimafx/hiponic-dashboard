@@ -1,7 +1,7 @@
 <div class="page-actions">
         <div class="left-actions">
-            <select-input class="mr-10 inline-block" [options]="pageOptions" [(ngModel)]="size" [ngModelOptions]="{standalone: true}"></select-input>
-            <text-input placeholder="Search a user" class="w-10x m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
+            <select-input class="mr-10 mt-0 mb-0 inline-block" [options]="pageOptions" [(ngModel)]="size" [ngModelOptions]="{standalone: true}"></select-input>
+            <text-input [placeholder]="placeholder" class="w-10x m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
             <div class="inline-block ml-20">
                 <label for="">From</label>
                 <input type="date" class="ml-10" (ngModelChange)="fireFrom($event)" [(ngModel)]="from" [ngModelOptions]="{standalone: true}">

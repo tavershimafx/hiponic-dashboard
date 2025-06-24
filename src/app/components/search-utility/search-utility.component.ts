@@ -19,6 +19,8 @@ export class SearchUtilityComponent {
   ]
   
 
+  @Input() placeholder?: string
+  
   @Input() search: string = ""
   @Output() searchChange: EventEmitter<any> = new EventEmitter()
 

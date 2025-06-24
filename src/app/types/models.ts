@@ -23,6 +23,11 @@ export interface IKeyValue{
    * The text to be displayed to the user
    */
   value: string
+
+  /**
+   * A flag to determine if the option should be disabled
+   */
+  disabled?: boolean
 }
 
 export interface IMailMessage{

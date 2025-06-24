@@ -26,6 +26,11 @@ export class SelectInputComponent {
   @Input() placeholder?: string = ""
 
   /**
+   * The placeholder for the input
+   */
+  @Input("class") cssClass?: string = ""
+
+  /**
    * The options for the control
    */
   @Input() options?: IKeyValue[]
@@ -107,6 +112,6 @@ export class SelectInputComponent {
   }
 
   getDisplay(): string{
-    return this.options!.find(k => k.value == this.value)!.value
+    return this.options!.find(k => k.key == this.value)!.value
   }
 }

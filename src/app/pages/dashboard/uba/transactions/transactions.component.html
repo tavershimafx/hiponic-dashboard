@@ -1,34 +1,11 @@
 <div class="transaction-page">
     <div class="page-actions">
-        <div class="tab-menu">
-            <div [ngClass]="{'active': tab == 0}" (click)="switchTab(0)">
-                All Transactions
-            </div>
-            <div [ngClass]="{'active': tab == 1}" (click)="switchTab(1)">
-                Verified Transactions
-            </div>
-            <div [ngClass]="{'active': tab == 2}" (click)="switchTab(2)">
-                Flagged Transactions
-            </div>
+        <search-utility placeholder="Search Transactions" [filterValues]="filterValues" (searchChange)="search($event)" (searchAll)="searchAll($event)">
+        <div class="inline-block float-right">
+            <button class="btn btn-md btn-info mr-10" (click)="advancedSearch()"><span class="material-symbols-outlined middle mr-10">search</span>Advanced Search</button>
         </div>
-        <div class="filters">
-            <span>
-                <span class="material-symbols-outlined"> filter_alt </span>
-                Filter
-            </span>
-            <div class="" dropdown>
-                <span class="material-symbols-outlined">sort</span>&nbsp;
-                Sort: Date Created
-                <div class="dropdown-menu" tabindex="-1">
-                    <div>Latest</div>
-                    <div>Alphabetical A-Z</div>
-                    <div>Alphabetical Z-A</div>
-                    <div>Completed</div>
-                    <div>Pending</div>
-                    <div>Date Created</div>
-                </div>
-            </div>
-        </div>
+    </search-utility>
+
     </div>
     <div class="page" *ngIf="tab == 0">
         <div class="row">
@@ -38,6 +15,7 @@
                         <tr>
                             <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
                             <th>Sol ID</th>
+                            <th>Source</th>
                             <th>Account Name</th>
                             <th>Account Number</th>
                             <th>Amount</th>
@@ -50,6 +28,7 @@
                         <tr *ngFor="let transaction of transactions">
                             <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
                             <td>{{transaction.solId}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.transactionType)">{{getTypeString(transaction.transactionType)}}</span></td>
                             <td>{{transaction.accountName}}</td>
                             <td>{{transaction.accountNumber}}</td>
                             <td>{{transaction.amount}}</td>
@@ -100,6 +79,7 @@
                         <tr>
                             <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
                             <th>Sol ID</th>
+                            <th>Source</th>
                             <th>Account Name</th>
                             <th>Account Number</th>
                             <th>Amount</th>
@@ -108,10 +88,12 @@
                             <th><span class="material-symbols-outlined"> more_horiz</span></th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr *ngFor="let transaction of getVerified()">
                             <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
                             <td>{{transaction.solId}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.transactionType)">{{getTypeString(transaction.transactionType)}}</span></td>
                             <td>{{transaction.accountName}}</td>
                             <td>{{transaction.accountNumber}}</td>
                             <td>{{transaction.amount}}</td>
@@ -162,6 +144,7 @@
                         <tr>
                             <th><checkbox class="mt-0 mb-0" (change)="checkAll($event)"></checkbox></th>
                             <th>Sol ID</th>
+                            <th>Source</th>
                             <th>Account Name</th>
                             <th>Account Number</th>
                             <th>Amount</th>
@@ -174,6 +157,7 @@
                         <tr *ngFor="let transaction of getFlagged()">
                             <td><checkbox class="mt-0 mb-0" [(ngModel)]="transaction.selected"></checkbox></td>
                             <td>{{transaction.solId}}</td>
+                            <td><span [squareBadge]="getStatusClass(transaction.transactionType)">{{getTypeString(transaction.transactionType)}}</span></td>
                             <td>{{transaction.accountName}}</td>
                             <td>{{transaction.accountNumber}}</td>
                             <td>{{transaction.amount}}</td>

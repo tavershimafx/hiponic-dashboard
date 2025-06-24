@@ -47,6 +47,10 @@
     padding: 15px;
 }
 
+.select-dropdown .dropdown-items div.disabled{
+    background-color: var(--theme-light);
+}
+
 .select-dropdown .dropdown-items div:hover{
     background-color: var(--theme-light);
 }
