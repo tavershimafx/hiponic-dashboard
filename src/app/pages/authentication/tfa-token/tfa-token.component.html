@@ -1,0 +1,19 @@
+<div class="auth-page">
+    <img src="../../../../../assets/images/uba-red.png" alt="logo">
+    <h1>Enter your 2FA Token</h1>
+    <p class="sub-text">Enter your 2FA token from your authenticator app to complete the login proces.</p>
+    <div class="login-form">
+        <form [formGroup]="loginForm" (submit)="submitLogin()">
+            <text-group placeholder="Token" formControlName="token" [showValidation]="isSubmitting" type="password"
+                [control]="loginForm.formControl('token')">
+                <span class="material-symbols-outlined">shield_lock</span>
+            </text-group>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Continue
+            </button>
+        </form>
+        <p class="text-center"><a routerLink="/">Back to Sign In</a></p>
+        <p class="text-center">Don't have an account? <a routerLink="/register">Sign Up</a></p>
+    </div>
+</div>

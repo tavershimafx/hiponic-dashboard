@@ -8,13 +8,15 @@ import ComponentsModule from '../../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { TfaTokenComponent } from './tfa-token/tfa-token.component';
 
 const components = [
   AuthComponent,
   LoginComponent,
   RegisterComponent,
   ForgotPasswordComponent,
-  VerifyEmailComponent
+  VerifyEmailComponent,
+  TfaTokenComponent
 ]
 
 @NgModule({

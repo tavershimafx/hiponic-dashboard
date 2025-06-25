@@ -4,12 +4,12 @@ import { Router } from '@angular/router';
 import { CustomFormControl, CustomFormGroup } from '@extensions/control.extensions';
 
 @Component({
-  selector: 'login',
+  selector: 'tfa-token',
   standalone: false,
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './tfa-token.component.html',
+  styleUrls: ['../login/login.component.css', './tfa-token.component.css']
 })
-export class LoginComponent {
+export class ForgotPasswordComponent {
   constructor(private router: Router){
     this.loginForm.valueChanges.subscribe({
       next: (e) =>{
@@ -21,9 +21,7 @@ export class LoginComponent {
   isSubmitting = false
 
   loginForm: CustomFormGroup = new CustomFormGroup({
-    "email": new CustomFormControl("email", "", "an", Validators.compose([Validators.required])),
-    "password": new CustomFormControl("password", "", "a", Validators.compose([Validators.required])),
-    "rememberMe": new CustomFormControl("", "", "")
+    "email": new CustomFormControl("email", "", "an", Validators.compose([Validators.required]))
   })
 
   submitLogin(){
@@ -32,6 +30,6 @@ export class LoginComponent {
       return
     }
 
-    this.router.navigateByUrl("/tfa-token")
+    this.router.navigateByUrl("/")
   }
 }

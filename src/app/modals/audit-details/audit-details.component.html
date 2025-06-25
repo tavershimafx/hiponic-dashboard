@@ -2,7 +2,7 @@
     <div class="task-dialog">
         <div class="header">
             <div class="crumb">
-                <span>User Management</span> > <span>Search User</span>
+                <span>Audit</span> > <span>Audit Details</span>
             </div>
             <div class="actions">
                 <span class="material-symbols-outlined">link</span>
@@ -12,54 +12,104 @@
         </div>
         <div class="dialog-body">
             <div class="automated">
-                <h3>Advanced User Search</h3>
+                <h3>Audit Action Details</h3>
                 <div class="review-drop">
-                    In Review
+                    {{"16 Jun 2025 17:28" | date: 'dd MMM yyyy HH:mm'}}
                     <span class="material-symbols-outlined">keyboard_arrow_down</span>
                 </div>
             </div>
             <form action="">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
-                        <label for="username">Search Keyword</label>
-                        <text-input></text-input>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10 action-tag">
+                        <label for="username">Action:</label>
+                        <p>Update User</p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
-                        <label for="match">Match type</label>
-                        <select-input [options]="matchType"></select-input>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10 action-tag">
+                        <label for="match">IP Address:</label>
+                        <p>172.168.24.103</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
-                        <label for="match">Status</label>
-                        <select-input [options]="userStatus" class="mt-0"></select-input>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10 action-tag">
+                        <label for="match">User Roles</label>
+                        <p>Admin</p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
-                        <label for="match">Predicate</label>
-                        <select-input [options]="predicates" class="mt-0"></select-input>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10 action-tag">
+                        <label for="match">Url</label>
+                        <p>https://e-callover.ubagroup.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 action-tag">
+                        <label for="match">Url</label>
+                        <p>https://e-callover.ubagroup.com/user-view/update?id=103&ps=10&p=1</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10 action-tag">
+                        <label for="match">Initiator</label>
+                        <p>Joseph Brown</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10 action-tag">
+                        <label for="match">Date</label>
+                        <p>{{"16 Jun 2025 17:28" | date: 'dd MMM yyyy HH:mm'}}</p>
+                    </div>
+                </div>
+                <h3>Properties states</h3>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10 props-collection">
+                        <label for="match">Username</label>
+                        <div class="states">
+                            <p class="old">Temidayo Kola</p>
+                            <p class="new">Temidayo Kola</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10 props-collection">
+                        <label for="match">Email</label>
+                        <div class="states">
+                            <p class="old">Temi.Kola</p>
+                            <p class="new">Temi.Kolami&#64;uba<span class="material-symbols-outlined">check</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10 props-collection">
+                        <label for="match">Status</label>
+                        <div class="states">
+                            <p class="old">Suspended</p>
+                            <p class="new">Active<span class="material-symbols-outlined">check</span></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10 props-collection">
+                        <label for="match">Directory</label>
+                        <div class="states">
+                            <p class="old">Tk&#64;ubagroup</p>
+                            <p class="new">Joseph Brown<span class="material-symbols-outlined">check</span></p>
+                        </div>
                     </div>
                 </div>
                 
+                <h3>Raw Data</h3>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 pr-10">
-                        <label for="username">Start Date</label>
-                        <input type="date">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pl-10 props-collection">
+                        <label for="match">Old state</label>
+                        <textarea [disabled]="true" class="w-100" [ngModel]="prevState" [ngModelOptions]="{standalone: true}">
+                        </textarea>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 pr-10">
-                        <label for="username">EndDate</label>
-                        <input type="date">
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                        <label for="match">Predicate</label>
-                        <select-input [options]="predicates.slice(1)" class="mt-0"></select-input>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pl-10 props-collection">
+                        <label for="match">New state</label>
+                        <textarea [disabled]="true" class="w-100" [ngModel]="prevState" [ngModelOptions]="{standalone: true}">
+                        </textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
-                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Cancel</button>
+                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Close</button>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
-                        <button type="submit" class="btn btn-primary w-100" (click)="next()">Search</button>
+                        <button type="submit" class="btn btn-primary w-100" (click)="next()">Done</button>
                     </div>
                 </div>
             </form>

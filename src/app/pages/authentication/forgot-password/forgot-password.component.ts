@@ -30,6 +30,6 @@ export class ForgotPasswordComponent {
       return
     }
 
-    this.router.navigateByUrl("/dashboard")
+    this.router.navigateByUrl("/")
   }
 }

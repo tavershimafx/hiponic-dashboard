@@ -5,6 +5,7 @@ import { RegisterComponent } from '@pages/authentication/register/register.compo
 import { AuthComponent } from './auth.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { TfaTokenComponent } from './tfa-token/tfa-token.component';
 
 const routes: Routes = [
   { path: "", component: AuthComponent, children:[
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: "register", component: RegisterComponent },
     { path: "forgot-password", component: ForgotPasswordComponent },
     { path: "verify-email", component: VerifyEmailComponent },
+    { path: "tfa-token", component: TfaTokenComponent },
   ]},
 ]
 

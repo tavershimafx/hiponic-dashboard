@@ -9,20 +9,13 @@ import { roles } from '@store/faker';
   styleUrl: './audit-details.component.css'
 })
 export class AuditDetailsModal{
-  /**
-   *
-   */
+  
+  prevState = `{"UserName":"User BTN/90/39057675","Roles":"Admin","Action":"Read","Url":"https://e-callover.ubagroup.com/user-view/update?id=103&ps=10&p=1","Origin":"https://e-callover.ubagroup.com","Ip":"206.46.20.1","Description":"User BTN/90/39057675 updated properties of a user","Entity":"Categories","PreviousState":null,"NewState":null}`
   constructor(private dialogService: DialogService) {
    
   }
 
-  roles = roles.map((r) => { return { key: r.id, value: r.name}})
-  matchType = [ { key: "exact", value: "Exact"}, { key: "contains", value: "Contains"}]
-  predicates = [ { key: "or", value: "OR"}, { key: "and", value: "AND"}]
-  userStatus = [ { key: "active", value: "Active"}, { key: "Inactive", value: "InActive"}, 
-    { key: "deleted", value: "Deleted"}, { key: "suspeded", value: "Suspeded"},
-    { key: "flagged", value: "Flagged"}
-  ]
+
 
   closeDialog(){
     this.dialogService.closeDialog()

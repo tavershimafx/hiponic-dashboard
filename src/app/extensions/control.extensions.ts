@@ -44,6 +44,8 @@ export class CustomFormControl extends FormControl {
           case "comparison":
             messages.push(`The ${this.label} comparison does not match`);
             break;
+          default:
+            console.log()
         }
       }
     }

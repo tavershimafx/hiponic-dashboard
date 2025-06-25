@@ -62,78 +62,67 @@
    font-size: 18px;
 }
 
-.task-dialog .dialog-body .task-details{
+.action-tag{
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-.task-dialog .dialog-body .task-details .detail-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.action-tag label{
+    display: inline-block;
+    background-color: var(--default);
     padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+    font-family: "Roboto-Bold";
+    color: var(--grey-scale-900);
+    margin-right: 10px;
 }
 
-.task-dialog .dialog-body .task-details .detail-body{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10px;
+.action-tag p, .action-tag p{
+    display: inline;
+    margin: 0;
 }
 
-.task-dialog .dialog-body .task-details .detail-body .assignment p{
-    text-transform: uppercase;
+.props-collection{
+    margin-bottom: 10px;
 }
 
-.task-description textarea{
-    width: 100%;
-    border: none;
-    outline: none;
+.props-collection label{
+    font-family: "Roboto-Bold";
+    color: var(--grey-scale-900);
 }
 
-.task-description .subtask{
+.props-collection .states{
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
     margin-top: 10px;
+    padding: 3px 0;
+    background-color: var(--grey-scale-200);
 }
 
-.task-description .subtask > div{
+.props-collection .states p{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0;
     display: inline-block;
 }
 
-.task-description .subtask > div span{
-    vertical-align: sub;
-}
-
-.dialog-body .activity{
-    margin-top: 20px;
-}
-
-.dialog-body .activity .activity-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dialog-body .activity .activity-head span{
+.props-collection .states p span{
+    display: inline-block;
     font-size: 18px;
-    color: var(--theme);
-    margin-right: 10px;
-    vertical-align: sub;
+    vertical-align: middle;
+    margin-left: 10px;
+    color: #FFF;
 }
 
-.dialog-body .activity .activity-body .add-comment > div{
-    display: flex;
+.props-collection .states .new{
+    color: #FFF;
+    background-color: var(--success);
 }
 
-.dialog-body .activity .activity-body .add-comment > div img{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-    vertical-align: sub;
+.props-collection .states .no-change{
+    background-color: var(--info);
 }
 
-.dialog-body .activity .activity-body .add-comment > div text-input{
-    flex-grow: 100;
+textarea{
+    min-height: 200px;
 }
