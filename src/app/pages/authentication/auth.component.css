@@ -12,7 +12,7 @@
     background-color: var(--theme);
 }
 
-.auth-layout .get-ads > div img{
+.auth-layout .get-ads > div > img{
     max-width: 160px;
 }
 
