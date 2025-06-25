@@ -44,8 +44,11 @@ export class CustomFormControl extends FormControl {
           case "comparison":
             messages.push(`The ${this.label} comparison does not match`);
             break;
+          case "number":
+            messages.push(`Value must be a number`);
+            break;
           default:
-            console.log()
+            messages.push(`Invalid control value`);
         }
       }
     }

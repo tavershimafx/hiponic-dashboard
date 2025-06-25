@@ -4,7 +4,7 @@ import { phoneNumberFormats } from '@store/constants';
 export function numberValidator(): ValidatorFn {
     return (control:AbstractControl) : ValidationErrors | null => {
 
-        return isNaN(+control.value)? { isValid: false } : null
+        return isNaN(+control.value)? { number: false } : null
     }
 }
 
