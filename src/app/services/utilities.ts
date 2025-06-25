@@ -26,8 +26,34 @@ export function isInbound(top:number, left:number, bottom:number, right:number, 
             (py >= p1.y && py >= p2.y && py <= p3.y && py <= p4.y)
 }
 
-
 interface Point{
   x: number
   y: number
 }
+
+export function downloadFile(url: string, local: boolean) {
+  if (local){
+    // const url = 'https://example.com/file.pdf';
+    // const blob = new Blob(url, { type: "text/csv" });
+
+    // const a = document.createElement('a');
+    // const objectUrl = URL.createObjectURL(blob);
+    // a.href = objectUrl;
+    // a.download = 'file.pdf';
+    // a.click();
+    // URL.revokeObjectURL(objectUrl);
+  }else{
+     //const url = 'https://example.com/file.pdf';
+    // const blob = new Blob(url, { type: "text/csv" });
+
+    // this.fileService.downloadFile(url).subscribe((blob) => {
+    // const a = document.createElement('a');
+    // const objectUrl = URL.createObjectURL(blob);
+    // a.href = objectUrl;
+    // a.download = 'file.pdf';
+    // a.click();
+    // URL.revokeObjectURL(objectUrl);
+    // });
+  }
+}
+

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
+import { FileService } from '@services/file-download';
 import { roles } from '@store/faker';
 
 @Component({
@@ -12,10 +13,12 @@ export class UserSearchModal{
   /**
    *
    */
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DialogService, private fileService: FileService) {
    
   }
 
+  export?: string
+  exportTypes = [ { key: "excel", value: "Excel"}, { key: "pdf", value: "PDF"}]
   roles = roles.map((r) => { return { key: r.id, value: r.name}})
   matchType = [ { key: "exact", value: "Exact"}, { key: "contains", value: "Contains"}]
   predicates = [ { key: "or", value: "OR"}, { key: "and", value: "AND"}]
@@ -30,5 +33,13 @@ export class UserSearchModal{
 
   next(){
     this.dialogService.showDialog("This is the value from user search")
+  }
+  
+  download(event: string){
+    if(event == "excel"){
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Styled.xlsx")
+    }else{
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Sample.pdf")
+    }
   }
 }

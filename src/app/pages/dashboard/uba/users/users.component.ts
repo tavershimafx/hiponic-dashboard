@@ -64,6 +64,9 @@ export class UsersComponent{
             }
           }
         })
+      setTimeout(() => {
+        this.dialogService.closeDialog()
+      }, 2000);
     }
 
   switchTab(index: number){

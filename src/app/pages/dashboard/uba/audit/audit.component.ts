@@ -93,6 +93,9 @@ export class AuditComponent {
         }
       }
     })
+      setTimeout(() => {
+        this.dialogService.closeDialog()
+      }, 2000);
   }
 
   viewAudit() {

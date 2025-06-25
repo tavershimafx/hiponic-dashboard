@@ -89,6 +89,9 @@ export class ApprovalsComponent{
           }
         }
       })
+      setTimeout(() => {
+        this.dialogService.closeDialog()
+      }, 2000);
   }
   
   switchTab(index: number){

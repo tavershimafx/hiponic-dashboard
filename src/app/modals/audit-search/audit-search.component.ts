@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { roles } from '@store/faker';
 import { Options } from '@angular-slider/ngx-slider';
+import { FileService } from '@services/file-download';
 
 @Component({
   selector: 'audit-search',
@@ -13,10 +14,11 @@ export class AuditSearchModal{
   /**
    *
    */
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DialogService, private fileService: FileService) {
    
   }
 
+  export?: string
   roles = roles.map((r) => { return { key: r.id, value: r.name}})
   matchType = [ { key: "exact", value: "Exact"}, { key: "contains", value: "Contains"}]
   predicates = [ { key: "or", value: "OR"}, { key: "and", value: "AND"}]
@@ -37,5 +39,13 @@ export class AuditSearchModal{
 
   next(){
     this.dialogService.showDialog("This is the value from audit search")
+  }
+  
+  download(event: string){
+    if(event == "excel"){
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Styled.xlsx")
+    }else{
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Sample.pdf")
+    }
   }
 }

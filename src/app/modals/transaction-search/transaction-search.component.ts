@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
 import { roles } from '@store/faker';
 import { Options } from '@angular-slider/ngx-slider';
+import { Router } from '@angular/router';
+import { FileService } from '@services/file-download';
 
 @Component({
   selector: 'transaction-search',
@@ -13,7 +15,7 @@ export class TransactionSearchModal{
   /**
    *
    */
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DialogService, private fileService: FileService) {
    
   }
 minValue: number = 50;
@@ -38,11 +40,20 @@ minValue: number = 50;
     { key: "and", value: "GTP"}, { key: "and", value: "NAPs"}
   ]
 
+  export?: string
   closeDialog(){
     this.dialogService.closeDialog()
   }
 
   next(){
     this.dialogService.showDialog("This is the value from user search")
+  }
+  
+  download(event: string){
+    if(event == "excel"){
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Styled.xlsx")
+    }else{
+      this.fileService.downloadLocal("/assets/files/Ecallover_Export_Sample.pdf")
+    }
   }
 }

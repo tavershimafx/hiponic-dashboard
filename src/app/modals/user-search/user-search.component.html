@@ -13,10 +13,7 @@
         <div class="dialog-body">
             <div class="automated">
                 <h3>Advanced User Search</h3>
-                <div class="review-drop">
-                    In Review
-                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                </div>
+                <select-input [options]="exportTypes" placeholder="Export" (ngModelChange)="download($event)" [ngModel]="export" [ngModelOptions]="{ standalone: true}" class="mt-0 mb-0 border-success"></select-input>
             </div>
             <form action="">
                 <div class="row">

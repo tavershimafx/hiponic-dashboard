@@ -13,7 +13,7 @@
         <div class="dialog-body">
             <div class="automated">
                 <h3>Advanced Audit Search</h3>
-                <select-input [options]="exportTypes" placeholder="Export" class="mt-0 mb-0 border-success"></select-input>
+                <select-input [options]="exportTypes" (ngModelChange)="download($event)" [ngModel]="export" [ngModelOptions]="{ standalone: true}" placeholder="Export" class="mt-0 mb-0 border-success"></select-input>
             </div>
             <form action="">
                 <div class="row">
