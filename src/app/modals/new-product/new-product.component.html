@@ -1,0 +1,128 @@
+<modal-dialog size="md">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>Products</span> > <span>Add Product</span>
+            </div>
+            <div class="actions">
+                <span class="material-symbols-outlined">link</span>
+                <span class="material-symbols-outlined"> more_horiz</span>
+                <span class="material-symbols-outlined" (click)="closeDialog()"> close </span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3>Add Product</h3>
+                <div class="review-drop">
+                    In Review
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <form action="">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pr-10">
+                        <label for="username">Product Name</label>
+                        <span>Include min 40 characters to make it more interesting</span>
+                        <text-input></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pr-10">
+                        <label for="username">Product Description</label>
+                        <span>Include min 250 characters to make it easier to understand and find your product</span>
+                        <textarea rows="15" class="w-100">
+
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Brand</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Categories</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                </div>
+                <h3 class="b bold f18">Specification</h3>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pr-10">
+                        <label for="username">Keyboard Language</label>
+                        <select-input [options]="roles"></select-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Memory</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Storage</label>
+                        <text-input ></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Prpduct weight</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Dimension(LxWxH)</label>
+                        <text-input ></text-input>
+                    </div>
+                </div>
+                <h3 class="b bold f18">Pricing</h3>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Tax Excluded Price</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Tax Included Price</label>
+                        <text-input ></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Unit Price</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Minimum Order</label>
+                        <text-input></text-input>
+                    </div>
+                </div>
+                <h3 class="b bold f18">Shipping</h3>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Width</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Length</label>
+                        <text-input></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <label for="username">Height</label>
+                        <text-input></text-input>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <label for="Email">Weight</label>
+                        <text-input></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <button type="button" class="btn btn-default w-100" (click)="closeDialog()">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <button type="submit" class="btn btn-primary w-100">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</modal-dialog>

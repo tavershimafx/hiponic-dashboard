@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { IApproval, IAuditLog, IRole, ITransaction, IUser, RoleStatus, TransactionStatus, TransactionType, UserStatus } from '@models/models';
+import { IApproval, IAuditLog, IKeyValue, IOrder, IProduct, IRole, ITransaction, IUser, OrderStatus, ProductStatus, RoleStatus, TransactionStatus, TransactionType, UserStatus } from '@models/models';
 
 
 function randomUser(): IUser {
@@ -22,7 +22,7 @@ function randomTransaction(): ITransaction {
     amount: faker.finance.amount({ symbol: "₦" }),
     date: faker.date.past(),
     solId: soleId,
-    accountName: faker.helpers.fake(`${faker.person.firstName()} ${faker.person.lastName()}`),
+    accountName: faker.person.fullName(),
     accountNumber: faker.finance.accountNumber(),
     status: faker.helpers.enumValue(TransactionStatus)
   };
@@ -67,6 +67,29 @@ function randomApproval(): IApproval {
   };
 }
 
+function randomproduct(): IProduct {
+  return {
+    id: faker.string.uuid(),
+    name: faker.commerce.productName(),
+    brand: faker.commerce.department(),
+    price: faker.commerce.price({symbol: "₦", min: 700, max: 2000}),
+    sales: faker.commerce.price({symbol: "₦", min: 700, max: 2000}),
+    stockQuantity: faker.number.int({min: 10, max: 200}),
+    status: faker.helpers.enumValue(ProductStatus)
+  };
+}
+
+function randomOrder(): IOrder {
+  return {
+    id: faker.helpers.fake(`OATN/${faker.string.alpha({ casing: "upper" })}${faker.string.alpha({ casing: "upper" })}${faker.number.bigInt({ min: 100000, max: 999999})}`),
+    product: faker.commerce.productName(),
+    customer: faker.person.fullName(),
+    total: faker.commerce.price({symbol: "₦", min: 700, max: 2000}),
+    date: faker.date.past(),
+    status: faker.helpers.enumValue(OrderStatus)
+  };
+}
+
 export function lineData() {
   return{
     x: faker.helpers.multiple(() => faker.number.int({min: 30, max: 250}), { count: 100 }), //[40, 85, 35, 68, 30, 75, 50, 100, 30, 75, 50]
@@ -74,26 +97,25 @@ export function lineData() {
   }
   }
 
-// function barData(){
-//   xData = faker.helpers.multiple(() => faker.number.int({min: 30, max: 250}), { count: 100 }) //[40, 85, 35, 68, 30, 75, 50, 100, 30, 75, 50]
-//   yData = faker.helpers.multiple(() => faker.helpers.fake(`${faker.helpers.arrayElement(this.months)} ${faker.number.int({min: 1, max: 31})}`), { count: 100 })
 
-// }
-export const users = faker.helpers.multiple(randomUser, {
-  count: 50,
-});
+export const filterValues: IKeyValue[] = [
+    { key: "ddd", value: "Alphabetical A-Z" },
+    { key: "ddd", value: "Alphabetical Z-A" },
+    { key: "ddd", value: "Completed" },
+    { key: "ddd", value: "Active" },
+    { key: "ddd", value: "Date Created" },
+  ]
+
+export const users = faker.helpers.multiple(randomUser, { count: 50,});
 
 export const transactions: ITransaction[] = faker.helpers.multiple(randomTransaction, {
   count: 100,
 });
 
-export const randomAudits: IAuditLog[] = faker.helpers.multiple(randomAudit, {
-  count: 100,
-});
-
-export const approvals: IApproval[] = faker.helpers.multiple(randomApproval, {
-  count: 100,
-});
+export const randomAudits: IAuditLog[] = faker.helpers.multiple(randomAudit, { count: 100 });
+export const approvals: IApproval[] = faker.helpers.multiple(randomApproval, { count: 100 });
+export const products: IProduct[] = faker.helpers.multiple(randomproduct, { count: 100 });
+export const orders: IOrder[] = faker.helpers.multiple(randomOrder, { count: 100 });
 
 export const roles: IRole[] = [
   { id: faker.string.uuid(), name: "Admin", date: faker.date.past(), isSystem: true, status: faker.helpers.enumValue(RoleStatus), createdBy: faker.helpers.fake(`${faker.person.firstName()} ${faker.person.lastName()}`)},

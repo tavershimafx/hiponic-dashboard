@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
-import { NewTaskModal } from '@modals/new-task/new-task.component';
 import { PageTitleService } from '@services/page-title.service';
-import { IKeyValue, ITransaction } from '@models/models';
-import { transactions } from '@store/faker';
+import { ITransaction } from '@models/models';
+import { filterValues, transactions } from '@store/faker';
 import { classes } from '@directives/badge.directive';
 import { TransactionSearchModal } from '@modals/transaction-search/transaction-search.component';
 import { LoadingDialogComponent } from '@components/loading-dialog/loading.component';
@@ -22,13 +21,7 @@ export class TransactionsComponent{
 
   tab = 0
   evaluate: Function = ()=> {}
-    filterValues: IKeyValue[] = [
-        { key: "ddd", value: "Alphabetical A-Z" },
-        { key: "ddd", value: "Alphabetical Z-A" },
-        { key: "ddd", value: "Completed" },
-        { key: "ddd", value: "Active" },
-        { key: "ddd", value: "Date Created" },
-      ]
+  filterValues = filterValues
   
   constructor(private dialogService: DialogService, pageTitle: PageTitleService){
     this.evaluate = this.evaluate.bind(this)
@@ -113,7 +106,6 @@ export class TransactionsComponent{
       this.transactions.filter(n => n.status == 3)
       .forEach((m) => m.selected = event.target.checked)
     }
-    
   }
 
   getVerified(){

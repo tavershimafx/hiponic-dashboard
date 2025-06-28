@@ -5,143 +5,24 @@
     <nav class="operator">
         <ul>
             <li class="group-heading">Menu</li>
-            <li class="active" sidebarItem>
-                <a routerLink="/dashboard/uba">
-                    <span class="material-symbols-outlined">apps</span>
-                    <span class="txt">Dashboard</span>
-                </a>
-            </li>
-            <li sidebarItem>
-                <a routerLink="/dashboard/uba/transactions">
-                    <span class="material-symbols-outlined">order_approve</span>
-                    <span class="txt">Transactions</span>
-                </a>
-            </li>
-            <li sidebarItem>
-                <a routerLink="/dashboard/uba/approvals">
-                    <span class="material-symbols-outlined">list_alt_check</span>
-                    <span class="txt">Approvals</span>
-                </a>
-            </li>
-            <li sidebarItem>
-                <a routerLink="/dashboard/uba/users">
-                    <span class="material-symbols-outlined">account_circle</span>
-                    <span class="txt">Users</span>
-                </a>
-            </li>
-            <li sidebarItem>
-                <a routerLink="/dashboard/uba/roles">
-                    <span class="material-symbols-outlined">add_moderator</span>
-                    <span class="txt">Roles</span>
-                </a>
-            </li>
-            <li sidebarItem>
-                <a routerLink="/dashboard/uba/audit">
-                    <span class="material-symbols-outlined">policy_alert</span>
-                    <span class="txt">Audit</span>
-                </a>
-            </li>
-            <!-- <li>
-                <div sidebar>
-                    <span class="material-symbols-outlined">check_box</span>
-                    <span class="txt">Projects</span>
-                    <span class="sl">
-                        <span class="material-symbols-outlined">arrow_drop_down</span>
-                    </span>
-                </div>
-                <ul>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard/tasks">Tasks</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard/tasks/messages"> Message</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard/tasks/goals">Goals</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div sidebar>
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span class="txt">Ecommerce</span>
-                    <span class="sl">
-                        <span class="material-symbols-outlined">arrow_drop_down</span>
-                    </span>
-                </div>
-                <ul>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard/ecommerce">Analytics</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard/ecommerce/orders">Orders </a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Products</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Customers</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div sidebar>
-                    <span class="material-symbols-outlined">mail</span>
-                    <span class="txt">Mail</span>
-                    <span class="sl">
-                        <span class="material-symbols-outlined">arrow_drop_down</span>
-                    </span>
-                </div>
-                <ul>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Inbox</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Sent Mail</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Favorites</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Drafts</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Spam</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Trash</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <div sidebar>
-                    <span class="material-symbols-outlined">work</span>
-                    <span class="txt">Work</span>
-                    <span class="sl">
-                        <span class="material-symbols-outlined">arrow_drop_down</span>
-                    </span>
-                </div>
-                <ul>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Overview</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Job Search</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Schedule</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">History</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Events</a>
-                    </li>
-                    <li sidebarItem>
-                        <a routerLink="/dashboard">Message</a>
-                    </li>
-                </ul>
-            </li> -->
+                <li *ngFor="let item of sidebarItems">
+                    <a [routerLink]="item.url" *ngIf="!item.children" sidebarItem>
+                        <span class="material-symbols-outlined">{{item.iconClass}}</span>
+                        <span class="txt">{{item.name}}</span>
+                    </a>
+                    <div *ngIf="item.children" sidebar>
+                        <span class="material-symbols-outlined">{{item.iconClass}}</span>
+                        <span class="txt">{{item.name}}</span>
+                        <span class="sl">
+                            <span class="material-symbols-outlined">arrow_drop_down</span>
+                        </span>
+                    </div>
+                    <ul *ngIf="item.children">
+                        <li *ngFor="let child of item.children">
+                            <a [routerLink]="child.url" sidebarItem>{{child.name}}</a>
+                        </li>
+                    </ul>
+                </li>
         </ul>
     </nav>
     <div class="aside-footer">

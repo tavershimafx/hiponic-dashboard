@@ -5,15 +5,15 @@ import { IndexComponent } from './index/index.component';
 import DirectivesModule from '@directives/directives.module';
 import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
-// import {provideNativeDateAdapter} from '@angular/material/core';
-// import {MatDatepickerModule} from '@angular/material/datepicker';
-// import {MatCardModule} from '@angular/material/card';
 import PipesModule from '@pipes/pipes.module';
 import { OrdersComponent } from './orders/orders.component';
+import { ProductsComponent } from './products/products.component';
+import { FormsModule } from '@angular/forms';
 
 const components = [
   IndexComponent,
-  OrdersComponent
+  OrdersComponent,
+  ProductsComponent
 ]
 
 @NgModule({
@@ -24,7 +24,7 @@ const components = [
     PipesModule,
     CommonModule,
     ComponentsModule,
-    //MatDatepickerModule, MatCardModule
+    FormsModule
   ],
   exports: [],
   providers: []//[provideNativeDateAdapter()],

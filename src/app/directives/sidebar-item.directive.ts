@@ -10,7 +10,7 @@ export class SideBarItemDirective{
      }
 
     @HostListener("click") onClick(){
-        let parent = this.el.nativeElement.parentElement // ul
+        let parent = this.el.nativeElement.parentElement.parentElement // ul
         for(let li of parent.children){
             if (li.classList.contains("active") && !this.el.nativeElement.isEqualNode(li)){
                 li.classList.remove("active")
@@ -18,7 +18,7 @@ export class SideBarItemDirective{
         }
 
         setTimeout(() => {
-            this.el.nativeElement.classList.add("active")
+            this.el.nativeElement.parentElement.classList.add("active")
         }, 50);
     }
 }

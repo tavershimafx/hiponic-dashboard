@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { classes } from '@directives/badge.directive';
 import { ChartOptions } from '@models/models';
 import { PageTitleService } from '@services/page-title.service';
+import { orders } from '@store/faker';
 import { ApexChart, ApexNonAxisChartSeries, ApexResponsive } from 'ng-apexcharts';
 
 export type PieOptions = {
@@ -18,6 +20,7 @@ export type PieOptions = {
 })
 export class IndexComponent{
 
+  orders = orders
   chartOptions: Partial<ChartOptions>;
   pieOptions: Partial<PieOptions>;
   barOptions: Partial<ChartOptions>;
@@ -157,4 +160,42 @@ export class IndexComponent{
       }
     };
   }
+      
+    getStatusString(status: number){
+      switch (status) {
+        case 0:
+          return "Pending"
+        case 1:
+          return "Payment"
+        case 2:
+          return "Shipping"
+        case 3:
+          return "Completed"
+        case 4:
+          return "Cancelled"
+        case 5:
+          return "Closed"
+        default:
+          return "";
+      }
+    }
+    
+    getStatusClass(status: number): classes{
+      switch (status) {
+        case 0:
+          return "info"
+        case 1:
+          return "success"
+        case 2:
+          return "info"
+        case 3:
+          return "success"
+        case 4:
+          return "warning"
+        case 5:
+          return "danger"
+        default:
+          return "info";
+      }
+    }
 }

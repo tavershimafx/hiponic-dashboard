@@ -29,8 +29,8 @@
 }
 
 :root{
-    --uba: #CB2F23;/*2563EB*/
-    --theme: #CB2F23;
+    --uba: #CB2F23;
+    --theme: #2563EB;
     --theme-light: #F8FAFC;
     --theme-background: #FFF;
     --grey-scale: #F8FAFC;
@@ -255,6 +255,30 @@ a:hover{
 .dropdown-menu > div:hover{
     background-color: var(--theme-light);
     cursor: pointer;
+}
+
+/*********************************************************************/
+/********************************Forms********************************/
+/*********************************************************************/
+form label{
+    display: block;
+    font-family: 'Roboto-Medium';
+    color: var(--grey-scale-900);
+}
+
+form span{
+    font-size: 12px;
+}
+
+textarea{
+    border: 1px solid var(--border-color);
+    outline: none;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    border-color: var(--theme);
 }
 
 /*********************************************************************/

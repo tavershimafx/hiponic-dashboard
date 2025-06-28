@@ -93,7 +93,48 @@ export type ChartOptions = {
   legend: ApexLegend;
 };
 
+export interface ISidebarItem{
+  name: string
+  url: string
+  iconClass: string
+  notificationCount?: number
+  children?: ISidebarItem[]
+}
 
+export enum ProductStatus{
+  Available,
+  OutofStock,
+  Suspended,
+  Deleted
+}
+
+export interface IProduct extends IModelBase{
+  id: string
+  name: string
+  brand: string
+  stockQuantity: number
+  sales: string
+  price: string
+  status: ProductStatus
+}
+
+export enum OrderStatus{
+  PendingPayment,
+  PaymentCompleted,
+  Shipping,
+  Completed,
+  Cancelled,
+  Closed
+}
+
+export interface IOrder extends IModelBase{
+  id: string
+  product: string
+  customer: string
+  total: string
+  date: Date
+  status: OrderStatus
+}
 
 /**
  * Uba models
