@@ -36,6 +36,11 @@
 
 .page-actions .filters {
     margin-left: 10px;
+    width: max-content;
+}
+
+.page-actions .filters .filter-mx{
+    width: max-content;
 }
 
 .page-actions .filters > span{
@@ -70,12 +75,23 @@
     vertical-align: middle;
 }
 
+.mb-search{
+    display: none;
+}
 /**************************************************************************/
 /**********************************Mobile**********************************/
 /**************************************************************************/
 
 @media (max-width: 575.98px) and (orientation:portrait) {
     .page-actions{
+        display: block;
+    }
+
+    .left-actions, .filters{
+        display: none;
+    }
+
+    .mb-search{
         display: block;
     }
 

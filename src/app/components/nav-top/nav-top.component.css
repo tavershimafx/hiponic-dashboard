@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     border-bottom: var(--border-color);
     padding: 20px 30px;
     background-color: var(--theme-background);
@@ -14,6 +15,10 @@
     font-size: 22px;
     color: var(--theme);
     margin: 0;
+}
+
+.nav-top .mb-title{
+    display: none;
 }
 
 .more-menu{
@@ -83,8 +88,19 @@
         padding-right: 10px;
     }
 
-    .nav-top .nav-left h1{
+    .nav-top .nav-left h1, .nav-top .nav-left p{
         display: none;
+    }
+
+    .nav-top .mb-title{
+        display: block;
+    }
+
+    .nav-top .mb-title h1{
+        font-family: "Roboto-Bold";
+        font-size: 22px;
+        color: var(--theme);
+        margin: 0;
     }
 
     .more-menu{

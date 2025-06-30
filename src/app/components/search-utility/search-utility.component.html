@@ -1,28 +1,28 @@
 <div class="page-actions">
-        <div class="left-actions">
-            <select-input class="mr-10 mt-0 mb-0 inline-block" [options]="pageOptions" [(ngModel)]="size" [ngModelOptions]="{standalone: true}"></select-input>
-            <text-input [placeholder]="placeholder" class="w-10x m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
-            <div class="inline-block ml-20">
-                <label for="">From</label>
-                <input type="date" class="ml-10" (ngModelChange)="fireFrom($event)" [(ngModel)]="from" [ngModelOptions]="{standalone: true}">
+    <div class="left-actions">
+        <select-input class="mr-10 mt-0 mb-0 inline-block" [options]="pageOptions" [(ngModel)]="size" [ngModelOptions]="{standalone: true}"></select-input>
+        <text-input [placeholder]="placeholder" class="w-10x m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
+        <div class="inline-block mll-20 mlm-20">
+            <label for="">From</label>
+            <input type="date" class="ml-10" (ngModelChange)="fireFrom($event)" [(ngModel)]="from" [ngModelOptions]="{standalone: true}">
 
-                <label class="ml-20">To</label>
-                <input type="date" class="ml-10" (ngModelChange)="fireTo($event)" [(ngModel)]="to" [ngModelOptions]="{standalone: true}">
-            </div>
-            <button class="btn btn-md btn-primary ml-10" (click)="sq()">Search</button>
-            <ng-content></ng-content>
+            <label class="ml-20">To</label>
+            <input type="date" class="ml-10" (ngModelChange)="fireTo($event)" [(ngModel)]="to" [ngModelOptions]="{standalone: true}">
         </div>
-        <div class="filters">
-            <!-- <span>
-                <span class="material-symbols-outlined"> filter_alt </span>
-                Filter
-            </span> -->
-            <div class="" dropdown>
-                <span class="material-symbols-outlined">sort</span>&nbsp;
-                Sort: Date Created
-                <div class="dropdown-menu" tabindex="-1">
-                    <div *ngFor="let item of filterValues" (click)="fireSort(item.key)">{{item.value}}</div>
-                </div>
+        <button class="btn btn-md btn-primary ml-10" (click)="sq()">Search</button>
+        <ng-content></ng-content>
+    </div>
+    <div class="mb-search">
+        <text-input [placeholder]="placeholder" class="m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
+        <button class="btn btn-md btn-primary ml-10" (click)="sq()">Search</button>
+    </div>
+    <div class="filters">
+        <div class="filter-mx" dropdown>
+            <span class="material-symbols-outlined">sort</span>&nbsp;
+            Sort: Date Created
+            <div class="dropdown-menu" tabindex="-1">
+                <div *ngFor="let item of filterValues" (click)="fireSort(item.key)">{{item.value}}</div>
             </div>
         </div>
     </div>
+</div>

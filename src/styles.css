@@ -195,7 +195,8 @@ a:hover{
     outline: none;
     border: none;
     border-radius: 12px;
-    padding: 17px 25px;
+    padding: 15px 25px;
+    height: 49px;
     font-size: 16px;
     color: #FFF;
     margin: 10px 0;
@@ -405,10 +406,6 @@ input[type='date']{
     border-top: 1px solid var(--border-color);
 }
 
-.w-10x{
-    width: 300px;
-}
-
 .circle{
     border-radius: 100%;
 }
@@ -490,6 +487,22 @@ input[type='date']{
 .w-100{
     display: inline-block;
     width: 100%;
+}
+
+.w-100p{
+    width: 100px;
+}
+
+.w-200p{
+    width: 200px;
+}
+
+.w-10x{
+    width: 300px;
+}
+
+.w-min{
+    width: min-content;
 }
 
 .h-100{
@@ -820,6 +833,38 @@ input[type='date']{
     .prs-10{
         padding-right: 10px !important;
     }
+
+    .mts-5{
+        margin-top: 5px !important;
+    }
+    
+    .mts-10{
+        margin-top: 10px !important;
+    }
+    
+    .mts-15{
+        margin-top: 15px !important;
+    }
+    
+    .mts-20{
+        margin-top: 20px !important;
+    }
+
+    .mbs-5{
+        margin-bottom: 5px !important;
+    }
+    
+    .mbs-10{
+        margin-bottom: 10px !important;
+    }
+    
+    .mbs-5{
+        margin-bottom: 15px !important;
+    }
+    
+    .mbs-10{
+        margin-bottom: 20px !important;
+    }
 }
 
 /**************************************************************************/
@@ -1024,6 +1069,10 @@ input[type='date']{
     .prs-10{
         padding-right: 10px !important;
     }
+
+    .w-10x{
+        width: unset;
+    }
 }
 
 /**************************************************************************/
@@ -1215,6 +1264,54 @@ input[type='date']{
     
     .prt-10{
         padding-right: 10px !important;
+    }
+
+    .mlt-5{
+        margin-left: 5px !important;
+    }
+    
+    .mlt-10{
+        margin-left: 10px !important;
+    }
+    
+    .mrt-5{
+        margin-right: 5px !important;
+    }
+    
+    .mrt-10{
+        margin-right: 10px !important;
+    }
+
+    .mtt-5{
+        margin-top: 5px !important;
+    }
+    
+    .mtt-10{
+        margin-top: 10px !important;
+    }
+    
+    .mtt-15{
+        margin-top: 15px !important;
+    }
+    
+    .mtt-20{
+        margin-top: 20px !important;
+    }
+
+    .mbt-5{
+        margin-bottom: 5px !important;
+    }
+    
+    .mbt-10{
+        margin-bottom: 10px !important;
+    }
+    
+    .mbt-5{
+        margin-bottom: 15px !important;
+    }
+    
+    .mbt-10{
+        margin-bottom: 20px !important;
     }
 }
 
@@ -1600,6 +1697,54 @@ input[type='date']{
     .prm-10{
         padding-right: 10px !important;
     }
+
+    .mlm-5{
+        margin-left: 5px !important;
+    }
+    
+    .mlm-10{
+        margin-left: 10px !important;
+    }
+    
+    .mrm-5{
+        margin-right: 5px !important;
+    }
+    
+    .mrm-10{
+        margin-right: 10px !important;
+    }
+
+    .mtm-5{
+        margin-top: 5px !important;
+    }
+    
+    .mtm-10{
+        margin-top: 10px !important;
+    }
+    
+    .mtm-15{
+        margin-top: 15px !important;
+    }
+    
+    .mtm-20{
+        margin-top: 20px !important;
+    }
+
+    .mbm-5{
+        margin-bottom: 5px !important;
+    }
+    
+    .mbm-10{
+        margin-bottom: 10px !important;
+    }
+    
+    .mbm-5{
+        margin-bottom: 15px !important;
+    }
+    
+    .mbm-10{
+        margin-bottom: 20px !important;
+    }
 }
 
 /**************************************************************************/
@@ -1791,6 +1936,22 @@ input[type='date']{
     
     .prl-10{
         padding-right: 10px !important;
+    }
+
+    .mll-5{
+        margin-left: 5px !important;
+    }
+    
+    .mll-10{
+        margin-left: 10px !important;
+    }
+    
+    .mrl-5{
+        margin-right: 5px !important;
+    }
+    
+    .mrl-10{
+        margin-right: 10px !important;
     }
 } 
 
@@ -1984,4 +2145,45 @@ input[type='date']{
     .prx-10{
         padding-right: 10px !important;
     }
+}
+
+
+
+
+/*
+Mobile templates
+*/
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+@media (max-width: 575.98px) and (orientation:portrait) {
+ 
+}
+
+/**************************************************************************/
+/**********************************Tablets*********************************/
+/**************************************************************************/
+@media (min-width: 576px) and (max-width: 992px) and (orientation:portrait) {
+   
+}
+
+/**************************************************************************/
+/*****************************iPad Pro 12"*********************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+   
+}
+
+/**************************************************************************/
+/******************************Medium screens******************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1200px) and (orientation:portrait) {
+
+}
+
+/**************************************************************************/
+/*****************************large HD screens*****************************/
+/**************************************************************************/
+@media (min-width: 1200px) {
+   
 }
