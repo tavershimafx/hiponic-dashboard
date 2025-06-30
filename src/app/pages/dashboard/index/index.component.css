@@ -4,7 +4,7 @@
 
 .pl-neutral{
     border-radius: 12px;
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     padding: 10px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .quick-message:hover{
-   background-color: var(--theme-light);
+   background-color: var(--grey-scale-50);
 }
 
 .quick-message > div{

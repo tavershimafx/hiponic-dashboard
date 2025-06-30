@@ -1,0 +1,31 @@
+<modal-dialog size="xs">
+    <div class="task-dialog">
+        <div class="header">
+            <div class="crumb">
+                <span>Two Factor Authorization</span> > <span>Enter Password</span>
+            </div>
+        </div>
+        <div class="dialog-body">
+            <div class="automated">
+                <h3 class="mt-0">Enter your password to proceed</h3>
+                <div class="review-drop"></div>
+            </div>
+            <form action="">
+                 <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 pr-10">
+                        <label for="username">Password</label>
+                        <text-input type="password"></text-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pr-10">
+                        <button type="button" class="btn btn-outline w-100" (click)="closeDialog()">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 pl-10">
+                        <button type="submit" class="btn btn-primary w-100" (click)="next()">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</modal-dialog>

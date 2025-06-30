@@ -14,6 +14,7 @@ import { RoleDetailsModal } from './role-details/role-details.component';
 import { NewRoleModal } from './new-role/new-role.component';
 import { AuditSearchModal } from './audit-search/audit-search.component';
 import { NewProductModal } from './new-product/new-product.component';
+import { TwoFactorAuthorizeModal } from './tfa-authorize/tfa-authorize.component';
 
 
 const components = [
@@ -26,7 +27,8 @@ const components = [
   AuditSearchModal,
   RoleDetailsModal,
   NewRoleModal,
-  NewProductModal
+  NewProductModal,
+  TwoFactorAuthorizeModal
 ]
 
 @NgModule({

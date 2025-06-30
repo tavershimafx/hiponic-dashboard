@@ -16,4 +16,8 @@ export class NavTopComponent {
   toggleSidebar(){
     this.sidebarService.toggleSidebar()
   }
+
+  settings(item: string){
+    console.log("I am clicked", item)
+  }
 }

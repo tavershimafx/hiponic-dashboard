@@ -1,0 +1,48 @@
+
+.task-dialog{
+    background-color: var(--theme-background);
+    border-radius: 12px;
+}
+
+.task-dialog .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-dialog .header .crumb{
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--default);
+}
+
+.task-dialog .header .actions span{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.task-dialog .header .actions span:nth-child(1){
+    padding: 10px;
+}
+
+.task-dialog .header .actions span:nth-child(2){
+    padding: 10px 0 10px 10px;
+}
+
+.task-dialog .dialog-body{
+    padding: 20px;
+}
+
+.task-dialog .dialog-body .automated{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-dialog .dialog-body .automated h3{
+    font-size: 18px;
+    font-family: "Roboto-Bold";
+    color: #000;
+}

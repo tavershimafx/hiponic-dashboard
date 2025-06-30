@@ -32,9 +32,18 @@ export class DialogService{
             })
         }
         else{
-            this.closeDialog()
+            // the assumption here is 
+            // if we did not get a component then the method received eithe null
+            // or an object to be sent back to the caller
+            // null means the close button was clicked so just close
+            // an object means the process completed so we should send the data back to
+            // the caller and close the dialog
+            // In addition, we also need to close the observable
+            this.subscriber?.next(null)
             setTimeout(() => {
                 this.onCloseSubscriber?.next(valueOrElement)
+                this.onCloseSubscriber?.complete()
+                this.onCloseSubscriber?.unsubscribe()
             }, 50);
         }
 
@@ -45,7 +54,9 @@ export class DialogService{
     closeDialog(){
         if (this.onCloseSubscriber != undefined){
             this.onCloseSubscriber?.next(true)
+            this.onCloseSubscriber?.complete()
         }
+
         this.subscriber?.next(null)
     }
 }

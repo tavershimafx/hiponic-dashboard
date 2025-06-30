@@ -8,7 +8,7 @@ import { FileService } from '@services/file-download';
   selector: 'approval-search',
   standalone: false,
   templateUrl: './approval-search.component.html',
-  styleUrl: './approval-search.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class ApprovalSearchModal{
   /**

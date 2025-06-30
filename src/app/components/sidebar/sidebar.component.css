@@ -85,7 +85,7 @@ nav.operator ul li span.sl{
 
 nav.operator ul li a:hover, nav.operator ul li > div:hover{
     text-decoration: none;
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }
 
 nav.operator ul li.active a, nav.operator ul li.active > div,
@@ -147,7 +147,7 @@ aside .aside-footer .setting a{
 }
 
 aside .aside-footer .setting a:hover{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     text-decoration: none;
 }
 

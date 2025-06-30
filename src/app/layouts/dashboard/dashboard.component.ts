@@ -41,7 +41,7 @@ export class DashboardLayoutComponent implements OnDestroy {
         if(n == null || typeof(n) != typeof(Component) && this.activeDialog != undefined){
           this.activeDialog?.destroy()
           this.activeDialog = undefined
-        }else{
+        }else if(typeof(n) == typeof(Component)){
           this.activeDialog = container.createComponent<any>(n)
         }
       }

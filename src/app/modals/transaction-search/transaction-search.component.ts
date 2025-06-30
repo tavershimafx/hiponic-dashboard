@@ -9,7 +9,7 @@ import { FileService } from '@services/file-download';
   selector: 'transaction-search',
   standalone: false,
   templateUrl: './transaction-search.component.html',
-  styleUrl: './transaction-search.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class TransactionSearchModal{
   /**

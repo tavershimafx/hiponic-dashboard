@@ -26,14 +26,16 @@
             </div> 
             <div class="dropdown-menu" tabindex="-1">
                 <div>
-                    <span class="material-symbols-outlined ml-0 mr-10 middle">person</span>
-                    Profile
+                    <a routerLink="/dashboard/account">
+                        <span class="material-symbols-outlined ml-0 mr-10 middle">person</span>
+                        Profile
+                    </a>
                 </div>
-                <div>
+                <div (click)="settings('settings')">
                     <span class="material-symbols-outlined ml-0 mr-10 middle">settings</span>
                     Settings
                 </div>
-                <div>
+                <div (click)="settings('logout')">
                     <span class="material-symbols-outlined ml-0 mr-10 middle">power_settings_new</span>
                     Logout
                 </div>

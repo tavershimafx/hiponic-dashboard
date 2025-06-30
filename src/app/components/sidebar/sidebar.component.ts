@@ -54,6 +54,7 @@ export class SidebarComponent {
         { name: "Audit", iconClass: "apps", url: "/dashboard/uba/audit" }
       ]
      },
+    { name: "Account", iconClass: "account_circle", url: "/dashboard/account" },
   ]
     constructor(){
     

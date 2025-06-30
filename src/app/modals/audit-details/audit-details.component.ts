@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
-import { roles } from '@store/faker';
 
 @Component({
   selector: 'audit-details',
   standalone: false,
   templateUrl: './audit-details.component.html',
-  styleUrl: './audit-details.component.css'
+  styleUrls: ['../modals.basic.css', './audit-details.component.css']
 })
 export class AuditDetailsModal{
   

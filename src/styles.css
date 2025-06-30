@@ -1,4 +1,8 @@
 
+/*
+* Icon font class: google material symbols
+* https://fonts.google.com/icons?icon.size=24&icon.color=%231f1f1f
+*/
 @font-face{
     src: url('/assets/fonts/MaterialSymbolsOutlined-Regular.ttf');
     font-family: "MaterialSymbols";
@@ -31,9 +35,8 @@
 :root{
     --uba: #CB2F23;
     --theme: #2563EB;
-    --theme-light: #F8FAFC;
     --theme-background: #FFF;
-    --grey-scale: #F8FAFC;
+    --grey-scale-50: #F8FAFC;
     --grey-scale-200: #E2E8F0;
     --grey-scale-300: #CBD5E1;
     --grey-scale-400: #94A3B8;
@@ -61,11 +64,11 @@
 }
 
 .theme-light{
-    color: var(--theme-light) !important;
+    color: var(--grey-scale-50) !important;
 }
 
 .theme-light-bg{
-    background-color: var(--theme-light) !important;
+    background-color: var(--grey-scale-50) !important;
 }
 
 .danger{
@@ -252,8 +255,13 @@ a:hover{
     border-radius: 12px;
 }
 
+.dropdown-menu > div a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 .dropdown-menu > div:hover{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     cursor: pointer;
 }
 
@@ -303,7 +311,7 @@ table thead tr th:last-of-type{
 table thead tr th{
     color: var(--grey-scale-400);
     font-family: "Roboto-Medium";
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     padding: 15px;
     text-align: left;
 }
@@ -370,6 +378,11 @@ input[type='date']{
     color: var(--grey-scale-900) !important;
 }
 
+.medium{
+    font-family: "Roboto-Medium";
+    color: var(--grey-scale-900) !important;
+}
+
 .bold{
     font-family: "Roboto-Bold";
     color: var(--grey-scale-900) !important;
@@ -384,6 +397,11 @@ input[type='date']{
 }
 
 .hr-top{
+    border-top: 1px solid var(--border-color);
+}
+
+.hr{
+    height: 1px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -488,6 +506,14 @@ input[type='date']{
 
 .f22{
     font-size: 22px;
+}
+
+.f24{
+    font-size: 24px;
+}
+
+.f32{
+    font-size: 32px;
 }
 
 .m-0{

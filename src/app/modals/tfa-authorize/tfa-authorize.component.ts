@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@services/dialog-service';
-import { roles } from '@store/faker';
 
 @Component({
-  selector: 'new-user',
+  selector: 'tfa-authorize',
   standalone: false,
-  templateUrl: './new-user.component.html',
+  templateUrl: './tfa-authorize.component.html',
   styleUrl: '../modals.basic.css'
 })
-export class NewUserModal{
-  /**
-   *
-   */
+export class TwoFactorAuthorizeModal{
+ 
+
   constructor(private dialogService: DialogService) {
    
   }
 
-  
-  roles = roles.map((r) => { return { key: r.id, value: r.name}})
 
   closeDialog(){
-    this.dialogService.showDialog(null)
+    this.dialogService.closeDialog()
+  }
+
+  next(){
+    this.dialogService.showDialog("This is the value from tfa")
   }
 }

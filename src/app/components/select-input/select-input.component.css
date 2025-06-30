@@ -38,7 +38,7 @@
     visibility: hidden;
     overflow: hidden;
     border-radius: 0 0 12px 12px;
-    border: 1px solid var(--theme-light);
+    border: 1px solid var(--grey-scale-50);
     z-index: 10;
     background-color: var(--theme-background);
 }
@@ -48,9 +48,9 @@
 }
 
 .select-dropdown .dropdown-items div.disabled{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }
 
 .select-dropdown .dropdown-items div:hover{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { IRolePrivilege } from '@models/models';
 import { DialogService } from '@services/dialog-service';
-import { roles } from '@store/faker';
 
 @Component({
   selector: 'new-role',
   standalone: false,
   templateUrl: './new-role.component.html',
-  styleUrl: './new-role.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class NewRoleModal{
   roleStatus = [ { key: "active", value: "Active"}, { key: "Inactive", value: "InActive"}, 

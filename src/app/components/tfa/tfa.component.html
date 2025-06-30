@@ -1,0 +1,19 @@
+
+
+<ng-content *ngIf="tfaCompleted"></ng-content>
+
+<p *ngIf="!tfaCompleted && subscription?.closed">
+    Error loading
+</p>
+
+<p *ngIf="tfaCompleted && !subscription?.closed">
+    completed not closed
+</p>
+
+<p *ngIf="tfaCompleted && subscription?.closed">
+    completed closed
+</p>
+
+<p *ngIf="!tfaCompleted && !subscription?.closed">
+    Loading...
+</p>

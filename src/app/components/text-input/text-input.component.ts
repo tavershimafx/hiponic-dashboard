@@ -69,7 +69,7 @@ export class TextInputComponent {
   // #region NgModel template definiton
   private innerValue:any;
 
-  visibility = "visible"
+  visibility = "visibility"
 
   //Placeholders for the callbacks which are later provided
   //by the Control Value Accessor

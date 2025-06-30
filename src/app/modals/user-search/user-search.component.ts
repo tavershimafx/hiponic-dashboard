@@ -7,7 +7,7 @@ import { roles } from '@store/faker';
   selector: 'user-search',
   standalone: false,
   templateUrl: './user-search.component.html',
-  styleUrl: './user-search.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class UserSearchModal{
   /**

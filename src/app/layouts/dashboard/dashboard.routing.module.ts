@@ -5,6 +5,7 @@ import { IndexComponent } from '@pages/dashboard/index/index.component';
 const routes: Routes = [
   { path: "", component: IndexComponent },
   { path: "tasks", loadChildren: () => import("@pages/dashboard/tasks/tasks.module").then(k => k.TasksModule) },
+  { path: "account", loadChildren: () => import("@pages/dashboard/account/account.module").then(k => k.AccountModule) },
   { path: "ecommerce", loadChildren: () => import("@pages/dashboard/ecommerce/ecommerce.module").then(k => k.EcommerceModule) },
   { path: "uba", loadChildren: () => import("@pages/dashboard/uba/uba.module").then(k => k.UbaModule) }
 ]

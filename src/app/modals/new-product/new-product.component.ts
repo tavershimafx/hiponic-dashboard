@@ -6,7 +6,7 @@ import { roles } from '@store/faker';
   selector: 'new-product',
   standalone: false,
   templateUrl: './new-product.component.html',
-  styleUrl: './new-product.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class NewProductModal{
   /**

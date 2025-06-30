@@ -4,7 +4,7 @@
 }
 
 .team-dropdown .current-item{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     padding: 20px;
     font-family: "Roboto-Medium";
     color: var(--grey-scale-900);
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     padding: 15px;
     border-radius: 12px;
 }
@@ -45,7 +45,7 @@
     visibility: hidden;
     overflow: hidden;
     border-radius: 0 0 12px 12px;
-    border: 1px solid var(--theme-light);
+    border: 1px solid var(--grey-scale-50);
     z-index: 10;
     background-color: var(--theme-background);
 }
@@ -55,5 +55,5 @@
 }
 
 .team-dropdown .dropdown-items div:hover{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }

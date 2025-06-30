@@ -8,7 +8,7 @@ import { FileService } from '@services/file-download';
   selector: 'audit-search',
   standalone: false,
   templateUrl: './audit-search.component.html',
-  styleUrl: './audit-search.component.css'
+  styleUrl: '../modals.basic.css'
 })
 export class AuditSearchModal{
   /**

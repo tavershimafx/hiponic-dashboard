@@ -49,7 +49,7 @@
 }
 
 .chat-card .card-tab .tab-head .items{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     border-radius: 12px;
     padding: 5px;
 }
@@ -78,11 +78,11 @@
 }
 
 .chat-head:hover{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }
 
 .chat-head.active{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
 }
 
 .chat-head img{
@@ -151,7 +151,7 @@
 }
 
 .current-chart-card .current-user .chat-actions{
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     border-radius: 12px;
 }
 
@@ -438,7 +438,7 @@
     display: inline-block;
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--theme-light);
+    background-color: var(--grey-scale-50);
     margin-right: 20px;
 }
 
