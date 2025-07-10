@@ -107,6 +107,94 @@
     transform: scale(1.1, 1.1);
 }
 
+.flex.hr-bottom.pb-20 img{
+    width: 50px;
+}
+
+.media-actions, .media-post .engagements{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.media-actions button, .media-post .engagements button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 30%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.media-actions button:hover, .media-post .engagements button:hover{
+    background-color: var(--grey-scale-50);
+}
+
+.media-actions button .material-symbols-outlined, 
+.media-post .engagements button .material-symbols-outlined{
+    font-size: 24px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.media-post .acl-user img{
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.media-post .acl-user div {
+    vertical-align: middle;
+}
+
+.media-post .acl-user div p{
+    font-family: "Roboto-Medium";
+    color: var(--grey-scale-900);
+    margin: 0 0 5px 0;
+}
+
+.media-post .acl-user div span{
+    color: var(--grey-scale-400);
+}
+
+.media-post .medias{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.media-post .medias div{
+    width: 48%;
+    max-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.media-post .medias div img{
+    width: 100%;
+}
+
+.media-post .engagements button.active{
+    color: var(--theme);
+}
+
+.media-post .engagements button.active span{
+    color: var(--theme);
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    fill: var(--theme);
+}
+
+
+.white{
+    background-color: #FFF;
+}
 /**************************************************************************/
 /**********************************Mobile**********************************/
 /**************************************************************************/
@@ -120,6 +208,10 @@
         margin-top: 20px;
     }
 
+    .media-actions button span:not(.material-symbols-outlined), 
+    .media-post .engagements button span:not(.material-symbols-outlined){
+        display: none;
+    }
 }
 
 /**************************************************************************/

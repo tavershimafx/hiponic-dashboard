@@ -1,6 +1,6 @@
-<div class="page">
+<div class="page pr-0 pt-0 pb-0">
     <div class="row flex-gap">
-        <div class="col-lg-9 col-md-9 col-tb-12 col-sm-12">
+        <div class="col-lg-9 col-md-9 col-tb-12 col-sm-12 mt-20">
             <div class="profile-flex">
                 <div class="flex-banner" [ngStyle]="{'background-image': backImage}">
                     <div class="profile-picture">
@@ -33,39 +33,37 @@
                 </div>
             </div>
             <div class="row mt-20">
-                <div class="col-lg-3 col-md-3 col-tb-12 col-sm-12">
+                <div class="col-lg-3 col-md-3 col-tb-12 col-sm-12 prl-10 prm-10 prt-10">
                     <card>
                         <h3 class="mb-20 b black">Complete Your Profile</h3>
                         <progress-bar width="80%"></progress-bar>
                     </card>
-                    <tfa>
-                        <card class="mt-20">
-                            <div class="flex-between">
-                                <h3 class="m-0 bold">Intro</h3>
-                                <span class="material-symbols-outlined f18"> more_horiz</span>
+                    <card class="mt-20">
+                        <div class="flex-between">
+                            <h3 class="m-0 bold">Intro</h3>
+                            <span class="material-symbols-outlined f18"> more_horiz</span>
+                        </div>
+                        <p class="mt-20">I am an experienced joiner with weill developed skills</p>
+                        <div class="hr mb-10 mt-10"></div>
+                        <div class="item-intro">
+                            <div class="set">
+                                <span class="material-symbols-outlined f24 middle inline-block mr-20">location_on </span>
+                                <p class="inline-block medium">299 Westminister Rd</p>
                             </div>
-                            <p class="mt-20">I am an experienced joiner with weill developed skills</p>
-                            <div class="hr mb-10 mt-10"></div>
-                            <div class="item-intro">
-                                <div class="set">
-                                    <span class="material-symbols-outlined f24 middle inline-block mr-20">location_on </span>
-                                    <p class="inline-block medium">299 Westminister Rd</p>
-                                </div>
-                                <div class="set">
-                                    <span class="material-symbols-outlined f24 middle inline-block mr-20">business_center </span>
-                                    <p class="inline-block medium">Tavershima Ltd</p>
-                                </div>
-                                <div class="set">
-                                    <span class="material-symbols-outlined f24 middle inline-block mr-20">calendar_month </span>
-                                    <p class="inline-block medium">September 24 2015</p>
-                                </div>
-                                <div class="set">
-                                    <span class="material-symbols-outlined f24 middle inline-block mr-20">link </span>
-                                    <p class="inline-block medium">tavershima.com</p>
-                                </div>
+                            <div class="set">
+                                <span class="material-symbols-outlined f24 middle inline-block mr-20">business_center </span>
+                                <p class="inline-block medium">Tavershima Ltd</p>
                             </div>
-                        </card>
-                    </tfa>
+                            <div class="set">
+                                <span class="material-symbols-outlined f24 middle inline-block mr-20">calendar_month </span>
+                                <p class="inline-block medium">September 24 2015</p>
+                            </div>
+                            <div class="set">
+                                <span class="material-symbols-outlined f24 middle inline-block mr-20">link </span>
+                                <p class="inline-block medium">tavershima.com</p>
+                            </div>
+                        </div>
+                    </card>
                     
                     <card class="mt-20">
                         <div class="flex-between">
@@ -85,18 +83,53 @@
                             <div class="picture">
                                 <a routerLink="/dashboard/account"><img src="../../../../../assets/images/pictures/unsplash_Xe.png" /></a>
                             </div>
-                            
                         </div>
                     </card>
-                    
                 </div>
-                <div class="col-lg-9 col-md-9 col-tb-12 col-sm-12">
+                <div class="col-lg-9 col-md-9 col-tb-12 col-sm-12 pll-10 plm-10 plt-10">
+                    <card>
+                        <div class="flex hr-bottom pb-20">
+                            <img class="mr-20" src="../../../../../assets/images/users/user-1.png" alt="user">
+                            <text-input class="background border-radius flex-grow m-0" placeholder="What's on your mind?"></text-input>
+                        </div>
+                        <div class="media-actions">
+                            <button><span class="material-symbols-outlined">smart_display</span><span class="accessi">Live Video</span></button>
+                            <button><span class="material-symbols-outlined">imagesmode</span><span class="accessi">Image/Video</span></button>
+                            <button><span class="material-symbols-outlined">kid_star</span><span class="accessi">Acivity</span></button>
+                        </div>
+                    </card>
 
+                    <card class="mt-20">
+                        <div class="media-post">
+                            <div class="acl-user">
+                                <img src="../../../../../assets/images/users/user-2.png" alt="user">
+                                <div class="inline-block">
+                                    <p>Tavershima Ako</p>
+                                    <span>56 mins ago</span>
+                                </div>
+                            </div>
+                            <p>Here are some photography works that I made on the weekend with some of my friends, happy for that!</p>
+                            <div class="medias">
+                                <div><img src="../../../../../assets/images/pictures/241967113.jpg" alt="gallery"></div>
+                                <div><img src="../../../../../assets/images/pictures/6951938_6943881292.jpg" alt="gallery"> </div>
+                            </div>
+                            <div class="engagements">
+                                <button class="active"><span class="material-symbols-outlined">favorite</span>7.8k <span class="accessi">Likes</span></button>
+                                <button><span class="material-symbols-outlined">sms</span>297 <span class="accessi">Comments</span></button>
+                                <button><span class="material-symbols-outlined">share</span>40 <span class="accessi">Share</span></button>
+                            </div>
+                            <div>
+                                <text-input class="background border-radius" placeholder="Write your message"></text-input>
+                            </div>
+                        </div>
+                    </card>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-tb-12 col-sm-0 col-xs-0">
-
+        <div class="col-lg-3 col-md-3 col-tb-12 col-sm-0 col-xs-0 white h-100">
+            <div class="panel">
+                some content
+            </div>
         </div>
-    </div>
+    </div>  
 </div>

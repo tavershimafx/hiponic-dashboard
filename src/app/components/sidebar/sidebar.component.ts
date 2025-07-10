@@ -47,6 +47,7 @@ export class SidebarComponent {
      },
     { name: "Uba", iconClass: "add_moderator", url: "dashboard",
       children: [
+        { name: "Overview", iconClass: "apps", url: "/dashboard/uba" },
         { name: "Transactions", iconClass: "apps", url: "/dashboard/uba/transactions" },
         { name: "Approvals", iconClass: "apps", url: "/dashboard/uba/approvals" },
         { name: "Users", iconClass: "apps", url: "/dashboard/uba/users" },

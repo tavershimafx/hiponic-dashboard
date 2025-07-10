@@ -23,6 +23,7 @@
 
 .class-impressions{
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--theme-background);
     padding: 20px;
 }
@@ -35,7 +36,6 @@
     width: 25%;
     border-right: 1px solid var(--border-color);
 }
-
 
 .class-impressions .item:not(:first-of-type),
 .class-impressions .item:not(:last-of-type){
@@ -77,3 +77,78 @@
 .class-impressions .item > span span{
     vertical-align: sub;
 }
+
+
+
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+
+@media (max-width: 575.98px) and (orientation:portrait) {
+    .class-impressions .item{
+        width: 50%;
+        border-right: unset;
+    }
+
+    .class-impressions .item:not(:last-of-type){
+        width: 50%;
+        border-right: unset;
+    }
+
+    .class-impressions .item:nth-child(odd){
+        border-right: 1px solid var(--border-color);
+    }
+
+    .class-impressions .item:nth-child(3), .class-impressions .item:nth-child(4){
+        margin-top: 20px;
+    }
+
+    .class-impressions .item:not(:first-of-type),
+    .class-impressions .item:not(:last-of-type){
+        padding: 0 10px;
+    }
+
+    .class-impressions .item:first-of-type{
+        padding-right: 10px;
+    }
+
+    .class-impressions .item:last-of-type{
+        padding-left: 10px;
+    }
+
+    .class-impressions .item div{
+        min-height: 34px;
+    }
+
+    .class-impressions .item div p{
+        color: var(--grey-scale-900);
+    }
+}
+
+/**************************************************************************/
+/**********************************Tablets*********************************/
+/**************************************************************************/
+@media (min-width: 576px) and (max-width: 992px) and (orientation:portrait) {
+    .class-impressions .item:not(:first-of-type),
+    .class-impressions .item:not(:last-of-type){
+        padding: 0 20px;
+    }
+
+    .class-impressions .item:first-of-type{
+        padding-right: 20px;
+    }
+
+    .class-impressions .item:last-of-type{
+        padding-left: 20px;
+    }
+
+    .class-impressions .item div{
+        min-height: 34px;
+    }
+}
+
+
+/* This file is replicated in 
+* ecommerce/index/index.component.css
+* and could be shared
+*/

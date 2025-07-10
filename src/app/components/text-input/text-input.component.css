@@ -1,5 +1,7 @@
 .text-contain{
     margin: 10px 0 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .text-contain p.text-danger{
@@ -15,7 +17,7 @@
     border-radius: 12px;
     outline: none;
     border: 1px solid var(--border-color);
-    background-color: var(--theme-background);
+    background-color: transparent; /*var(--theme-background);*/
 }
 
 .text-element input{
