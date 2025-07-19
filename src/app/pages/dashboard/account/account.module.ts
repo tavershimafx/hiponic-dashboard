@@ -7,9 +7,11 @@ import { CommonModule } from '@angular/common';
 import ComponentsModule from '@components/components.module';
 import PipesModule from '@pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const components = [
   IndexComponent,
+  GalleryComponent
 ]
 
 @NgModule({

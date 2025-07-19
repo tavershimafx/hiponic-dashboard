@@ -1,0 +1,55 @@
+
+.tab-collection .tabs span{
+    display: inline-block;
+    padding: 20px 40px;
+}
+
+.tab-collection .tabs span.active{
+    color: var(--theme);
+    font-family: "Roboto-Medium";
+    border-bottom: 3px solid var(--theme);
+}
+
+.tab-collection .tab .pictures{
+    /* display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 10px; */
+    
+}
+
+.tab-collection .tab .pictures .image {
+    columns: 4;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+}
+
+.tab-collection .tab .pictures img{
+    /* max-width: 23%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    background-size: cover; */
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+}
+
+/**************************************************************************/
+/**********************************Mobile**********************************/
+/**************************************************************************/
+@media (max-width: 575.98px) and (orientation:portrait) {
+ 
+   .tab-collection .tab .pictures .image {
+        columns: 2;
+    }
+}
+
+/**************************************************************************/
+/**********************************Tablets*********************************/
+/**************************************************************************/
+@media (min-width: 576px) and (max-width: 992px) and (orientation:portrait) {
+   .tab-collection .tab .pictures .image {
+        columns: 3;
+    }
+}

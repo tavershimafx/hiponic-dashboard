@@ -23,6 +23,7 @@ import { SelectInputComponent } from "./select-input/select-input.component";
 import { SearchUtilityComponent } from "./search-utility/search-utility.component";
 import { LoadingDialogComponent } from "./loading-dialog/loading.component";
 import { TFAComponent } from "./tfa/tfa.component";
+import { RecentViewedComponent } from "./recent-viewed/recent-viewed.component";
 
 const components = [
     TextInputComponent,
@@ -43,7 +44,8 @@ const components = [
     SelectInputComponent,
     SearchUtilityComponent,
     LoadingDialogComponent,
-    TFAComponent
+    TFAComponent,
+    RecentViewedComponent
 ]
 
 @NgModule({

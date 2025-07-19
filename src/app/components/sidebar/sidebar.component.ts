@@ -56,6 +56,7 @@ export class SidebarComponent {
       ]
      },
     { name: "Account", iconClass: "account_circle", url: "/dashboard/account" },
+    { name: "Gallery", iconClass: "account_circle", url: "/dashboard/account/gallery" },
   ]
     constructor(){
     
