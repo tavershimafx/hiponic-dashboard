@@ -266,19 +266,19 @@ a:hover{
     width: max-content;
 }
 
-.dropdown-menu > div{
+.dropdown-menu .menu-item{
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid var(--border-color);
     border-radius: 12px;
 }
 
-.dropdown-menu > div a{
+.dropdown-menu .menu-item a{
     color: var(--text-color);
     text-decoration: none;
 }
 
-.dropdown-menu > div:hover{
+.dropdown-menu .menu-item:hover{
     background-color: var(--grey-scale-50);
     cursor: pointer;
 }
