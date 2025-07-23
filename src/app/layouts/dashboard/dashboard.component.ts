@@ -1,4 +1,5 @@
 import { Component, ComponentRef, ElementRef, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
+import { Router, NavigationCancel, NavigationEnd, NavigationError, NavigationStart } from '@angular/router';
 import { DialogService } from '@services/dialog-service';
 import { SidebarService } from '@services/sidebar';
 import { isInbound } from '@services/utilities';
@@ -15,7 +16,7 @@ export class DashboardLayoutComponent implements OnDestroy {
 
   activeDialog?: ComponentRef<any>
   constructor(private sidebarService: SidebarService, dialogService: DialogService,
-    container: ViewContainerRef
+    container: ViewContainerRef, router: Router
   ){
     this.mouseEvent = this.mouseEvent.bind(this)
     sidebarService.sidebar.subscribe({
@@ -53,6 +54,20 @@ export class DashboardLayoutComponent implements OnDestroy {
         this.isLoading = n? true : false
       }
     })
+
+    router.events.subscribe((event:any) => {
+      if (event instanceof NavigationStart) {
+        dialogService.toggleAsyncMode(true);
+      } else if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        dialogService.toggleAsyncMode(false);
+      }
+    });
+  
+
   }
 
   mouseEvent(e:MouseEvent){
