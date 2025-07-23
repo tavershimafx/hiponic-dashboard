@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 100%;
     padding: 0 250px;
+    animation: slide-from-right 0.5s linear 0s 1 normal forwards;
 }
 
 .auth-page > img:first-child{
@@ -56,6 +57,15 @@
     margin-right: 10px;
 }
 
+@keyframes slide-from-right{
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
 /*********************************************************************/
 /***************************Small Laptops*****************************/
 /*********************************************************************/

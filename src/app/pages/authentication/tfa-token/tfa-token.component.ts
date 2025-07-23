@@ -22,7 +22,7 @@ export class TfaTokenComponent {
   isSubmitting = false
 
   loginForm: CustomFormGroup = new CustomFormGroup({
-    "token": new CustomFormControl("token", "", "a", Validators.compose([Validators.required, 
+    "token": new CustomFormControl("token", "123456", "a", Validators.compose([Validators.required, 
       numberValidator(), Validators.minLength(6), Validators.maxLength(6)]))
   })
 

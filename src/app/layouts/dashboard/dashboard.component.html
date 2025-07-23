@@ -5,6 +5,7 @@
     <div class="main-area">
         <nav-top></nav-top>
         <div class="full-pages">
+            <div class="fade-view" *ngIf="isLoading"><div class="async-loading"></div></div>
             <router-outlet></router-outlet>
         </div>
     </div>

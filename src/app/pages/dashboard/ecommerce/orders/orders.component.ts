@@ -61,17 +61,10 @@ export class OrdersComponent{
   }
       
   showLoading(){
-      this.dialogService.showDialog(LoadingDialogComponent)?.subscribe({
-        next: x =>{
-          if(x != true){
-            console.log("loading ended", x)
-            // send to backend
-          }
-        }
-      })
+      this.dialogService.toggleAsyncMode()
       setTimeout(() => {
-        this.dialogService.closeDialog()
-      }, 2000);
+        this.dialogService.toggleAsyncMode(false)
+      }, 4000);
   }
 
   checkAll(event:any){

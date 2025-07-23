@@ -21,8 +21,8 @@ export class LoginComponent {
   isSubmitting = false
 
   loginForm: CustomFormGroup = new CustomFormGroup({
-    "email": new CustomFormControl("email", "", "an", Validators.compose([Validators.required])),
-    "password": new CustomFormControl("password", "", "a", Validators.compose([Validators.required])),
+    "email": new CustomFormControl("email", "abc@example.com", "an", Validators.compose([Validators.required])),
+    "password": new CustomFormControl("password", "Tavershima", "a", Validators.compose([Validators.required])),
     "rememberMe": new CustomFormControl("", "", "")
   })
 

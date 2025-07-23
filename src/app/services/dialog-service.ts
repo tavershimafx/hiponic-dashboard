@@ -11,9 +11,15 @@ export class DialogService{
     private onClose?: Observable<any>
     private onCloseSubscriber?: Subscriber<any>
 
+    loadingObservable: Observable<any>
+    private loadingSubscriber?: Subscriber<boolean>
     constructor(){
         this.dialog = new Observable(sub =>{
             this.subscriber = sub
+        })
+
+        this.loadingObservable = new Observable(sub =>{
+            this.loadingSubscriber = sub
         })
     }
 
@@ -58,5 +64,9 @@ export class DialogService{
         }
 
         this.subscriber?.next(null)
+    }
+
+    toggleAsyncMode(showLoading: boolean = true){
+        this.loadingSubscriber?.next(showLoading)
     }
 }

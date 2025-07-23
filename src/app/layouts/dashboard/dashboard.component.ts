@@ -11,6 +11,7 @@ import { isInbound } from '@services/utilities';
 })
 export class DashboardLayoutComponent implements OnDestroy {
   @ViewChild("sidebar", { static: true }) sidebar!: ElementRef
+  isLoading: boolean = false
 
   activeDialog?: ComponentRef<any>
   constructor(private sidebarService: SidebarService, dialogService: DialogService,
@@ -46,6 +47,12 @@ export class DashboardLayoutComponent implements OnDestroy {
         }
       }
     })
+
+    dialogService.loadingObservable.subscribe({
+      next: n =>{
+        this.isLoading = n? true : false
+      }
+    })
   }
 
   mouseEvent(e:MouseEvent){
@@ -62,4 +69,5 @@ export class DashboardLayoutComponent implements OnDestroy {
   ngOnDestroy(): void {
     window.removeEventListener("click", this.mouseEvent)
   }
+
 }
