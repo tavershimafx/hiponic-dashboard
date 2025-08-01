@@ -1,7 +1,10 @@
 <div class="transaction-page">
     <search-utility placeholder="Search Transactions" [filterValues]="filterValues" (searchChange)="search($event)" (searchAll)="searchAll($event)">
         <div class="inline-block float-right">
-            <button class="btn btn-md btn-info mr-10" (click)="advancedSearch()"><span class="material-symbols-outlined middle mr-10">search</span>Advanced Search</button>
+            <button class="btn btn-md btn-info mr-10" (click)="advancedSearch()">
+                <span class="material-symbols-outlined middle mr-10">search</span>
+                <span class="hide-md">Advanced Search</span>
+            </button>
         </div>
     </search-utility>
     <div class="page" *ngIf="tab == 0">

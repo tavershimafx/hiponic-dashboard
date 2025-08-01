@@ -95,4 +95,15 @@
         display: block;
     }
 
+    text-input, button{
+        vertical-align: middle;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .page-actions{
+        align-items: flex-start;
+    }
 }

@@ -14,12 +14,12 @@
     </div>
     <div class="mb-search">
         <text-input [placeholder]="placeholder" class="m-0 inline-block" (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"></text-input>
-        <button class="btn btn-md btn-primary ml-10" (click)="sq()">Search</button>
+        <button class="btn btn-md btn-primary ml-10 ms-0 mls-10" (click)="sq()">Search</button>
     </div>
     <div class="filters">
         <div class="filter-mx" dropdown>
             <span class="material-symbols-outlined">sort</span>&nbsp;
-            Sort: Date Created
+            <span class="hide-md">Sort: Date Created</span>
             <div class="dropdown-menu" tabindex="-1">
                 <div *ngFor="let item of filterValues" (click)="fireSort(item.key)">{{item.value}}</div>
             </div>
