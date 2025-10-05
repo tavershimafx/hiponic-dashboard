@@ -219,7 +219,7 @@ export interface IPermission extends IModelBase{
 export interface ITransaction extends IModelBase{
   id: string
   transactionType: TransactionType
-  amount: string
+  amount: number
   date: Date
   solId: string
   accountName: string

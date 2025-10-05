@@ -6,6 +6,7 @@ import { filterValues, transactions } from '@store/faker';
 import { classes } from '@directives/badge.directive';
 import { TransactionSearchModal } from '@modals/transaction-search/transaction-search.component';
 import { LoadingDialogComponent } from '@components/loading-dialog/loading.component';
+import { UtilityFunctions } from '@services/functions';
 
 @Component({
   selector: 'transactions',
@@ -122,6 +123,10 @@ export class TransactionsComponent{
       default:
         return "";
     }
+  }
+
+   formatMoney(value: string | number){
+    return UtilityFunctions.formatMoney(value)
   }
 
   getTypeString(status: number){

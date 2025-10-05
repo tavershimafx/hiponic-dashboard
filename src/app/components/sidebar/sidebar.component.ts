@@ -17,14 +17,14 @@ export class SidebarComponent {
         { name: "Goals", iconClass: "apps", url: "/dashboard/tasks/goals" }
       ]
      },
-    { name: "Ecommerce", iconClass: "shopping_cart", url: "dashboard",
-      children:[
-        { name: "Analytics", iconClass: "apps", url: "/dashboard/ecommerce" },
-        { name: "Orders", iconClass: "apps", url: "/dashboard/ecommerce/orders" },
-        { name: "Products", iconClass: "apps", url: "/dashboard/ecommerce/products" },
-        { name: "Customers", iconClass: "apps", url: "/dashboard/ecommerce/customers" }
-      ]
-     },
+    // { name: "Ecommerce", iconClass: "shopping_cart", url: "dashboard",
+    //   children:[
+    //     { name: "Analytics", iconClass: "apps", url: "/dashboard/ecommerce" },
+    //     { name: "Orders", iconClass: "apps", url: "/dashboard/ecommerce/orders" },
+    //     { name: "Products", iconClass: "apps", url: "/dashboard/ecommerce/products" },
+    //     { name: "Customers", iconClass: "apps", url: "/dashboard/ecommerce/customers" }
+    //   ]
+    //  },
     { name: "Mail", iconClass: "mail", url: "dashboard",
       children:[
         { name: "Inbox", iconClass: "apps", url: "dashboard" },
@@ -35,17 +35,17 @@ export class SidebarComponent {
         { name: "Trash", iconClass: "apps", url: "dashboard" }
       ]
      },
-    { name: "Work", iconClass: "work", url: "dashboard",
-      children: [
-        { name: "Overview", iconClass: "apps", url: "dashboard" },
-        { name: "Job Search", iconClass: "apps", url: "dashboard" },
-        { name: "Schedule", iconClass: "apps", url: "dashboard" },
-        { name: "History", iconClass: "apps", url: "dashboard" },
-        { name: "Events", iconClass: "apps", url: "dashboard" },
-        { name: "Message", iconClass: "apps", url: "dashboard" }
-      ]
-     },
-    { name: "Uba", iconClass: "add_moderator", url: "dashboard",
+    // { name: "Work", iconClass: "work", url: "dashboard",
+    //   children: [
+    //     { name: "Overview", iconClass: "apps", url: "dashboard" },
+    //     { name: "Job Search", iconClass: "apps", url: "dashboard" },
+    //     { name: "Schedule", iconClass: "apps", url: "dashboard" },
+    //     { name: "History", iconClass: "apps", url: "dashboard" },
+    //     { name: "Events", iconClass: "apps", url: "dashboard" },
+    //     { name: "Message", iconClass: "apps", url: "dashboard" }
+    //   ]
+    //  },
+    { name: "Access", iconClass: "add_moderator", url: "dashboard",
       children: [
         { name: "Overview", iconClass: "apps", url: "/dashboard/uba" },
         { name: "Transactions", iconClass: "apps", url: "/dashboard/uba/transactions" },
@@ -56,7 +56,7 @@ export class SidebarComponent {
       ]
      },
     { name: "Account", iconClass: "account_circle", url: "/dashboard/account" },
-    { name: "Gallery", iconClass: "account_circle", url: "/dashboard/account/gallery" },
+    //{ name: "Gallery", iconClass: "account_circle", url: "/dashboard/account/gallery" },
   ]
     constructor(){
     
