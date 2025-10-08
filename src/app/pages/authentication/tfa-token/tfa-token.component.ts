@@ -32,6 +32,6 @@ export class TfaTokenComponent {
       return
     }
 
-    this.router.navigateByUrl("/dashboard/uba")
+    this.router.navigateByUrl("/dashboard/uba/access-index")
   }
 }

@@ -34,7 +34,8 @@
 
 :root{
     --uba: #CB2F23;
-    --theme: #2563EB;
+    /* --theme: #2563EB; */
+    --theme: #1D4483;
     --theme-background: #FFF;
     --grey-scale-50: #F8FAFC;
     --grey-scale-200: #E2E8F0;
@@ -532,6 +533,10 @@ input[type='date']{
 
 .h-100{
     height: 100%;
+}
+
+.no-x{
+    overflow-x: unset !important;
 }
 
 .f16{

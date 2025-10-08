@@ -28,6 +28,34 @@ function randomTransaction(): ITransaction {
     status: faker.helpers.enumValue(TransactionStatus)
   };
 }
+function suspiciousTransaction(): ITransaction {
+  return {
+    id: faker.string.uuid(),
+    description: faker.finance.transactionDescription(),
+    transactionType: faker.helpers.enumValue(TransactionType),
+    //amount: faker.finance.amount({ symbol: "₦", min:100000, max: 6000000, autoFormat: true }),
+    amount: faker.number.float({ min:7000000, max: 30000000}),
+    date: faker.date.past(),
+    solId: soleId,
+    accountName: faker.person.fullName(),
+    accountNumber: faker.finance.accountNumber(),
+    status: faker.helpers.enumValue(TransactionStatus)
+  };
+}
+function falseTransaction(): ITransaction {
+  return {
+    id: faker.string.uuid(),
+    description: faker.finance.transactionDescription(),
+    transactionType: faker.helpers.enumValue(TransactionType),
+    //amount: faker.finance.amount({ symbol: "₦", min:100000, max: 6000000, autoFormat: true }),
+    amount: faker.number.float({ min:1000000, max: 1500000}),
+    date: faker.date.past(),
+    solId: soleId,
+    accountName: faker.person.fullName(),
+    accountNumber: faker.finance.accountNumber(),
+    status: faker.helpers.enumValue(TransactionStatus)
+  };
+}
 
 const auditActions = [
   "Login Fail", "Login Success",
@@ -110,6 +138,14 @@ export const filterValues: IKeyValue[] = [
 export const users = faker.helpers.multiple(randomUser, { count: 50,});
 
 export const transactions: ITransaction[] = faker.helpers.multiple(randomTransaction, {
+  count: 100,
+});
+
+export const suspicious: ITransaction[] = faker.helpers.multiple(suspiciousTransaction, {
+  count: 100,
+});
+
+export const falseDetection: ITransaction[] = faker.helpers.multiple(falseTransaction, {
   count: 100,
 });
 

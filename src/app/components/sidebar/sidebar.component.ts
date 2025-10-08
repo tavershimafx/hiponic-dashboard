@@ -10,13 +10,13 @@ export class SidebarComponent {
 
   sidebarItems: ISidebarItem[] = [
     { name: "Dashboard", iconClass: "apps", url: "/dashboard" },
-    { name: "Projects", iconClass: "check_box", url: "/dashboard",
-      children: [
-        { name: "Tasks", iconClass: "apps", url: "/dashboard/tasks" },
-        { name: "Message", iconClass: "apps", url: "/dashboard/tasks/messages" },
-        { name: "Goals", iconClass: "apps", url: "/dashboard/tasks/goals" }
-      ]
-     },
+    // { name: "Projects", iconClass: "check_box", url: "/dashboard",
+    //   children: [
+    //     { name: "Tasks", iconClass: "apps", url: "/dashboard/tasks" },
+    //     { name: "Message", iconClass: "apps", url: "/dashboard/tasks/messages" },
+    //     { name: "Goals", iconClass: "apps", url: "/dashboard/tasks/goals" }
+    //   ]
+    //  },
     // { name: "Ecommerce", iconClass: "shopping_cart", url: "dashboard",
     //   children:[
     //     { name: "Analytics", iconClass: "apps", url: "/dashboard/ecommerce" },
@@ -25,16 +25,16 @@ export class SidebarComponent {
     //     { name: "Customers", iconClass: "apps", url: "/dashboard/ecommerce/customers" }
     //   ]
     //  },
-    { name: "Mail", iconClass: "mail", url: "dashboard",
-      children:[
-        { name: "Inbox", iconClass: "apps", url: "dashboard" },
-        { name: "Sent Mail", iconClass: "apps", url: "dashboard" },
-        { name: "Favorites", iconClass: "apps", url: "dashboard" },
-        { name: "Drafts", iconClass: "apps", url: "dashboard" },
-        { name: "Spam", iconClass: "apps", url: "dashboard" },
-        { name: "Trash", iconClass: "apps", url: "dashboard" }
-      ]
-     },
+    // { name: "Mail", iconClass: "mail", url: "dashboard",
+    //   children:[
+    //     { name: "Inbox", iconClass: "apps", url: "dashboard" },
+    //     { name: "Sent Mail", iconClass: "apps", url: "dashboard" },
+    //     { name: "Favorites", iconClass: "apps", url: "dashboard" },
+    //     { name: "Drafts", iconClass: "apps", url: "dashboard" },
+    //     { name: "Spam", iconClass: "apps", url: "dashboard" },
+    //     { name: "Trash", iconClass: "apps", url: "dashboard" }
+    //   ]
+    //  },
     // { name: "Work", iconClass: "work", url: "dashboard",
     //   children: [
     //     { name: "Overview", iconClass: "apps", url: "dashboard" },
@@ -45,9 +45,9 @@ export class SidebarComponent {
     //     { name: "Message", iconClass: "apps", url: "dashboard" }
     //   ]
     //  },
-    { name: "Access", iconClass: "add_moderator", url: "dashboard",
+    { name: "Monitoring", iconClass: "add_moderator", url: "dashboard",
       children: [
-        { name: "Overview", iconClass: "apps", url: "/dashboard/uba" },
+        { name: "Overview", iconClass: "apps", url: "/dashboard/uba/access-index" },
         { name: "Transactions", iconClass: "apps", url: "/dashboard/uba/transactions" },
         { name: "Approvals", iconClass: "apps", url: "/dashboard/uba/approvals" },
         { name: "Users", iconClass: "apps", url: "/dashboard/uba/users" },

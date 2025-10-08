@@ -9,14 +9,17 @@ import ComponentsModule from '@components/components.module';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 // import {MatCardModule} from '@angular/material/card';
 import PipesModule from '@pipes/pipes.module';
+import { AgCharts } from "ag-charts-angular";
 import { TransactionsComponent } from './transactions/transactions.component';
 import { UsersComponent } from './users/users.component';
 import { AuditComponent } from './audit/audit.component';
 import { RolesComponent } from './roles/roles.component';
 import { FormsModule } from '@angular/forms';
 import { ApprovalsComponent } from './approvals/approvals.component';
+import { AccessIndexComponent } from './access-index/access-index.component';
 
 const components = [
+  AccessIndexComponent,
   IndexComponent,
   TransactionsComponent,
   UsersComponent,
@@ -34,6 +37,7 @@ const components = [
     CommonModule,
     FormsModule,
     ComponentsModule,
+    AgCharts
     //MatDatepickerModule, MatCardModule
   ],
   exports: [],

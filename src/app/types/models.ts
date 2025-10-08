@@ -10,7 +10,8 @@ import {
   ApexFill,
   ApexGrid,
   ApexLegend,
-  ApexStroke
+  ApexStroke,
+  ApexTitleSubtitle
 } from "ng-apexcharts";
 
 export interface IKeyValue{
@@ -91,6 +92,7 @@ export type ChartOptions = {
   dataLabels: ApexDataLabels;
   grid: ApexGrid;
   legend: ApexLegend;
+  title: ApexTitleSubtitle
 };
 
 export interface ISidebarItem{

@@ -6,9 +6,11 @@ import { UsersComponent } from './users/users.component';
 import { AuditComponent } from './audit/audit.component';
 import { RolesComponent } from './roles/roles.component';
 import { ApprovalsComponent } from './approvals/approvals.component';
+import { AccessIndexComponent } from './access-index/access-index.component';
 
 const routes: Routes = [
   { path: "", component: IndexComponent },
+  { path: "access-index", component: AccessIndexComponent },
   { path: "transactions", component: TransactionsComponent },
   { path: "users", component: UsersComponent },
   { path: "audit", component: AuditComponent },
